@@ -1,0 +1,12 @@
+CALC_OK             0
+ERR_DIV_BY_ZERO    -1
+ERR_STACK_EMPTY    -2
+ERR_OVERFLOW       -3
+ERR_UNKNOWN        -4
+
+STACK_SIZE          10       
+STACK_OK            0       
+STACK_ERROR         -1
+STACK_OVERFLOW      10
+STACK_EMPTY         -10
+STACK_NUR1          -11

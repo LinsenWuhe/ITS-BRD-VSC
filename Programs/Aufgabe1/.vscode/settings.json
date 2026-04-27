@@ -1,0 +1,7 @@
+{
+    "debug.hideSlowPreLaunchWarning": true,
+    "debug.showInStatusBar": "never",
+    "clangd.arguments": [
+        "--compile-commands-dir=/Users/jannik/Studium lokal/ITSBoard/ITS-BRD-VSC/Programs/Aufgabe1/out/Aufgabe1/ITSboard/Debug"
+    ]
+}
