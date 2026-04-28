@@ -5,7 +5,4 @@ Praktikumsaufgaben für das 2. Semester ITS
 
 ## Zweite Aufgabe: Drehmotor
 
-## Test
 
-
-"Hallo, das klappt auch?"
