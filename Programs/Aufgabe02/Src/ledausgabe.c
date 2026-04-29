@@ -12,20 +12,29 @@ int updateLEDAusgabe(int bewegung, int phasenzahl)
 
 			if (bewegung == VORWAERTS)
 			{
-				GPIOE->BSRR = (0x1U << 15); //unischer
-				GPIOE->BSRR = (0x1U << 7);
+				GPIOE->BSRR = (0x1U << (6 + 16)); //unischer // D22 aus
+				GPIOE->BSRR = (0x1U << 7); // D23 an
 			}
 			else
 			{
-				GPIOE->BSRR = (0x1U << 15); //unsicher
+				GPIOE->BSRR = (0x1U << (7 + 16)); //unsicher // D23 aus
 				GPIOE->BSRR = (0x1U << 6);
 			}
 		}
 		else if (bewegung == FEHLER)
 		{
-			GPIOE->BSRR = (0x1U << 15); //unsicher
-			GPIOE->BSRR = (0x1U << 15); //unsicher
+			GPIOE->BSRR = (0x1U << (6 + 16)); //unischer // D22 aus
+			GPIOE->BSRR = (0x1U << (7 + 16)); //unsicher // D23 aus
 
-			GPIOE->BSRR = (0x1U << 5);
+			GPIOE->BSRR = (0x1U << 5); // D21 an
 		}
+	
+	return 0;
+}
+
+int resetBewegungLEDAusgabe()
+{
+	GPIOE->BSRR = (0x1U << (6 + 16)); //unischer // D22 aus
+	GPIOE->BSRR = (0x1U << (7 + 16)); //unsicher // D23 aus
+	GPIOE->BSRR = (0x1U << (5 + 16)); //unischer // D21 aus
 }

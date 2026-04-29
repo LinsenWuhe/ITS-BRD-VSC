@@ -7,6 +7,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
+#include "ledausgabe.h"
 #include "stm32f429xx.h"
 #include "init.h"
 #include "LCD_GUI.h"
@@ -17,6 +18,7 @@
 
 #define IDR_MASK_PIN_0	(0x01U << 0)
 #define IDR_MASK_PIN_1 (0x01U << 1)
+#define IDR_MASK_PIN_6 (0x01U << 6)
 
 #define BSRR_MASK_PIN_2 (0x01U << 2)
 #define BSRR_MASK_PIN_3 (0x01U << 3)
@@ -32,37 +34,37 @@ int main(void) {
 		Sei PIN0 Kanal A und PIN1 Kanal B:
 	*/
 
-	char gpiofPin0Pressed, gpiofPin1Pressed;
+	char gpiofPin0Pressed, gpiofPin1Pressed, gpiofPin6Pressed;
 
 	int aktuellePhase;
-	int bewegung;
+	int bewegung = 0; // Sollte es mit 0 initialisiert werden?
 	int phasenzahl = 0;
 
 	while(1) {
 		gpiofPin0Pressed = (IDR_MASK_PIN_0 != (GPIOF->IDR & IDR_MASK_PIN_0));
 		gpiofPin1Pressed = (IDR_MASK_PIN_1 != (GPIOF->IDR & IDR_MASK_PIN_1));
+		gpiofPin6Pressed = (IDR_MASK_PIN_6 != (GPIOF->IDR & IDR_MASK_PIN_6)); // für Taster S6
 
-		phase(gpiofPin0Pressed, gpiofPin1Pressed, &aktuellePhase);
-		phasenwechsel(aktuellePhase, &bewegung);
-		// TODO: Wie wird letztePhase am Anfang gesetzt?
-		letztePhase = aktuellePhase;
-
-		if (bewegung == VORWAERTS) phasenzahl++;
-		else if (bewegung == RUECKWAERTS) phasenzahl--;
-
-		updateLEDAusgabe(bewegung, phasenzahl);
-
-		/*
-		if (gpiofPin1Pressed)
+		if (bewegung != FEHLER)
 		{
-			GPIOD->BSRR = BSRR_MASK_PIN_2;
-			GPIOE->BSRR = (0x1U << 17);
+			phase(gpiofPin0Pressed, gpiofPin1Pressed, &aktuellePhase);
+			phasenwechsel(aktuellePhase, &bewegung);
+			// TODO: Wie wird letztePhase am Anfang gesetzt?
+			letztePhase = aktuellePhase;
+
+			if (bewegung == VORWAERTS) phasenzahl++;
+			else if (bewegung == RUECKWAERTS) phasenzahl--;
+
+			updateLEDAusgabe(bewegung, phasenzahl);
 		}
 		else
 		{
-			GPIOD->BSRR = BSRR_MASK_PIN_2 << 16;
+			if (gpiofPin6Pressed)
+			{
+				resetBewegungLEDAusgabe();
+				bewegung = 0; // 0 oder GLEICH, oder was anderes?
+			}
 		}
-			*/
 	}
 }
 

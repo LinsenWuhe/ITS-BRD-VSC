@@ -21,14 +21,32 @@ int phasenwechsel(int aktuellePhase, int* ergebnis)
     {
         switch (letztePhase) 
         {
-            // TODO: andere Phasen müssen auch implementiert werden
             case PHASE_B:
                 if (aktuellePhase == PHASE_A) *ergebnis = RUECKWAERTS;
                 else if (aktuellePhase == PHASE_C) *ergebnis = VORWAERTS;
+                else *ergebnis = FEHLER; // Phase B auf D
+                break;
+
+            case PHASE_A:
+                if (aktuellePhase == PHASE_D) *ergebnis = RUECKWAERTS;
+                else if (aktuellePhase == PHASE_B) *ergebnis = VORWAERTS;
+                else *ergebnis = FEHLER;
+                break;
+            
+            case PHASE_C:
+                if (aktuellePhase == PHASE_B) *ergebnis = RUECKWAERTS;
+                else if (aktuellePhase == PHASE_D) *ergebnis = VORWAERTS;
+                else *ergebnis = FEHLER;
+                break;
+            
+            case PHASE_D:
+                if (aktuellePhase == PHASE_C) *ergebnis = RUECKWAERTS;
+                else if (aktuellePhase == PHASE_A) *ergebnis = VORWAERTS;
                 else *ergebnis = FEHLER;
                 break;
 
             default:
+                return -1; // Passt das?
                 break;
         }
     }

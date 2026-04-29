@@ -3,4 +3,6 @@
 
 int updateLEDAusgabe(int bewegung, int phasenzahl);
 
+int resetBewegungLEDAusgabe();
+
 #endif
