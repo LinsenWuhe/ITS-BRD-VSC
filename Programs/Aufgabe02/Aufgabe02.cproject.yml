@@ -174,12 +174,18 @@ project:
     - group: Program/User/Inc
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
+        - file: Inc/phase.h
+        - file: Inc/fsm.h
+        - file: Inc/zeitmessung.h
 
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/phase.c
+        - file: Src/fsm.c
+        - file: Src/zeitmessung.c
 
 
   components:
