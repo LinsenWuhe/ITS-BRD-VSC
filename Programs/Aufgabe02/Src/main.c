@@ -7,13 +7,12 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
-#include "lcd.h"
 #include "stm32f429xx.h"
-#include "stm32f4xx_hal.h"
 #include "init.h"
 #include "LCD_GUI.h"
 #include "LCD_Touch.h"
 #include "phase.h"
+#include "ledausgabe.c"
 
 
 #define IDR_MASK_PIN_0	(0x01U << 0)
@@ -35,8 +34,6 @@ int main(void) {
 
 	char gpiofPin0Pressed, gpiofPin1Pressed;
 
-
-
 	int aktuellePhase;
 	int bewegung;
 	int phasenzahl = 0;
@@ -47,37 +44,13 @@ int main(void) {
 
 		phase(gpiofPin0Pressed, gpiofPin1Pressed, &aktuellePhase);
 		phasenwechsel(aktuellePhase, &bewegung);
+		// TODO: Wie wird letztePhase am Anfang gesetzt?
+		letztePhase = aktuellePhase;
 
 		if (bewegung == VORWAERTS) phasenzahl++;
 		else if (bewegung == RUECKWAERTS) phasenzahl--;
 
-		// TODO: Wie wird letztePhase am Anfang gesetzt?
-		letztePhase = aktuellePhase;
-
-		// TODO: Richtigkeit überprüfen, denn eventuell nicht richtig
-		if ((bewegung != GLEICH) && (bewegung != FEHLER))
-		{
-			GPIOD->BSRR = 0x00000000;
-			GPIOD->BSRR = phasenzahl;
-
-			if (bewegung == VORWAERTS)
-			{
-				GPIOE->BSRR = (0x1U << 15); //unischer
-				GPIOE->BSRR = (0x1U << 7);
-			}
-			else
-			{
-				GPIOE->BSRR = (0x1U << 15); //unsicher
-				GPIOE->BSRR = (0x1U << 6);
-			}
-		}
-		else if (bewegung == FEHLER)
-		{
-			GPIOE->BSRR = (0x1U << 15); //unsicher
-			GPIOE->BSRR = (0x1U << 15); //unsicher
-
-			GPIOE->BSRR = (0x1U << 5);
-		}
+		updateLEDAusgabe(bewegung, phasenzahl);
 
 		/*
 		if (gpiofPin1Pressed)

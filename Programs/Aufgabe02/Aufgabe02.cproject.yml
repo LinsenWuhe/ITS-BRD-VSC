@@ -177,6 +177,8 @@ project:
         - file: Inc/phase.h
         - file: Inc/fsm.h
         - file: Inc/zeitmessung.h
+        - file: Inc/displayausgabe.h
+        - file: Inc/ledausgabe.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -186,6 +188,8 @@ project:
         - file: Src/phase.c
         - file: Src/fsm.c
         - file: Src/zeitmessung.c
+        - file: Src/displayausgabe.c
+        - file: Src/ledausgabe.c
 
 
   components:
