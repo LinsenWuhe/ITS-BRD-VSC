@@ -42,8 +42,9 @@ while(1) {
 	//einlesen
 	status_drehscheibe();
 
-
 	//verarbeiten
+	berechneAktuellePhase();
+	berechnePhasenWechsel();
 
 	//ausgeben
 	statusDrucken();

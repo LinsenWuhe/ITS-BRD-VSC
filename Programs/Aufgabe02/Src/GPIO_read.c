@@ -1,8 +1,8 @@
 #include "GPIO_read.h"
 #include "stm32f429xx.h"
 
-char kanal1;
-char kanal2;
+int kanal1;
+int kanal2;
 
 
 int status_drehscheibe()
@@ -10,19 +10,19 @@ int status_drehscheibe()
     // Auslesen von PF0
     if (GPIOF->IDR & (1 << 0)) {
         // Pin PF0 ist HIGH
-        kanal1 = '1';
+        kanal1 = HIGH;
     } else {
         // Pin PF0 ist LOW (0V)
-        kanal1 = '0';
+        kanal1 = LOW;
     }
 
     // Auslesen von PF1
     if (GPIOF->IDR & (1 << 1)) {
         // Pin PF1 ist HIGH
-        kanal2 = '1';
+        kanal2 = HIGH;
     }
     else{
-        kanal2 = '0';
+        kanal2 = LOW;
     }
 
     return 0;

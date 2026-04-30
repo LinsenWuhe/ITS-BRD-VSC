@@ -1,6 +1,9 @@
 #include "util.h"
 #include "GPIO_read.h"
 #include "lcd.h"
+#include "calc.h"
+
+extern int aktuellePhase;
 
 void statusDrucken(void)
 {
@@ -31,7 +34,7 @@ void statusDrucken(void)
 
     lcdGotoXY(6, 10);
     lcdPrintS("Phase: ");
-    lcdPrintC('1');
+    lcdPrintInt(aktuellePhase);
 
     lcdGotoXY(6, 11);
     lcdPrintS("Fehler: keine");
