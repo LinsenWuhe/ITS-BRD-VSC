@@ -183,6 +183,8 @@ project:
         - file: Src/calc.c
         - file: Src/LED_output.c
         - file: Src/util.c
+        - file: Src/GPIO_read.c
+
 
 
   components:
