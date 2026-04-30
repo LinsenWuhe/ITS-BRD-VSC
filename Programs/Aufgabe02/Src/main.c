@@ -23,24 +23,16 @@
 
 int main(void) {
 	initITSboard();    // Initialisierung des ITS Boards
-	
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
   // Begruessungstext	
 	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
-	
-//FSM als Superloop
-	while(1) {
-
-		//einlesen
 
 
-		//verarbeiten 
+
+while(1) {
+    
 
 
-		//ausgeben
-
-
-	}
-}
+}}
