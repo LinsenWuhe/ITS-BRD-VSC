@@ -1,8 +1,8 @@
 /**
   ******************************************************************************
   * @file    main.c
-  * @author  Franz Korf
-  * @brief   Kleines Testprogramm fuer neu erstelle Fonts.
+  * @author  Ahmet / Jannik
+  * @brief   Programm zur Kontrolle eines Drehreglers (simuliert mit Pi Pico)
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
@@ -15,6 +15,10 @@
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
 #include "error.h"
+#include "calc.h"
+#include "LED_output.h"
+#include "util.h"
+
 
 
 int main(void) {
@@ -26,10 +30,17 @@ int main(void) {
   // Begruessungstext	
 	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
 	
-	// Test in Endlosschleife
+//FSM als Superloop
 	while(1) {
-		HAL_Delay(10000);
+
+		//einlesen
+
+
+		//verarbeiten 
+
+
+		//ausgeben
+
+
 	}
 }
-
-// EOF

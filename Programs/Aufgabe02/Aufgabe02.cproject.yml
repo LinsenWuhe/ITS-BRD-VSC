@@ -180,6 +180,9 @@ project:
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/calc.c
+        - file: Src/LED_output.c
+        - file: Src/util.c
 
 
   components:
