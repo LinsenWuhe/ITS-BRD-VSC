@@ -32,11 +32,14 @@ int main(void) {
 	//lcdSetFont(24);
 	textInit();
 
-	extern char kanal1;
-	extern char kanal2;
+
+	status_drehscheibe();
+	calcInit();
+
 	uint32_t t_fenster_start = getTimeStamp();
 	int32_t pulse_start = 0;
 	bool berechnet = false;
+	bool s6_letzter_zustand = false;
 
 //FSM-Loop
 while(1) {
@@ -45,8 +48,25 @@ while(1) {
 	status_drehscheibe();
 	
 	//verarbeiten
-	berechneAktuellePhase();
 	berechnePhasenWechsel();
+
+
+	 /* S6 Flankenerkennung */
+    bool s6_aktuell = s6_lesen();
+    if (s6_aktuell && !s6_letzter_zustand) {
+        /* Nur bei steigender Flanke - einmal beim Druecken */
+        fehlerLoeschen();
+        calcInit();  /* Startphase neu einlesen */
+    }
+    s6_letzter_zustand = s6_aktuell;
+
+
+    /* S6 Taste prüfen - Fehler loeschen */
+    //if (GPIOA->IDR & (1 << 6)) {   /* S6 an PA6? Pin prüfen! */
+      //  fehlerLoeschen();
+   // }
+
+	updateLEDs();
 
 	//Zeitfenster prüfen
 	uint32_t t_now = getTimeStamp();

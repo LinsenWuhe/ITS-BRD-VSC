@@ -2,12 +2,12 @@
 #include "GPIO_read.h"
 #include <stdbool.h>
 #include "timer.h"
+#include "GPIO_read.h"
+#include "lcd.h"
 
 #define PHASEN_PRO_UMDREHUNG 1200
 #define GRAD_PRO_PHASE       (360.0/ PHASEN_PRO_UMDREHUNG)
 
-extern int kanal1;
-extern int kanal2;
 
 int pulse_count;
 bool error;
@@ -17,6 +17,20 @@ double geschwindigkeit = 0.0;
 //Initialisierung der letzten Phase und Richtung
 phase_t letztePhase = PHASE_B;
 richtung_t richtung = RICHTUNG_UNBEKANNT;
+
+/* -------------------------------------------------------
+ * calcInit
+ * Initialisiert den Startzustand korrekt
+ * -------------------------------------------------------*/
+void calcInit(void)
+{
+    /* Echte Startphase einlesen statt PHASE_B anzunehmen */
+    letztePhase = berechneAktuellePhase();
+    pulse_count = 0;
+    richtung    = RICHTUNG_UNBEKANNT;
+    error       = false;
+}
+
 
 void berechneWinkel()
 {
@@ -58,52 +72,67 @@ phase_t berechneAktuellePhase()
     {
         return PHASE_C;
     }
-    else if(kanal1 == 0 && kanal2 == 1)
+    else // else if (kanal1 == 0 && kanal2 == 1)
     {
         return PHASE_D;
     }
 }
 
-void berechnePhasenWechsel()
-{   
+void berechnePhasenWechsel(void)
+{
     phase_t aktuellePhase = berechneAktuellePhase();
 
-    switch (letztePhase) {
+    if (aktuellePhase == letztePhase) return;
 
+    switch (letztePhase) {
         case PHASE_A:
             if      (aktuellePhase == PHASE_D) { pulse_count--; richtung = RICHTUNG_ZUR; }
-            else if (aktuellePhase == PHASE_B) { pulse_count++; richtung = RICHTUNG_VOR;  }
-            else if (aktuellePhase == PHASE_C) { error = true;                            }
-            // PHASE_A -> PHASE_A: keine Aenderung 
+            else if (aktuellePhase == PHASE_B) { pulse_count++; richtung = RICHTUNG_VOR; }
+            else if (aktuellePhase == PHASE_C) { 
+                error = true;
+                /* DEBUG - welcher Übergang? */
+                lcdGotoXY(6, 13);
+                lcdPrintS("ERR: A->C");
+            }
             break;
 
         case PHASE_B:
-            if      (aktuellePhase == PHASE_A) { pulse_count--; richtung = RICHTUNG_VOR; }
-            else if (aktuellePhase == PHASE_C) { pulse_count++; richtung = RICHTUNG_VOR;  }
-            else if (aktuellePhase == PHASE_D) { error = true;                            }
-            // PHASE_B -> PHASE_B: keine Aenderung 
+            if      (aktuellePhase == PHASE_A) { pulse_count--; richtung = RICHTUNG_ZUR; }
+            else if (aktuellePhase == PHASE_C) { pulse_count++; richtung = RICHTUNG_VOR; }
+            else if (aktuellePhase == PHASE_D) { 
+                error = true;
+                lcdGotoXY(6, 13);
+                lcdPrintS("ERR: B->D");
+            }
             break;
 
         case PHASE_C:
             if      (aktuellePhase == PHASE_B) { pulse_count--; richtung = RICHTUNG_ZUR; }
-            else if (aktuellePhase == PHASE_D) { pulse_count++; richtung = RICHTUNG_VOR;  }
-            else if (aktuellePhase == PHASE_A) { error = true;                            }
-            // PHASE_C -> PHASE_C: keine Aenderung 
+            else if (aktuellePhase == PHASE_D) { pulse_count++; richtung = RICHTUNG_VOR; }
+            else if (aktuellePhase == PHASE_A) { 
+                error = true;
+                lcdGotoXY(6, 13);
+                lcdPrintS("ERR: C->A");
+            }
             break;
 
         case PHASE_D:
             if      (aktuellePhase == PHASE_C) { pulse_count--; richtung = RICHTUNG_ZUR; }
-            else if (aktuellePhase == PHASE_A) { pulse_count++; richtung = RICHTUNG_VOR;  }
-            else if (aktuellePhase == PHASE_B) { error = true;                            }
-            // PHASE_D -> PHASE_D: keine Aenderung 
+            else if (aktuellePhase == PHASE_A) { pulse_count++; richtung = RICHTUNG_VOR; }
+            else if (aktuellePhase == PHASE_B) { 
+                error = true;
+                lcdGotoXY(6, 13);
+                lcdPrintS("ERR: D->B");
+            }
             break;
 
         default:
             error = true;
+            lcdGotoXY(6, 13);
+            lcdPrintS("ERR: DEFAULT");
             break;
     }
 
-    // Letzte Phase fuer naechsten Durchlauf speichern 
     letztePhase = aktuellePhase;
 }
 

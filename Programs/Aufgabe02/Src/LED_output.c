@@ -1,118 +1,61 @@
 #include "LED_output.h"
 #include "stm32f429xx.h"
+#include "calc.h"
 
-
-//braucht als Parameter, welche LED eingeschaltet werden soll
-void greune_LED_an(int LED){
-//merkt sich, welche LED angeschaltet werden soll
-int anschalten;
-
-switch (LED) {
-case 23: 
-        anschalten = LED_vorwaertsDrehung;
-        break;
-case 22:
-        anschalten = LED_rueckwaertsDrehung;
-        break;
-case 21:
-        anschalten = LED_fehler;
-        break;
-default: 
-        return;
-}
-    //schreibt an gewünschte LED Position ein 1 - alle anderen Ziffern bleiben gleich
-    GPIOE->ODR |= anschalten;
+void greune_LED_an(int LED) {
+    switch (LED) {
+        case 23: GPIOE->ODR |= LED_vorwaertsDrehung;  break;
+        case 22: GPIOE->ODR |= LED_rueckwaertsDrehung; break;
+        case 21: GPIOE->ODR |= LED_fehler;             break;
+        default: return;
+    }
 }
 
-void gruene_LED_aus(int LED){
-    
-int ausschalten;
-
-switch (LED) {
-case 23: 
-        ausschalten = LED_vorwaertsDrehung;
-        break;
-case 22:
-        ausschalten = LED_rueckwaertsDrehung;
-        break;
-case 21:
-        ausschalten = LED_fehler;
-        break;
-default: 
-        return;
-}
-    //negiert alle Bits -> schreibt dann an gewünschte Position eine 0, alle anderen Bits bleiben unverändert
-    GPIOE->ODR &= ~ausschalten;
+void gruene_LED_aus(int LED) {
+    switch (LED) {
+        case 23: GPIOE->ODR &= ~LED_vorwaertsDrehung;  break;
+        case 22: GPIOE->ODR &= ~LED_rueckwaertsDrehung; break;
+        case 21: GPIOE->ODR &= ~LED_fehler;             break;
+        default: return;
+    }
 }
 
-void blaue_LED_an(int LED){
-    
-int anschalten;
+/* Statt einzelner blaue_LED_an/aus Funktionen
+   einfach den ganzen Port auf einmal setzen! */
+void blaue_LEDs_setzen(int pulse_count)
+{
+    /* Nur unterste 8 Bits nehmen */
+    uint8_t wert = (uint8_t)(pulse_count & 0xFF);
 
-switch (LED) {
-case 8: 
-        anschalten = (1);
-        break;
-case 9:
-        anschalten = (1 << 1);
-        break;
-case 10:
-        anschalten = (1 << 2);
-        break;
-case 11: 
-        anschalten = (1 << 3);
-        break;
-case 12:
-        anschalten = (1 << 4);
-        break;
-case 13:
-        anschalten = (1 << 5);
-        break;
-case 14: 
-        anschalten = (1 << 6);
-        break;
-case 15:
-        anschalten = (1 << 7);
-        break;
-default: 
-        return;
+    /* Unterste 8 Bits von GPIOD setzen, Rest unveraendert */
+    GPIOD->ODR = (GPIOD->ODR & 0xFF00) | wert;
 }
 
-    GPIOD->ODR |= anschalten;
-}
+/* Alle LEDs auf einmal aktualisieren */
+void updateLEDs(void)
+{
+    richtung_t richtung = gibRichtung();
+    bool       fehler   = gibFehler();
+    int        pulse    = gibPulseCount();
 
-void blaue_LED_aus(int LED){
-    
-int ausschalten;
+    /* Richtungs LEDs */
+    if (richtung == RICHTUNG_VOR) {
+        greune_LED_an(23);   /* Vorwärts an */
+        gruene_LED_aus(22);  /* Rückwärts aus */
+    }
+    else if (richtung == RICHTUNG_ZUR) {
+        gruene_LED_aus(23);  /* Vorwärts aus */
+        greune_LED_an(22);   /* Rückwärts an */
+    }
 
-switch (LED) {
-case 8: 
-        ausschalten = (1);
-        break;
-case 9:
-        ausschalten = (1 << 1);
-        break;
-case 10:
-        ausschalten = (1 << 2);
-        break;
-case 11: 
-        ausschalten = (1 << 3);
-        break;
-case 12:
-        ausschalten = (1 << 4);
-        break;
-case 13:
-        ausschalten = (1 << 5);
-        break;
-case 14: 
-        ausschalten = (1 << 6);
-        break;
-case 15:
-        ausschalten = (1 << 7);
-        break;
-default: 
-        return;
-}
+    /* Fehler LED */
+    if (fehler) {
+        greune_LED_an(21);
+    }
+    else {
+        gruene_LED_aus(21);
+    }
 
-    GPIOD->ODR &= ~ausschalten;
+    /* Blaue LEDs - pulse_count binaer */
+    blaue_LEDs_setzen(pulse);
 }

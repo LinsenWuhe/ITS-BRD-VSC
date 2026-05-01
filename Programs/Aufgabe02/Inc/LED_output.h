@@ -9,9 +9,9 @@ void greune_LED_an(int LED);
 
 void gruene_LED_aus(int LED);
 
-void blaue_LED_an(int LED);
+void blaue_LEDs_setzen(int LED);
 
-void blaue_LED_aus(int LED);
+void updateLEDs(void);
 
 
 #endif

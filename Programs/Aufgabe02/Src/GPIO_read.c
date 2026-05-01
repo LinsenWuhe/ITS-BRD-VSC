@@ -27,3 +27,11 @@ int status_drehscheibe()
 
     return 0;
 }
+
+int s6_lesen(void)
+{
+    if (GPIOF->IDR & (1 << 6)) {
+        return 1;  /* Taste gedrueckt */
+    }
+    return 0;
+}

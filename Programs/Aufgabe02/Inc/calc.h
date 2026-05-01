@@ -17,6 +17,7 @@ typedef enum{
     RICHTUNG_ZUR = 2,
 } richtung_t;
 
+void calcInit(void);
 void berechneWinkel(void);
 
 void berechneGeschwindigkeit(uint32_t t_start, uint32_t t_end, int32_t pulse_start);
