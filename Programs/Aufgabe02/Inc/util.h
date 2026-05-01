@@ -5,6 +5,6 @@
 
 void statusDrucken(void);
 
-
+void textInit(void);
 
 #endif
