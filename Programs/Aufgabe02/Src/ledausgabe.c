@@ -1,15 +1,16 @@
-#include "ledausgabe.h"
 #include "phase.h"
 #include "stm32f429xx.h"
+#include "ledausgabe.h"
+
 
 int updateLEDAusgabe(int bewegung, int phasenzahl)
 {
     // TODO: Richtigkeit überprüfen, denn eventuell nicht richtig
 		if ((bewegung != GLEICH) && (bewegung != FEHLER))
 		{
-			GPIOD->BSRR = 0x00000000;
+			GPIOD->BSRR = 0xFF << 16;
 			GPIOD->BSRR = phasenzahl;
-
+			
 			if (bewegung == VORWAERTS)
 			{
 				GPIOE->BSRR = (0x1U << (6 + 16)); //unischer // D22 aus

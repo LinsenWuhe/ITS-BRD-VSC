@@ -15,7 +15,7 @@ int phase(char kanalA, char kanalB, int* phase)
 }
 
 // TODO: vervollständigen
-int phasenwechsel(int aktuellePhase, int* ergebnis)
+int phasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 {
     if (aktuellePhase != letztePhase)
     {
@@ -46,7 +46,7 @@ int phasenwechsel(int aktuellePhase, int* ergebnis)
                 break;
 
             default:
-                return -1; // Passt das?
+                return -1; // Passt das? // lieber UNBEKANNTER_FEHLER
                 break;
         }
     }

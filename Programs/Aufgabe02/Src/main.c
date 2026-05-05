@@ -7,13 +7,14 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
+#include "lcd.h"
 #include "ledausgabe.h"
 #include "stm32f429xx.h"
 #include "init.h"
 #include "LCD_GUI.h"
 #include "LCD_Touch.h"
 #include "phase.h"
-#include "ledausgabe.c"
+#include "zeitmessung.h"
 
 
 #define IDR_MASK_PIN_0	(0x01U << 0)
@@ -25,7 +26,7 @@
 
 int main(void) {
 	initITSboard();    // Initialisierung des ITS Boards
-	
+	initZeitmessung(); // Initialisiert den Timer
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
@@ -36,10 +37,17 @@ int main(void) {
 
 	char gpiofPin0Pressed, gpiofPin1Pressed, gpiofPin6Pressed;
 
-	int aktuellePhase;
+	int aktuellePhase, letztePhase;
 	int bewegung = 0; // Sollte es mit 0 initialisiert werden?
 	int phasenzahl = 0;
 
+	gpiofPin0Pressed = (IDR_MASK_PIN_0 != (GPIOF->IDR & IDR_MASK_PIN_0));
+	gpiofPin1Pressed = (IDR_MASK_PIN_1 != (GPIOF->IDR & IDR_MASK_PIN_1));
+	gpiofPin6Pressed = (IDR_MASK_PIN_6 != (GPIOF->IDR & IDR_MASK_PIN_6)); // für Taster S6
+	phase(gpiofPin0Pressed, gpiofPin1Pressed, &aktuellePhase);
+	letztePhase = aktuellePhase;
+	
+	// Superloop
 	while(1) {
 		gpiofPin0Pressed = (IDR_MASK_PIN_0 != (GPIOF->IDR & IDR_MASK_PIN_0));
 		gpiofPin1Pressed = (IDR_MASK_PIN_1 != (GPIOF->IDR & IDR_MASK_PIN_1));
@@ -48,10 +56,10 @@ int main(void) {
 		if (bewegung != FEHLER)
 		{
 			phase(gpiofPin0Pressed, gpiofPin1Pressed, &aktuellePhase);
-			phasenwechsel(aktuellePhase, &bewegung);
+			phasenwechsel(aktuellePhase, letztePhase, &bewegung);
 			// TODO: Wie wird letztePhase am Anfang gesetzt?
 			letztePhase = aktuellePhase;
-
+			
 			if (bewegung == VORWAERTS) phasenzahl++;
 			else if (bewegung == RUECKWAERTS) phasenzahl--;
 
@@ -66,6 +74,9 @@ int main(void) {
 			}
 		}
 	}
+		
+
+	
 }
 
 // EOF

@@ -179,6 +179,7 @@ project:
         - file: Inc/zeitmessung.h
         - file: Inc/displayausgabe.h
         - file: Inc/ledausgabe.h
+        - file: Inc/fehler.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -190,6 +191,7 @@ project:
         - file: Src/zeitmessung.c
         - file: Src/displayausgabe.c
         - file: Src/ledausgabe.c
+        - file: Src/fehler.c
 
 
   components:

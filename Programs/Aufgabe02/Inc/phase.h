@@ -11,11 +11,9 @@
 #define VORWAERTS   70
 #define FEHLER      80
 
-static int letztePhase;
-
 int phase(char kanalA, char kanalB, int* phase);
 
-int phasenwechsel(int aktuellePhase, int* ergebnis);
+int phasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
 
 
 

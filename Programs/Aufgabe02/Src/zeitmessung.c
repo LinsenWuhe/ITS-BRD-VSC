@@ -1,5 +1,4 @@
 #include "zeitmessung.h"
-#include "timer.h"
 
 int initZeitmessung()
 {
