@@ -174,12 +174,24 @@ project:
     - group: Program/User/Inc
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
+        - file: Inc/calc.h
+        - file: Inc/error.h
+        - file: Inc/GPIO_read.h
+        - file: Inc/LED_output.h
+        - file: Inc/text_output.h
+        - file: Inc/timer.h
 
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/calc.c
+        - file: Src/error.c
+        - file: Src/GPIO_read.c
+        - file: Src/LED_output.c
+        - file: Src/text_output.c
+        - file: Src/timer.c
 
 
   components:
