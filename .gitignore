@@ -15,5 +15,17 @@
 .AppleDouble
 .LSOverride
 
+#Eigene - alle außer wichtigste in Aufgabe II
+.vscode/
+bin/
+DisplayWaveshare/
+Docs/
+ITS_BRD_LIB/
+ITS_Keil_prj_base/
+lwip/
+stm32cubef4/
+Programs/*/.clangd
+
+
 # EOF
 
