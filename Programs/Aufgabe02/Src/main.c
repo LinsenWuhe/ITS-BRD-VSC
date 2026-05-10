@@ -15,6 +15,7 @@
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
 #include "error.h"
+#include "GPIO_read.h"
 
 
 int main(void) {
@@ -22,13 +23,21 @@ int main(void) {
 	
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
-
-  // Begruessungstext	
-	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
 	
-	// Test in Endlosschleife
-	while(1) {
-		HAL_Delay(10000);
+	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
+	while(1) 
+	{
+		//1. Einlesen
+		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
+		s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
+
+
+		//2. Verarbeiten
+
+		//3. Ausgeben
+
+
+
 	}
 }
 
