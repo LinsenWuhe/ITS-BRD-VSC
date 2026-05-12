@@ -35,7 +35,6 @@ int main(void) {
 		//2. Verarbeiten
 
 		//3. Ausgeben
-//test
 
 	}
 }
