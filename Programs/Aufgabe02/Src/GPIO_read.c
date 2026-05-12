@@ -1,6 +1,5 @@
 #include "GPIO_read.h"
 #include "stm32f429xx.h"
-#include "error.h"
 
 
 //speichern den aktuellen Status der Kanäle
