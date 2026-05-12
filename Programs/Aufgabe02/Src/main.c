@@ -7,6 +7,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
+#include "LED_output.h"
 #include "stm32f4xx_hal.h"
 #include "init.h"
 #include "LCD_GUI.h"
@@ -24,6 +25,10 @@ int main(void) {
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 	
+	
+	int phasenzahl = 0;	// Anzahl der Phasenwechsel
+	int Bewegungsrichtung; // Bewegungsrichtung
+
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
@@ -34,7 +39,9 @@ int main(void) {
 
 		//2. Verarbeiten
 
+
 		//3. Ausgeben
+		updateLEDAusgabe(Bewegungsrichtung, phasenzahl); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 
 	}
 }

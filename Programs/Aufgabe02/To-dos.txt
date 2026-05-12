@@ -3,5 +3,14 @@ TO-DOs
 
 
 CALC
-- berechne Winkel 
-- usw
+-   calcInit()
+-   berechneWinkel()
+-   berechneAktuellePhase() - das würde Ahmet gerne machen
+-   gibPulseCount()
+-   gibRichtung()
+-   gibFehler()
+-   gibWinkel()
+-   gibGeschwindigkeit()
+-   fehlerLoeschen()
+-   berechnePhasenWechsel() - das würde Ahmet gerne machen
+
