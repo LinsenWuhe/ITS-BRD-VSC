@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file    main.c
-  * @author  Franz Korf
+  * @author  Franz Korf, modifiziert durch andere
   * @brief   Kleines Testprogramm fuer neu erstelle Fonts.
   ******************************************************************************
   */
@@ -35,8 +35,7 @@ int main(void) {
 		//2. Verarbeiten
 
 		//3. Ausgeben
-
-
+//test
 
 	}
 }
