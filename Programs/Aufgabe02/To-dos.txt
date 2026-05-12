@@ -1,0 +1,7 @@
+TO-DOs
+
+
+
+CALC
+- berechne Winkel 
+- usw
