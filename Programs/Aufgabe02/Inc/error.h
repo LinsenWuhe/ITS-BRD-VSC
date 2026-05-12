@@ -4,4 +4,6 @@
 #define OK               0
 #define kanal_fehler     1
 
+#define test    6
+
 #endif
