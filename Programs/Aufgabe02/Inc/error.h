@@ -7,5 +7,6 @@
 #define Testfehler      3
 #define test    6
 #define test4 7
+#define Test_zwei       4
 
 #endif
