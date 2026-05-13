@@ -1,7 +1,5 @@
 TO-DOs
 
-
-
 CALC
 -   calcInit()
 -   berechneWinkel()
@@ -13,4 +11,11 @@ CALC
 -   gibGeschwindigkeit()
 -   fehlerLoeschen()
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
+
+TIMER
+- timer.getDuration()
+
+TEXTAUSGABE
+- textInit ()
+- statusDrucken()
 
