@@ -60,7 +60,7 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 
 int berechneWinkel(void)
 {
-    winkel = pulse_count * (360.0/PHASEN_PRO_UMDREHUNG);
+    winkel = pulse_count * GRAD_PRO_PHASE;
     return 0;
 }
 
