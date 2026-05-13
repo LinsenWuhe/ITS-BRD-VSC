@@ -1,21 +1,18 @@
 TO-DOs
 
 CALC
--   calcInit()
--   berechneWinkel()
+-   calcInit()              
 -   berechneAktuellePhase() - das würde Ahmet gerne machen
--   gibPulseCount()
 -   gibRichtung()
 -   gibFehler()
--   gibWinkel()
 -   gibGeschwindigkeit()
--   fehlerLoeschen()
+-   fehlerLoeschen()        - jannik
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
 
 TIMER
 - timer.getDuration()
 
 TEXTAUSGABE
-- textInit ()
+- textInit ()               - jannik
 - statusDrucken()
 

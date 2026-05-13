@@ -12,8 +12,19 @@
 #define GLEICH      60
 #define VORWAERTS   70
 
+#define PHASEN_PRO_UMDREHUNG 1200
+#define GRAD_PRO_PHASE       (360.0/ PHASEN_PRO_UMDREHUNG)
+
 int berechneAktuellePhase(char kanalA, char kanalB, int* phase);
 
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
+
+int berechneWinkel(void);
+
+
+//Getter
+double gibWinkel(void);
+
+int gibPulseCount(void);
 
 #endif

@@ -1,5 +1,9 @@
 #include "calc.h"
 
+
+int pulse_count; //Zähler für Zustandswechsel
+double winkel = 0.0;
+
 int berechneAktuellePhase(char kanalA, char kanalB, int* phase)
 {
     if (!kanalA && !kanalB) *phase = PHASE_A;
@@ -53,3 +57,22 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 
     return 0;
 }
+
+int berechneWinkel(void)
+{
+    winkel = pulse_count * (360.0/PHASEN_PRO_UMDREHUNG);
+    return 0;
+}
+
+//Getter
+double gibWinkel(void)
+{
+    return winkel;
+}
+
+int gibPulseCount(void)
+{
+    return pulse_count;
+}
+
+
