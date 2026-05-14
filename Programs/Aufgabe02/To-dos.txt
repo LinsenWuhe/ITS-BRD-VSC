@@ -1,12 +1,14 @@
 TO-DOs
 
+MAIN   
+- Ablauf anpassen
+- Zeit messen
+- Aufgabe Berechnung nach x Sekunden
+
 CALC
 -   berechneAktuellePhase() - das würde Ahmet gerne machen
--   fehlerLoeschen()        - jannik
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
 
 TIMER
 - timer.getDuration()
 
-
-Fehler anpassen -> einmal Methode gibFehler und bool Fehler und einmal als return von berechnePhasenWechsel

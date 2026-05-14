@@ -22,35 +22,36 @@
 
 
 int main(void) {
-	initITSboard();    // Initialisierung des ITS Boards
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
+	initITSboard();  					  							 // Initialisierung des ITS Boards
+	GUI_init(DEFAULT_BRIGHTNESS);							 // Initialisierung des LCD Boards mit Touch
+	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
 	
 	textInit();
 	calcInit();
 
-	extern int phasenzahl;	// Anzahl der Phasenwechsel
-	int Bewegungsrichtung = UNBEKANNT; // Bewegungsrichtung
+	extern int phasenzahl;											// Anzahl der Phasenwechsel
+	int Bewegungsrichtung = UNBEKANNT; 								// Bewegungsrichtung
 
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
-		//1. Einlesen
-		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
+		/*-----1. Einlesen--------*/
+		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		if(s6_lesen() == HIGH)
 		{
 			fehlerLoeschen();
 			statusDrucken();
-			continue; //nächsten Loop starten und nicht mehr
+		continue;													 //nächsten Loop starten und nicht mehr
 		}
 
 
-		//2. Verarbeiten
+		/*-----2. Verarbeiten--------*/
+		berechneAktuellePhase();
+		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
 
-
-		//3. Ausgeben
-		updateLEDAusgabe(Bewegungsrichtung, phasenzahl); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
-		statusDrucken(); //Text ausgeben mit Zeitmessung
+		/*-----3. Ausgeben--------*/
+		updateLEDAusgabe(Bewegungsrichtung, phasenzahl);	 // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		statusDrucken(); 												//Text ausgeben mit Zeitmessung
 	}
 }
 
