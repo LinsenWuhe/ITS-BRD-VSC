@@ -12,12 +12,23 @@ int richtung;
 int letztePhase;
 int aktuellePhase;
 
-//in der main
-extern int phasenzahl;
+//auch in der main
+int phasenzahl;
 
 //Zahlen aus GPIO_read -> statusDrehscheibe
 extern int kanal1;
 extern int kanal2;
+
+//Initialisierung für Rechner -> zu beginn oder nach fehler löschen
+void calcInit()
+{
+    // Startphase einlesen 
+    letztePhase = berechneAktuellePhase();
+    pulse_count = 0;
+    richtung    = UNBEKANNT;
+    fehlerBeiPhasenwechsel       = false;
+    phasenzahl = 0;
+}
 
 //Statt kanalA und kanalB, direkt auf kanal1 und kanal2 aus GPIO read zugreifen - alt: int berechneAktuellePhase(char kanalA, char kanalB, int* phase)
 int berechneAktuellePhase(void)
@@ -82,14 +93,6 @@ int berechneWinkel(void)
     return 0;
 }
 
-void calcInit()
-{
-    // Startphase einlesen 
-    letztePhase = berechneAktuellePhase();
-    pulse_count = 0;
-    richtung    = UNBEKANNT;
-    fehlerBeiPhasenwechsel       = false;
-}
 
 //Getter
 double gibWinkel(void)

@@ -37,3 +37,8 @@ int resetBewegungLEDAusgabe()
 	GPIOE->BSRR = (0x1U << (7 + 16)); //unsicher // D23 aus
 	GPIOE->BSRR = (0x1U << (5 + 16)); //unischer // D21 aus
 }
+
+void fehlerLEDaus(void)
+{
+	GPIOE->BSRR &= ~fehlerLED; // D21 an
+}

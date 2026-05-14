@@ -29,10 +29,8 @@ int main(void) {
 	textInit();
 	calcInit();
 
-	int phasenzahl = 0;	// Anzahl der Phasenwechsel
+	extern int phasenzahl;	// Anzahl der Phasenwechsel
 	int Bewegungsrichtung = UNBEKANNT; // Bewegungsrichtung
-
-
 
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
@@ -42,6 +40,8 @@ int main(void) {
 		if(s6_lesen() == HIGH)
 		{
 			fehlerLoeschen();
+			statusDrucken();
+			continue; //nächsten Loop starten und nicht mehr
 		}
 
 

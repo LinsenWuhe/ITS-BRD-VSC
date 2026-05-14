@@ -77,7 +77,7 @@ lcdPrintS("Grad/s");
 lcdGotoXY(6, 9);
 lcdPrintS("Richtung:");
 
-//lcdGotoXY(6, 11);
-//lcdPrintS("Fehler:  ");
+lcdGotoXY(6, 11);
+lcdPrintS("Fehler:  ");
 
 }
