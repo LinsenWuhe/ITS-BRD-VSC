@@ -30,7 +30,7 @@ int main(void) {
 	calcInit();
 
 	int phasenzahl = 0;	// Anzahl der Phasenwechsel
-	int Bewegungsrichtung; // Bewegungsrichtung
+	int Bewegungsrichtung = UNBEKANNT; // Bewegungsrichtung
 
 
 
@@ -39,7 +39,10 @@ int main(void) {
 	{
 		//1. Einlesen
 		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
+		if(s6_lesen() == HIGH)
+		{
+			fehlerLoeschen();
+		}
 
 
 		//2. Verarbeiten

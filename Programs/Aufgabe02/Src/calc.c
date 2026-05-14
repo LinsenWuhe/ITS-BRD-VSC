@@ -12,6 +12,9 @@ int richtung;
 int letztePhase;
 int aktuellePhase;
 
+//in der main
+extern int phasenzahl;
+
 //Zahlen aus GPIO_read -> statusDrehscheibe
 extern int kanal1;
 extern int kanal2;
@@ -19,7 +22,7 @@ extern int kanal2;
 //Statt kanalA und kanalB, direkt auf kanal1 und kanal2 aus GPIO read zugreifen - alt: int berechneAktuellePhase(char kanalA, char kanalB, int* phase)
 int berechneAktuellePhase(void)
 {
-    status_drehscheibe();
+    //status_drehscheibe() wird in der main eingelesen zu Beginn -> kanal1 und 2 werden gesetzt
 
     if (!kanal1 && !kanal2) aktuellePhase = PHASE_A;
 
@@ -32,7 +35,7 @@ int berechneAktuellePhase(void)
     return 0;
 }
 
-// TODO: vervollständigen -- das ist schon vollständig? oder?
+// TODO: vervollständigen -- das ist schon vollständig? oder? -> Noch Zähler für Phasenzahl hinzugefügt
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 {
     if (aktuellePhase != letztePhase)
@@ -40,27 +43,27 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
         switch (letztePhase) 
         {
             case PHASE_B:
-                if (aktuellePhase == PHASE_A) *ergebnis = RUECKWAERTS;
-                else if (aktuellePhase == PHASE_C) *ergebnis = VORWAERTS;
-                else *ergebnis = phasenwechsel_fehler; // Phase B auf D
+                if (aktuellePhase == PHASE_A) {phasenzahl--; *ergebnis = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_C) {phasenzahl++; *ergebnis = VORWAERTS;}
+                else {*ergebnis = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;} // Phase B auf D
                 break;
 
             case PHASE_A:
-                if (aktuellePhase == PHASE_D) *ergebnis = RUECKWAERTS;
-                else if (aktuellePhase == PHASE_B) *ergebnis = VORWAERTS;
-                else *ergebnis = phasenwechsel_fehler;
+                if (aktuellePhase == PHASE_D) {phasenzahl--; *ergebnis = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_B)  {phasenzahl++; *ergebnis = VORWAERTS;}
+                else {*ergebnis = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
                 break;
             
             case PHASE_C:
-                if (aktuellePhase == PHASE_B) *ergebnis = RUECKWAERTS;
+                if (aktuellePhase == PHASE_B) {phasenzahl--; *ergebnis = RUECKWAERTS;}
                 else if (aktuellePhase == PHASE_D) *ergebnis = VORWAERTS;
-                else *ergebnis = phasenwechsel_fehler;
+                else {*ergebnis = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
                 break;
             
             case PHASE_D:
-                if (aktuellePhase == PHASE_C) *ergebnis = RUECKWAERTS;
-                else if (aktuellePhase == PHASE_A) *ergebnis = VORWAERTS;
-                else *ergebnis = phasenwechsel_fehler;
+                if (aktuellePhase == PHASE_C) {phasenzahl--; *ergebnis = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_A) {phasenzahl++; *ergebnis = VORWAERTS;}
+                else {*ergebnis = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
                 break;
 
             default:
