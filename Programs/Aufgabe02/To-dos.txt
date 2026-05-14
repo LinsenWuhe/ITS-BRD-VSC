@@ -1,18 +1,12 @@
 TO-DOs
 
 CALC
--   calcInit()              
 -   berechneAktuellePhase() - das würde Ahmet gerne machen
--   gibRichtung()
--   gibFehler()
--   gibGeschwindigkeit()
 -   fehlerLoeschen()        - jannik
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
 
 TIMER
 - timer.getDuration()
 
-TEXTAUSGABE
-- textInit ()               - jannik
-- statusDrucken()
 
+Fehler anpassen -> einmal Methode gibFehler und bool Fehler und einmal als return von berechnePhasenWechsel

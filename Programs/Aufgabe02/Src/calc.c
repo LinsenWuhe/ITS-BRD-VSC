@@ -1,18 +1,33 @@
 #include "calc.h"
+#include "GPIO_read.h"
 
 
 int pulse_count; //Zähler für Zustandswechsel
 double winkel = 0.0;
+double geschwindigkeit = 0.0;
+bool fehlerBeiPhasenwechsel = false;
+int richtung;
 
-int berechneAktuellePhase(char kanalA, char kanalB, int* phase)
+//für phasenberechnung
+int letztePhase;
+int aktuellePhase;
+
+//Zahlen aus GPIO_read -> statusDrehscheibe
+extern int kanal1;
+extern int kanal2;
+
+//Statt kanalA und kanalB, direkt auf kanal1 und kanal2 aus GPIO read zugreifen - alt: int berechneAktuellePhase(char kanalA, char kanalB, int* phase)
+int berechneAktuellePhase(void)
 {
-    if (!kanalA && !kanalB) *phase = PHASE_A;
+    status_drehscheibe();
 
-    else if (kanalA && !kanalB) *phase = PHASE_B;
+    if (!kanal1 && !kanal2) aktuellePhase = PHASE_A;
 
-    else if (kanalA && kanalB) *phase = PHASE_C;
+    else if (kanal1 && !kanal2) aktuellePhase = PHASE_B;
 
-    else *phase = PHASE_D;
+    else if (kanal1 && kanal2) aktuellePhase = PHASE_C;
+
+    else aktuellePhase = PHASE_D;
 
     return 0;
 }
@@ -64,6 +79,15 @@ int berechneWinkel(void)
     return 0;
 }
 
+void calcInit()
+{
+    // Startphase einlesen 
+    letztePhase = berechneAktuellePhase();
+    pulse_count = 0;
+    richtung    = UNBEKANNT;
+    fehlerBeiPhasenwechsel       = false;
+}
+
 //Getter
 double gibWinkel(void)
 {
@@ -74,5 +98,21 @@ int gibPulseCount(void)
 {
     return pulse_count;
 }
+
+double gibGeschwindigkeit(void)
+{
+    return geschwindigkeit;
+}
+
+bool gibFehler()
+{
+    return fehlerBeiPhasenwechsel;
+}
+
+int gibRichtung()
+{
+    return richtung;
+}
+
 
 
