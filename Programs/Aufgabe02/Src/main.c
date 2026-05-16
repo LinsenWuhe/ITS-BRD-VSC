@@ -35,28 +35,26 @@ int main(void) {
 
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	int letztePhasenzahl = 0;
-	int Bewegungsrichtung = UNBEKANNT; 								// Bewegungsrichtung
+	int s6;
 
-	//int phasenzahl = 0;	// Anzahl der Phasenwechsel
-	double winkel = 0; // Winkel
-	int bewegungsrichtung; // Bewegungsrichtung
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
 		//1. Einlesen
 		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
+		
+		
+		s6 = s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
 		//2. Verarbeiten
-		/*-----1. Einlesen--------*/
-		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		if(s6_lesen() == LOW) //bzw LOW wegen high active?, --> wahrscheinlich LOW
+		//-----1. Einlesen--------
+		if(s6 == LOW) //bzw LOW wegen high active?, --> wahrscheinlich LOW
 		{
 			fehlerLoeschen();
 			statusDrucken();
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
-
+		
 
 		/*-----2. Verarbeiten--------*/
 		//TODO - Zeitfenster öffnen
@@ -64,14 +62,14 @@ int main(void) {
 		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
 		berechnePhasenwechsel2();
 
-		// Phasenzahl bestimmen fehlt
+		// Phasenzahl bestimmen fehlt nicht
 
 		//berechneWinkel(phasenzahl, &winkel);
 		
 
 		//3. Ausgeben
-		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		//TODO - Zeitfenster schließen
+		
 		if(phasenzahl != letztePhasenzahl) //ist ein Phasenwechsel aufgetreten??
 		{	
 			berechneWinkel();
@@ -82,9 +80,9 @@ int main(void) {
 			letztePhasenzahl = phasenzahl;
 
 		}
-
+		
 		/*-----3. Ausgeben--------*/
-		updateLEDAusgabe(Bewegungsrichtung, phasenzahl);	 // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		updateLEDAusgabe(gibRichtung(), gibPulseCount());	 // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		statusDrucken(); 												//Text ausgeben mit Zeitmessung
 	}
 }
