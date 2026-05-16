@@ -19,10 +19,13 @@
 #include "error.h"
 #include "GPIO_read.h"
 #include "text_output.h"
+#include "timer.h"
+#include <stdint.h>
 
 
 int main(void) {
 	initITSboard();  					  							 // Initialisierung des ITS Boards
+	initTimer();
 	GUI_init(DEFAULT_BRIGHTNESS);							 // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
 	
@@ -40,6 +43,8 @@ int main(void) {
 	//int phasenzahl = 0;	// Anzahl der Phasenwechsel
 	double winkel = 0; // Winkel
 	int bewegungsrichtung; // Bewegungsrichtung
+
+	uint32_t t_fenster_start = getTimeStamp(); //Timer zählt nur vorwärts, keine negativen zahlen
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 

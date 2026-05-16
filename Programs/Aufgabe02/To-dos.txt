@@ -2,8 +2,8 @@ TO-DOs
 
 MAIN   
 - Ablauf anpassen
-- Zeit messen
-- Aufgabe Berechnung nach x Sekunden
+- Zeit messen - j
+- Aufgabe Berechnung nach x Sekunden -j 
 
 CALC
 -   calcInit()
@@ -19,5 +19,5 @@ CALC
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
 
 TIMER
-- timer.getDuration()
+- timer.getDuration() -> Jannik baut timer in main.
 
