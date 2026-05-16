@@ -3,6 +3,7 @@
 
 #include "error.h"
 #include <stdbool.h>
+#include <stdint.h>
 
 #define PHASE_A 10
 #define PHASE_B 20
@@ -22,6 +23,8 @@ int berechneAktuellePhase(void);
 
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
 int berechnePhasenwechsel2(void);
+
+double berechneGeschwindigkeit(uint32_t t_start, uint32_t t_end, int32_t pulse_start);
 
 //int berechneWinkel(int phasenzahl, double* winkel);
 int berechneWinkel(void);

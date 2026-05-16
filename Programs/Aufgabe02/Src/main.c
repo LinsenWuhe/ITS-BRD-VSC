@@ -60,58 +60,59 @@ int main(void) {
 			statusDrucken();
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
-
-
+		
+		
 		/*-----2. Verarbeiten--------*/
+		
+		berechneAktuellePhase();
+		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
+		berechnePhasenwechsel2();
+		
+		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
+		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		
+		
 		uint32_t t_jetzt = getTimeStamp();
 		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
 
 		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
 		{
-			
+		
+			//phasenwechsel aufgetreten?
+			if (gibPulseCount() != pulse_start) 
+			{
+				//zeitfenster schließen und berechnen
+				berechneWinkel();
+				berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
+				
+				//neues Zeitfenster starten
+				t_fenster_start = t_jetzt;
+				pulse_start = gibPulseCount();
+				berechnet = true;
+
+
+				//Ausgeben I
+				statusDrucken();		
+			}
 		}
+		
 
 		if (t_differenz >= 0.500) //spätestens nach 500ms wird berechnet
 		{
 			if (!berechnet) //wenn noch nicht berechnet wurde
 			{
+			    // Noch nicht berechnet - jetzt auf jeden Fall 
+            	berechneWinkel();
+           		berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
 				
+				//Ausgeben II
+            	statusDrucken();
 			}
 
 			t_fenster_start = t_jetzt; //neues zeitfenster starten
 			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
 			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		}
-
-
-
-		//TODO - Zeitfenster öffnen
-		berechneAktuellePhase();
-		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
-		berechnePhasenwechsel2();
-
-		// Phasenzahl bestimmen fehlt
-
-		//berechneWinkel(phasenzahl, &winkel);
-		
-
-		//3. Ausgeben
-		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
-		//TODO - Zeitfenster schließen
-		if(phasenzahl != letztePhasenzahl) //ist ein Phasenwechsel aufgetreten??
-		{	
-			berechneWinkel();
-			//berechneGeschwindigkeit
-
-			//für nächsten Loop
-										// TODO - Zeitfenster öffnen für nächsten loop
-			letztePhasenzahl = phasenzahl;
-
-		}
-
-		/*-----3. Ausgeben--------*/
-		updateLEDAusgabe(Bewegungsrichtung, phasenzahl);	 // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
-		statusDrucken(); 												//Text ausgeben mit Zeitmessung
 	}
 }
 
