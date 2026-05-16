@@ -54,7 +54,7 @@ int main(void) {
 		
 		/*-----1. Einlesen--------*/
 		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		if(s6_lesen() == s6_gedrueckt) 
+		if(s6_lesen() == LOW) 
 		{
 			fehlerLoeschen();
 			statusDrucken();
