@@ -19,7 +19,7 @@
 #include "error.h"
 #include "GPIO_read.h"
 #include "text_output.h"
-#include "timer.h"
+#include "zeitmessung.h"
 #include <stdint.h>
 
 
@@ -45,6 +45,7 @@ int main(void) {
 	int bewegungsrichtung; // Bewegungsrichtung
 
 	uint32_t t_fenster_start = getTimeStamp(); //Timer zählt nur vorwärts, keine negativen zahlen
+	int32_t pulse_start = 0;
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
@@ -61,6 +62,11 @@ int main(void) {
 
 
 		/*-----2. Verarbeiten--------*/
+		uint32_t t_jetzt = getTimeStamp();
+		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
+
+
+
 		//TODO - Zeitfenster öffnen
 		berechneAktuellePhase();
 		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
