@@ -2,6 +2,7 @@
 #include "lcd.h"
 #include "stm32f429xx.h"
 #include "calc.h"
+#include <stdio.h>
 
  //statusDrucken-  Gibt Winkel, Geschwindigkeit und Status auf LCD aus - Wird nur alle 250ms-500ms aufgerufen
 void statusDrucken(void)
@@ -14,17 +15,20 @@ void statusDrucken(void)
     int winkel          = (int)gibWinkel(); //gibWinkel() ist hier richtig !!!
     int geschwindigkeit = (int)gibGeschwindigkeit();
 
+    double winkelD = gibWinkel();
+    double geschwindigkeitD = gibGeschwindigkeit();
+
 
     // Winkel ausgeben 
     lcdGotoXY(16, 7);
     //lcdPrintS("Winkel:  ");
-    lcdPrintInt(winkel);
+    doubleDrucken(winkelD);
     //lcdPrintS(" Grad  ");       
 
     // Winkelgeschwindigkeit ausgeben 
     lcdGotoXY(16, 8);
     //lcdPrintS("Tempo:   ");
-    lcdPrintInt(geschwindigkeit);
+    doubleDrucken(geschwindigkeitD);
     //lcdPrintS(" Grad/s  ");
 
     /*
@@ -85,4 +89,20 @@ lcdGotoXY(6, 11);
 lcdPrintS("Fehler:  ");
 */
 
+}
+
+int doubleDrucken(double zahl)
+{
+    char str[20];
+
+    sprintf(str, "%8.3lf", zahl);
+
+    int i = 0;
+    while (str[i] != 0)
+    {
+        lcdPrintC(str[i]);
+        i++;
+    }
+
+    return 0;
 }

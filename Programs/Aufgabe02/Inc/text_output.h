@@ -8,5 +8,7 @@ void statusDrucken(void);
 //Initialisiert die Textausgabe (feste Worte)
 void textInit(void);
 
+int doubleDrucken(double zahl);
+
 
 #endif
