@@ -16,4 +16,6 @@ int berechneAktuellePhase(char kanalA, char kanalB, int* phase);
 
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
 
+int berechneWinkel(int phasenzahl, double* winkel);
+
 #endif

@@ -4,13 +4,13 @@ TO-DOs
 
 CALC
 -   calcInit()
--   berechneWinkel()
+-   berechneWinkel() - das würde Ahmet gerne machen
 -   berechneAktuellePhase() - das würde Ahmet gerne machen
--   gibPulseCount()
--   gibRichtung()
+-   gibPulseCount() ist das nötig?
+-   gibRichtung() ist das nötig?
 -   gibFehler()
--   gibWinkel()
--   gibGeschwindigkeit()
+-   gibWinkel() ist das nötig?
+-   gibGeschwindigkeit() statt dessen, berechneGeschwindigkeit()?
 -   fehlerLoeschen()
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
 

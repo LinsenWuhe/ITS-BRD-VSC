@@ -25,23 +25,26 @@ int main(void) {
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 	
-	
-	int phasenzahl = 0;	// Anzahl der Phasenwechsel
-	int Bewegungsrichtung; // Bewegungsrichtung
 
+	int phasenzahl = 0;	// Anzahl der Phasenwechsel
+	double winkel = 0; // Winkel
+	int bewegungsrichtung; // Bewegungsrichtung
+	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
 		//1. Einlesen
 		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
-
-
 		//2. Verarbeiten
 
+		// Phasenzahl bestimmen fehlt
+
+		berechneWinkel(phasenzahl, &winkel);
+		
 
 		//3. Ausgeben
-		updateLEDAusgabe(Bewegungsrichtung, phasenzahl); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		updateLEDAusgabe(bewegungsrichtung, phasenzahl); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 
 	}
 }

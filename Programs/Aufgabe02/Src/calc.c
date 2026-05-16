@@ -53,3 +53,14 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 
     return 0;
 }
+
+int berechneWinkel(int phasenzahl, double* winkel)
+{
+    if (phasenzahl == 0) *winkel = 0;
+    else *winkel = (1200.0 / 360.0) * *winkel; 
+}
+
+int berechneGeschwindigkeit() // wie? anzahlphasenwechsel durch zeit? oder winkel durch zeit, ja oder?
+{
+
+}
