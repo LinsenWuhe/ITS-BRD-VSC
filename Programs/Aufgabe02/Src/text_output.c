@@ -11,7 +11,7 @@ void statusDrucken(void)
     GPIOG->ODR |= (1 << 2);
 
     // Werte aus den Modulen holen 
-    int winkel          = (int)gibWinkel();
+    int winkel          = (int)gibWinkel(); //gibWinkel() ist hier richtig !!!
     int geschwindigkeit = (int)gibGeschwindigkeit();
 
 
@@ -31,16 +31,18 @@ void statusDrucken(void)
     // Richtung ausgeben 
     lcdGotoXY(16, 9);
     //lcdPrintS("Richtung: ");
-    if (gibRichtung() == RICHTUNG_VOR) {
+    if (gibRichtung() == VORWAERTS) {
         lcdPrintS("vorwaerts ");
     }
-    else if (gibRichtung() == RICHTUNG_ZUR) {
+    else if (gibRichtung() == RUECKWAERTS) {
         lcdPrintS("rueckwaerts");
     }
     else {
         lcdPrintS("unbekannt  ");
-    } */
+    } 
+    */
 
+    /*
     // Fehler ausgeben 
     lcdGotoXY(6, 11);
     if (gibFehler()) {
@@ -50,6 +52,7 @@ void statusDrucken(void)
         lcdPrintS("Fehler: keine     ");
     }
     */
+    
 
     //Pin LOW - Messung endet
     GPIOG -> ODR &= ~(1<<2);
@@ -74,10 +77,12 @@ lcdPrintS("Tempo:   ");
 lcdGotoXY(19, 8);
 lcdPrintS("Grad/s");
 
+/*
 lcdGotoXY(6, 9);
 lcdPrintS("Richtung:");
 
 lcdGotoXY(6, 11);
 lcdPrintS("Fehler:  ");
+*/
 
 }

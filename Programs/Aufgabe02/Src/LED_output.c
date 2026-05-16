@@ -1,10 +1,11 @@
 #include "LED_output.h"
+#include "calc.h"
 #include "error.h"
 
 int updateLEDAusgabe(int bewegung, int phasenzahl)
 {
     // TODO: Richtigkeit überprüfen, denn eventuell nicht richtig
-		if ((bewegung != GLEICH) && (bewegung != phasenwechsel_fehler))
+		if ((bewegung != GLEICH) && (bewegung != phasenwechsel_fehler) && (bewegung != UNBEKANNT))
 		{
 			GPIOD->BSRR = 0xFF << 16;
 			GPIOD->BSRR = phasenzahl;

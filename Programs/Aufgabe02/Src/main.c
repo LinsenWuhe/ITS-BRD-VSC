@@ -38,7 +38,7 @@ int main(void) {
 
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	int letztePhasenzahl = 0;
-	int Bewegungsrichtung = UNBEKANNT; 								// Bewegungsrichtung
+	int s6;
 
 	//int phasenzahl = 0;	// Anzahl der Phasenwechsel
 	double winkel = 0; // Winkel

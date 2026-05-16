@@ -28,8 +28,7 @@ void calcInit()
     //letztePhase                  = berechneAktuellePhase(); Das geht nicht, denn berechneAktuellePhase() gibt 0, also einen Statuscode, statt dessen:
     berechneAktuellePhase();
     letztePhase = aktuellePhase;
-    
-    phasenzahl                   = 0;
+
     richtung                     = UNBEKANNT;
     fehlerBeiPhasenwechsel       = false;
     phasenzahl                   = 0;
@@ -51,7 +50,7 @@ int berechneAktuellePhase(void)
     return 0;
 }
 
-// TODO: vervollständigen -- das ist schon vollständig? oder? -> Noch Zähler für Phasenzahl hinzugefügt
+// TODO: vervollständigen -- das ist schon vollständig? oder? -> Noch Zähler für Phasenzahl hinzugefügt // aufpassen bei wiederverwendung: letztephase muss aktualisiert werden wharscheinlich in main
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
 {
     if (aktuellePhase != letztePhase)
@@ -72,7 +71,7 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
             
             case PHASE_C:
                 if      (aktuellePhase == PHASE_B) {phasenzahl--; *ergebnis = RUECKWAERTS;}
-                else if (aktuellePhase == PHASE_D) *ergebnis = VORWAERTS;
+                else if (aktuellePhase == PHASE_D) {phasenzahl++; richtung = VORWAERTS;}
                 else    {*ergebnis = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
                 break;
             
@@ -102,27 +101,32 @@ int berechnePhasenwechsel2(void) // Ansatz, dass allles in calc ist
                 if      (aktuellePhase == PHASE_A) {phasenzahl--; richtung = RUECKWAERTS;}
                 else if (aktuellePhase == PHASE_C) {phasenzahl++; richtung = VORWAERTS;}
                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;} // Phase B auf D
+                letztePhase = aktuellePhase;
                 break;
 
             case PHASE_A:
                 if      (aktuellePhase == PHASE_D) {phasenzahl--; richtung = RUECKWAERTS;}
                 else if (aktuellePhase == PHASE_B)  {phasenzahl++; richtung = VORWAERTS;}
                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
                 break;
             
             case PHASE_C:
                 if      (aktuellePhase == PHASE_B) {phasenzahl--; richtung = RUECKWAERTS;}
-                else if (aktuellePhase == PHASE_D) richtung = VORWAERTS;
+                else if (aktuellePhase == PHASE_D) {phasenzahl++; richtung = VORWAERTS;}
                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
                 break;
             
             case PHASE_D:
                 if      (aktuellePhase == PHASE_C) {phasenzahl--; richtung = RUECKWAERTS;}
                 else if (aktuellePhase == PHASE_A) {phasenzahl++; richtung = VORWAERTS;}
                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
                 break;
 
             default:
+                letztePhase = aktuellePhase;
                 return -1; // Passt das? // lieber UNBEKANNTER_phasenwechsel_fehler
                 break;
         }
@@ -142,6 +146,7 @@ int berechneWinkel(int phasenzahl, double* winkel)
 
 double berechneGeschwindigkeit(uint32_t t_start, uint32_t t_end, int32_t pulse_start) // wie? anzahlphasenwechsel durch zeit? oder winkel durch zeit, ja oder?
 {
+    
     // Zeitspanne in Sekunden 
     double dt = timer_get_duration(t_start, t_end);
 
