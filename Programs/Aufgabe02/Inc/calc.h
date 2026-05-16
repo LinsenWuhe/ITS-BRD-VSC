@@ -2,6 +2,7 @@
 #define __CALC_H
 
 #include "error.h"
+#include <stdbool.h>
 
 #define PHASE_A 10
 #define PHASE_B 20
@@ -11,11 +12,31 @@
 #define RUECKWAERTS 50
 #define GLEICH      60
 #define VORWAERTS   70
+#define UNBEKANNT   80
 
-int berechneAktuellePhase(char kanalA, char kanalB, int* phase);
+#define PHASEN_PRO_UMDREHUNG 1200
+#define GRAD_PRO_PHASE       (360.0/ PHASEN_PRO_UMDREHUNG)
+
+
+int berechneAktuellePhase(void);
 
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
 
-int berechneWinkel(int phasenzahl, double* winkel);
+//int berechneWinkel(int phasenzahl, double* winkel);
+int berechneWinkel(void);
+
+void calcInit(void);
+
+
+//Getter
+double gibWinkel(void);
+
+int gibPulseCount(void);
+
+double gibGeschwindigkeit(void);
+
+bool gibFehler(void);
+
+int gibRichtung(void);
 
 #endif

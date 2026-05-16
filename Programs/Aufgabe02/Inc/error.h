@@ -5,4 +5,6 @@
 #define kanal_fehler     1
 #define phasenwechsel_fehler -2
 
+void fehlerLoeschen(void);
+
 #endif

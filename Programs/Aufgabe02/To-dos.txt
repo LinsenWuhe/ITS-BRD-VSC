@@ -1,6 +1,9 @@
 TO-DOs
 
-
+MAIN   
+- Ablauf anpassen
+- Zeit messen
+- Aufgabe Berechnung nach x Sekunden
 
 CALC
 -   calcInit()
@@ -12,5 +15,9 @@ CALC
 -   gibWinkel() ist das nötig?
 -   gibGeschwindigkeit() statt dessen, berechneGeschwindigkeit()?
 -   fehlerLoeschen()
+-   berechneAktuellePhase() - das würde Ahmet gerne machen
 -   berechnePhasenWechsel() - das würde Ahmet gerne machen
+
+TIMER
+- timer.getDuration()
 
