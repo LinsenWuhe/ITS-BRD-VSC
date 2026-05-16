@@ -21,6 +21,7 @@
 int berechneAktuellePhase(void);
 
 int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis);
+int berechnePhasenwechsel2(void);
 
 //int berechneWinkel(int phasenzahl, double* winkel);
 int berechneWinkel(void);

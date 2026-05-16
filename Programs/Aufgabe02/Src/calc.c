@@ -22,7 +22,10 @@ extern int kanal2;
 void calcInit()
 {
     // Startphase einlesen 
-    letztePhase                  = berechneAktuellePhase();
+    //letztePhase                  = berechneAktuellePhase(); Das geht nicht, denn berechneAktuellePhase() gibt 0, also einen Statuscode, statt dessen:
+    berechneAktuellePhase();
+    letztePhase = aktuellePhase;
+    
     phasenzahl                   = 0;
     richtung                     = UNBEKANNT;
     fehlerBeiPhasenwechsel       = false;
@@ -82,6 +85,46 @@ int berechnePhasenwechsel(int aktuellePhase, int letztePhase, int* ergebnis)
         }
     }
     else *ergebnis = GLEICH;
+
+    return 0;
+}
+
+int berechnePhasenwechsel2(void) // Ansatz, dass allles in calc ist
+{
+    if (aktuellePhase != letztePhase)
+    {
+        switch (letztePhase) 
+        {
+            case PHASE_B:
+                if      (aktuellePhase == PHASE_A) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_C) {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;} // Phase B auf D
+                break;
+
+            case PHASE_A:
+                if      (aktuellePhase == PHASE_D) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_B)  {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                break;
+            
+            case PHASE_C:
+                if      (aktuellePhase == PHASE_B) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_D) richtung = VORWAERTS;
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                break;
+            
+            case PHASE_D:
+                if      (aktuellePhase == PHASE_C) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_A) {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                break;
+
+            default:
+                return -1; // Passt das? // lieber UNBEKANNTER_phasenwechsel_fehler
+                break;
+        }
+    }
+    else richtung = GLEICH;
 
     return 0;
 }

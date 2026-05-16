@@ -10,7 +10,8 @@ void fehlerLoeschen(void)
 {
     calcInit();
     fehlerBeiPhasenwechsel = false;
-    fehlerLEDaus();
+    //fehlerLEDaus(); lieber:?
+    resetBewegungLEDAusgabe(); 
     
 
     //Wenn Fehler gedruckt wird
