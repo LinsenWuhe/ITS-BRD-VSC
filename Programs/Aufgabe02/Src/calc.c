@@ -1,5 +1,8 @@
 #include "calc.h"
 #include "GPIO_read.h"
+#include "error.h"
+#include "zeitmessung.h"
+#include <stdint.h>
 
 
 double winkel               = 0.0;
@@ -137,10 +140,28 @@ int berechneWinkel(int phasenzahl, double* winkel)
 }
 */
 
-int berechneGeschwindigkeit() // wie? anzahlphasenwechsel durch zeit? oder winkel durch zeit, ja oder?
+double berechneGeschwindigkeit(uint32_t t_start, uint32_t t_end, int32_t pulse_start) // wie? anzahlphasenwechsel durch zeit? oder winkel durch zeit, ja oder?
 {
+    // Zeitspanne in Sekunden 
+    double dt = timer_get_duration(t_start, t_end);
 
+    // Sicherheit - Division durch 0 vermeiden 
+    if (dt <= 0.0) 
+    {
+        geschwindigkeit = 0.0;
+        return DIVISION_DURCH_0;
+    }
+
+    // Phasenwechsel im Zeitfenster 
+    int32_t delta_pulse = gibPulseCount() - pulse_start;
+
+    // Winkelaenderung in Grad - Formeln in Aufgabenzettel
+    double delta_phi = (double)delta_pulse * GRAD_PRO_PHASE;
+
+    // Winkelgeschwindigkeit in Grad/Sekunde 
+    geschwindigkeit = delta_phi / dt;
 }
+
 int berechneWinkel(void)
 {
     winkel = phasenzahl * GRAD_PRO_PHASE;
