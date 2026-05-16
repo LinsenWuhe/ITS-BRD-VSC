@@ -30,6 +30,7 @@ int main(void) {
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 	
 	textInit();
+	status_drehscheibe(); // nötig vor calc init für letztePhase
 	calcInit();
 
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
@@ -58,6 +59,7 @@ int main(void) {
 		//TODO - Zeitfenster öffnen
 		berechneAktuellePhase();
 		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
+		berechnePhasenwechsel2();
 
 		// Phasenzahl bestimmen fehlt
 
@@ -65,7 +67,7 @@ int main(void) {
 		
 
 		//3. Ausgeben
-		updateLEDAusgabe(bewegungsrichtung, phasenzahl); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		//TODO - Zeitfenster schließen
 		if(phasenzahl != letztePhasenzahl) //ist ein Phasenwechsel aufgetreten??
 		{	
