@@ -143,8 +143,9 @@ int berechneWinkel(int phasenzahl, double* winkel)
 
 int berechneGeschwindigkeit() // wie? anzahlphasenwechsel durch zeit? oder winkel durch zeit, ja oder?
 {
-
+    
 }
+
 int berechneWinkel(void)
 {
     winkel = phasenzahl * GRAD_PRO_PHASE;
