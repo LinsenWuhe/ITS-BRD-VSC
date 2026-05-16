@@ -43,13 +43,10 @@ int main(void) {
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
-		//1. Einlesen
-		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
-		//2. Verarbeiten
+		
 		/*-----1. Einlesen--------*/
 		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		if(s6_lesen() == HIGH) //bzw LOW wegen high active?
+		if(s6_lesen() == s6_gedrueckt) 
 		{
 			fehlerLoeschen();
 			statusDrucken();
