@@ -45,7 +45,8 @@ int main(void) {
 	int bewegungsrichtung; // Bewegungsrichtung
 
 	uint32_t t_fenster_start = getTimeStamp(); //Timer zählt nur vorwärts, keine negativen zahlen
-	int32_t pulse_start = 0;
+	int32_t pulse_start = 0; //wie viele phasenwechsel passieren im zeitfenster
+	bool berechnet = false;
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
@@ -64,6 +65,23 @@ int main(void) {
 		/*-----2. Verarbeiten--------*/
 		uint32_t t_jetzt = getTimeStamp();
 		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
+
+		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
+		{
+			
+		}
+
+		if (t_differenz >= 0.500) //spätestens nach 500ms wird berechnet
+		{
+			if (!berechnet) //wenn noch nicht berechnet wurde
+			{
+				
+			}
+
+			t_fenster_start = t_jetzt; //neues zeitfenster starten
+			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
+			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
+		}
 
 
 
