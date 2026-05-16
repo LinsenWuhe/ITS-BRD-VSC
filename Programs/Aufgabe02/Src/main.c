@@ -19,10 +19,13 @@
 #include "error.h"
 #include "GPIO_read.h"
 #include "text_output.h"
+#include "zeitmessung.h"
+#include <stdint.h>
 
 
 int main(void) {
 	initITSboard();  					  							 // Initialisierung des ITS Boards
+	initTimer();
 	GUI_init(DEFAULT_BRIGHTNESS);							 // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
 	
@@ -37,53 +40,79 @@ int main(void) {
 	int letztePhasenzahl = 0;
 	int s6;
 
+	//int phasenzahl = 0;	// Anzahl der Phasenwechsel
+	double winkel = 0; // Winkel
+	int bewegungsrichtung; // Bewegungsrichtung
+
+	uint32_t t_fenster_start = getTimeStamp(); //Timer zählt nur vorwärts, keine negativen zahlen
+	int32_t pulse_start = 0; //wie viele phasenwechsel passieren im zeitfenster
+	bool berechnet = false;
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
-		//1. Einlesen
-		status_drehscheibe(); //kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		
-		
-		s6 = s6_lesen();			  //lesen, ob S6 gedrückt ist, wird noch nicht gespeichert -> liefert 0 oder 1 zurück
-		//2. Verarbeiten
-		//-----1. Einlesen--------
-		if(s6 == LOW) //bzw LOW wegen high active?, --> wahrscheinlich LOW
+		/*-----1. Einlesen--------*/
+		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
+		if(s6_lesen() == s6_gedrueckt) 
 		{
 			fehlerLoeschen();
 			statusDrucken();
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
 		
-
+		
 		/*-----2. Verarbeiten--------*/
-		//TODO - Zeitfenster öffnen
+		
 		berechneAktuellePhase();
 		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
 		berechnePhasenwechsel2();
-
-		// Phasenzahl bestimmen fehlt nicht
-
-		//berechneWinkel(phasenzahl, &winkel);
 		
-
-		//3. Ausgeben
-		//TODO - Zeitfenster schließen
+		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
+		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		
-		if(phasenzahl != letztePhasenzahl) //ist ein Phasenwechsel aufgetreten??
-		{	
-			berechneWinkel();
-			//berechneGeschwindigkeit
+		
+		uint32_t t_jetzt = getTimeStamp();
+		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
 
-			//für nächsten Loop
-										// TODO - Zeitfenster öffnen für nächsten loop
-			letztePhasenzahl = phasenzahl;
+		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
+		{
+		
+			//phasenwechsel aufgetreten?
+			if (gibPulseCount() != pulse_start) 
+			{
+				//zeitfenster schließen und berechnen
+				berechneWinkel();
+				berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
+				
+				//neues Zeitfenster starten
+				t_fenster_start = t_jetzt;
+				pulse_start = gibPulseCount();
+				berechnet = true;
 
+
+				//Ausgeben I
+				statusDrucken();		
+			}
 		}
 		
-		/*-----3. Ausgeben--------*/
-		updateLEDAusgabe(gibRichtung(), gibPulseCount());	 // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
-		statusDrucken(); 												//Text ausgeben mit Zeitmessung
+
+		if (t_differenz >= 0.500) //spätestens nach 500ms wird berechnet
+		{
+			if (!berechnet) //wenn noch nicht berechnet wurde
+			{
+			    // Noch nicht berechnet - jetzt auf jeden Fall 
+            	berechneWinkel();
+           		berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
+				
+				//Ausgeben II
+            	statusDrucken();
+			}
+
+			t_fenster_start = t_jetzt; //neues zeitfenster starten
+			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
+			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
+		}
 	}
 }
 

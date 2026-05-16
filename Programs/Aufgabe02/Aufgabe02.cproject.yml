@@ -179,7 +179,7 @@ project:
         - file: Inc/GPIO_read.h
         - file: Inc/LED_output.h
         - file: Inc/text_output.h
-        - file: Inc/timer.h
+        - file: Inc/zeitmessung.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -191,7 +191,7 @@ project:
         - file: Src/GPIO_read.c
         - file: Src/LED_output.c
         - file: Src/text_output.c
-        - file: Src/timer.c
+        - file: Src/zeitmessung.c
 
 
   components:
