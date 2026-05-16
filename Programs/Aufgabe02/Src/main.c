@@ -49,7 +49,7 @@ int main(void) {
 		//2. Verarbeiten
 		/*-----1. Einlesen--------*/
 		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		if(s6_lesen() == HIGH)
+		if(s6_lesen() == HIGH) //bzw LOW wegen high active?
 		{
 			fehlerLoeschen();
 			statusDrucken();
