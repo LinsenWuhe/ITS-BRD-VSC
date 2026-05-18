@@ -62,6 +62,9 @@ int main(void) {
 	while(1) 
 	{
 		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
+		//kanal1 = GPIO...
+		//kanal2 =
+		//button_s6
 
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
@@ -120,10 +123,10 @@ int main(void) {
 				//Ausgeben II
             	statusDrucken();
 			}
-			t_fenster_start = t_jetzt; //neues zeitfenster starten
-			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
-			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		}
+		t_fenster_start = t_jetzt; //neues zeitfenster starten
+		pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
+		berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		
 		//PG3 auf low
