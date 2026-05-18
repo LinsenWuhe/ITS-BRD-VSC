@@ -8,8 +8,7 @@
 void statusDrucken(void)
 {
     //Pin PG2 HIGH - Messung startet
-    GPIOG -> MODER |= (1 << 2);
-    GPIOG->ODR |= (1 << 2);
+    GPIOG->ODR |= (1 << 2); 
 
     // Werte aus den Modulen holen 
     int winkel          = (int)gibWinkel(); //gibWinkel() ist hier richtig !!!

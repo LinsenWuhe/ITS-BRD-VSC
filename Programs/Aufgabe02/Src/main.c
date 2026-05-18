@@ -37,21 +37,32 @@ int main(void) {
 	calcInit();
 
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
-	int letztePhasenzahl = 0;
-	int s6;
+	// int letztePhasenzahl = 0;
+	// int s6;
 
-	//int phasenzahl = 0;	// Anzahl der Phasenwechsel
-	double winkel = 0; // Winkel
-	int bewegungsrichtung; // Bewegungsrichtung
+	// int phasenzahl = 0;	// Anzahl der Phasenwechsel
+	// double winkel = 0; // Winkel
+	// int bewegungsrichtung; // Bewegungsrichtung
 
 	uint32_t t_fenster_start = getTimeStamp(); //Timer zählt nur vorwärts, keine negativen zahlen
 	int32_t pulse_start = 0; //wie viele phasenwechsel passieren im zeitfenster
 	bool berechnet = false;
+
+	//PG2 für Textmessung
+	__HAL_RCC_GPIOG_CLK_ENABLE(); //Clock aktivieren auf Port
+	GPIOG->MODER |= (1 << 4); 	//Bit 4+5 auf Output setzen -> 01
+	GPIOG->MODER &= ~(1 << 5);
+
+
+	//PG3 als Output für mainloop-Messung
+	GPIOG->MODER |= (1 << 6);
+	GPIOG->MODER &= ~(1 << 7);
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
-		
+		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
+
 		/*-----1. Einlesen--------*/
 		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		if(s6_lesen() == LOW) 
@@ -113,6 +124,9 @@ int main(void) {
 			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
 			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		}
+
+		//PG3 auf low
+		GPIOG->ODR &= ~(1 << 3);
 	}
 }
 
