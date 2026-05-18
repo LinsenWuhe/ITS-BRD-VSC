@@ -109,6 +109,7 @@ int main(void) {
 				//Ausgeben I
 				statusDrucken();		
 			}
+			t_fenster_start = t_jetzt; //neues zeitfenster starten
 		}
 		
 
@@ -123,8 +124,8 @@ int main(void) {
 				//Ausgeben II
             	statusDrucken();
 			}
+			t_fenster_start = t_jetzt; //neues zeitfenster starten
 		}
-		t_fenster_start = t_jetzt; //neues zeitfenster starten
 		pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
 		berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
