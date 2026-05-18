@@ -82,11 +82,11 @@ int main(void) {
 		berechnePhasenwechsel2();
 		
 		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
-		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		
 		
 		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
-
+		
+		
 		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
 		{
 		
@@ -120,12 +120,12 @@ int main(void) {
 				//Ausgeben II
             	statusDrucken();
 			}
-
 			t_fenster_start = t_jetzt; //neues zeitfenster starten
 			pulse_start = gibPulseCount(); //anfangsphasenzahl = aktuelle phasenzahl
 			berechnet = false;	//nächstes Ergebnis wurde noch nicht berechnet
 		}
-
+		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
+		
 		//PG3 auf low
 		GPIOG->ODR &= ~(1 << 3);
 	}
