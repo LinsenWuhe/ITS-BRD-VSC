@@ -64,6 +64,7 @@ int main(void) {
 		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
 
 		/*-----1. Einlesen--------*/
+		uint32_t t_jetzt = getTimeStamp();
 		status_drehscheibe(); 
 		// 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		if(s6_lesen() == LOW) 
@@ -84,7 +85,6 @@ int main(void) {
 		updateLEDAusgabe(gibRichtung(), gibPulseCount()); // Ausgabe der Bewegungsrichtung/Fehler und Anzahl der Phasenwechsel auf den LEDs
 		
 		
-		uint32_t t_jetzt = getTimeStamp();
 		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
 
 		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
