@@ -8,6 +8,7 @@ int kanal2;
 
 int status_drehscheibe()
 {
+    /*
     // Auslesen von PF0 - Input Register lesen -> verundet mit 0000 0001
     if (GPIOF->IDR & (1 << 0)) 
     {
@@ -36,6 +37,10 @@ int status_drehscheibe()
     {
         return kanal_fehler;
     }
+    */
+
+    kanal1 = GPIOF->IDR & (1 << 0);
+	kanal2 = GPIOF->IDR & (1 << 1);
 
     return OK;
 }

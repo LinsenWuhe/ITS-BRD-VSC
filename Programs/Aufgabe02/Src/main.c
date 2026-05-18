@@ -35,7 +35,7 @@ int main(void) {
 	textInit();
 	status_drehscheibe(); // nötig vor calc init für letztePhase
 	calcInit();
-
+	
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	// int letztePhasenzahl = 0;
 	// int s6;
@@ -64,7 +64,8 @@ int main(void) {
 		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
 
 		/*-----1. Einlesen--------*/
-		status_drehscheibe(); 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
+		status_drehscheibe(); 
+		// 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		if(s6_lesen() == LOW) 
 		{
 			fehlerLoeschen();
