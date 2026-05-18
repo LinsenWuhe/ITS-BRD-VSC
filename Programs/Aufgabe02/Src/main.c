@@ -21,6 +21,7 @@
 #include "text_output.h"
 #include "zeitmessung.h"
 #include <stdint.h>
+#include <stdio.h>
 
 
 int main(void) {
@@ -28,9 +29,6 @@ int main(void) {
 	initTimer();
 	GUI_init(DEFAULT_BRIGHTNESS);							 // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
-	
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 	
 	textInit();
 	status_drehscheibe(); // nötig vor calc init für letztePhase
@@ -69,7 +67,8 @@ int main(void) {
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
 		status_drehscheibe(); 
-		// 										//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
+		// 	
+											//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
 		if(s6_lesen() == LOW) 
 		{
 			fehlerLoeschen();
@@ -92,9 +91,8 @@ int main(void) {
 		
 		if (t_differenz >= 0.250 && !berechnet) //Zeitfenster soll nach Phasenwechsel stattfinden -> mindestens 250ms vergangen
 		{
-		
 			//phasenwechsel aufgetreten?
-			if (gibPulseCount() != pulse_start) 
+			if (gibRichtung() != GLEICH)//gibPulseCount() != pulse_start) 
 			{
 				//zeitfenster schließen und berechnen
 				berechneWinkel();
@@ -108,8 +106,8 @@ int main(void) {
 
 				//Ausgeben I
 				statusDrucken();		
+				t_fenster_start = t_jetzt; //neues zeitfenster starten
 			}
-			t_fenster_start = t_jetzt; //neues zeitfenster starten
 		}
 		
 
@@ -132,6 +130,9 @@ int main(void) {
 		
 		//PG3 auf low
 		GPIOG->ODR &= ~(1 << 3);
+
+		//printf("%f\n", t_differenz);
+
 	}
 }
 
