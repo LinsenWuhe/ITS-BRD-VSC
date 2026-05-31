@@ -31,7 +31,7 @@ int main(void) {
 
 	
 	initInput();
-	GUI_clear(255);
+	GUI_clear(BLACK);
 	
 	char gpiofPin6Pressed;
 
@@ -42,7 +42,17 @@ int main(void) {
 		
 		if (gpiofPin6Pressed)
 		{
+			GUI_clear(BLACK);
 			openNextFile();
+	//bmp_reader aufrufen:
+			//BMP_readHeaders(&fh, &ih);
+			//BMP_readPalette(&ih, palette);
+			//BMP_decodeAndDisplay(&fh, &ih, palette)
+
+
+
+
+
 			COMread(buffer, PIXELSIZE, PIXELCOUNT);
 		}
 
