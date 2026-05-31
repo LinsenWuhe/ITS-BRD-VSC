@@ -183,6 +183,8 @@ project:
         - file: Src/errorhandler.c
         - file: Src/input.c
         - file: Src/perfTimer.c
+        - file: Src/bmp_reader.c
+        
 
 
   components:
