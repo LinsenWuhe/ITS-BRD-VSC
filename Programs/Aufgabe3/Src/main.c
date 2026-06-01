@@ -34,6 +34,9 @@ int main(void) {
 	GUI_clear(BLACK);
 	
 	char gpiofPin6Pressed;
+	static BITMAPFILEHEADER fh; //static, damit sie nicht auf stack landen, sondern im globalen Speicher liegen - erster Struct, der sagt, ob es überhaupt eine bmp datei ist, wie groß die datei ist und die pixeldatenanfangen
+	static BITMAPINFOHEADER ih; //enthält alle Infos über das Bild, Breite, Höhe, Bits pro Pixel, Komprimierung und Anzahl der Palettenfarben
+	static RGBQUAD palette[MAX_COLOR_TABLE_SIZE]; //Array mit bis zu 256 Einträgen. Jeder Eintrag ist ein RGBQUAD mit Felder Rot, Grün, Blau
 
 	char buffer[PIXELCOUNT];
 	
@@ -45,9 +48,9 @@ int main(void) {
 			GUI_clear(BLACK);
 			openNextFile();
 	//bmp_reader aufrufen:
-			//BMP_readHeaders(&fh, &ih);
-			//BMP_readPalette(&ih, palette);
-			//BMP_decodeAndDisplay(&fh, &ih, palette)
+			BMP_readHeaders(&fh, &ih);
+			BMP_readPalette(&ih, palette);
+			BMP_decodeAndDisplay(&fh, &ih, palette);
 
 
 
