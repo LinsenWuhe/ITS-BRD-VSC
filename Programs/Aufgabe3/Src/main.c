@@ -7,6 +7,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
+#include "bmp_reader.h"
 #include "input.h"
 #include "stm32f4xx_hal.h"
 #include "init.h"
