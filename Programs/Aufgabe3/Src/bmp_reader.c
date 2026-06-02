@@ -1,17 +1,10 @@
 #include "bmp_reader.h"
 #include "BMP_types.h"
+#include "LCD_GUI.h"
 #include "errors.h"
 #include "input.h"
+#include <stdio.h>
 
-
-typedef struct {
-    LONG  width;        // Breite in Pixeln
-    LONG  height;       // Höhe in Pixeln
-    WORD  bitCount;     // 8 oder 24
-    DWORD compression;  // BI_RGB oder BI_RLE8
-    BOOL  hasPalette;   // hat das Bild eine Palette?
-    int   padding;      // Padding-Bytes pro Zeile
-} BMP_Info;
 
 
 /**
@@ -37,12 +30,9 @@ int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPFILEHEADER *ih)
         // jetzt ist ih gefüllt:
         // ih->biWidth       = Breite
         // ih->biHeight      = Höhe
-        // ih->biBitCount    = 8
+        // ih->biBitCount    = 8 oder 24
         // ih->biCompression = BI_RGB oder BI_RLE8
         // ih->biClrUsed     = Anzahl Palettenfarben
-
-    
-
 
     return 0;
 }
@@ -54,6 +44,25 @@ int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPFILEHEADER *ih)
 */
 int BMP_readPalette(BITMAPINFOHEADER *ih, RGBQUAD *palette)
 {
+    // Bestimmen, wie viele Farben tatsächlich gelesen werden müssen
+    int numColors = ih->biClrUsed;
+    
+    if (numColors == 0 && ih->biBitCount <= 8) 
+    {
+        // Wenn 0 eingetragen ist, gilt das Maximum für 8-Bit (256 Farben)
+        numColors = 256; 
+    }
+
+    // Falls biBitCount > 8 ist (24-Bit), gibt es keine Palette
+    if (numColors == 0)
+    {
+        return OK; // Keine Palette vorhanden
+    }
+
+    // palette-struct einlesen
+    COMread((char *) palette, sizeof(RGBQUAD), numColors);
+
+
     return 0;
 }
 
@@ -66,7 +75,25 @@ int BMP_readPalette(BITMAPINFOHEADER *ih, RGBQUAD *palette)
 */
 int BMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette)
 {
-    return 0;
+    //Holt sich Infos aus den gespeicherten headern zu Breite und Höhe
+    int width = ih->biWidth;
+    int height = ih->biHeight;
+
+//padding berechnen, sodass jede zeile ein Vielfaches von 4 ist
+    //zuerst: wie viele Bits brauchen wir? -> width ist anzahl pixel und ih->biCount die anzahl von bits pro pixel
+    //dann: nach oben aufrunden mit +31, damit rest bei division nciht abgeschnitten wird -> /32 - wie viele 32 bit blöcke 4 Byte
+    //dann: *4 um Anzahl der Bytes zu haben
+    //casts wegen compiler warnungen
+    int rowSize = (int) ((((unsigned int) width * ih->biBitCount +31)/32) *4);
+    int paddingBytes = rowSize - width;
+
+    //zu Pixeldaten vorspringen
+    unsigned int numColors = ih->biClrUsed;
+
+
+
+
+        return 0;
 }
 
 

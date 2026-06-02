@@ -59,7 +59,7 @@ int main(void) {
 
 
 
-			COMread(buffer, PIXELSIZE, PIXELCOUNT);
+			//COMread(buffer, PIXELSIZE, PIXELCOUNT);
 		}
 
 	}
