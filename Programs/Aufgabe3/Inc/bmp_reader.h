@@ -2,6 +2,7 @@
 #define _BMP_READER_H
 
 #include "BMP_types.h"
+#include "errors.h"
 
 /**
 *Liest und prüft BITMAPFILEHEADER und BITMAPINFOHEADER
