@@ -9,7 +9,7 @@
 * fh zeigt auf Bitmapfileheader
 * ih zeigt auf Bitmapinfoheader
 */
-int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPFILEHEADER *ih);
+int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih);
 
 /**
 * Liest die Farbpalette (8-Bit)
