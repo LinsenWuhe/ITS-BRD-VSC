@@ -8,11 +8,13 @@ Für das nächste Bild muss der Taster losgelassen und erneut gedrückt werden -
 TODO's
 
 - Fehlermeldungen ausgeben
-- Besonderheiten beachten - 24 bit etc
+- Besonderheiten beachten - 24 bit etc, oder 8bit?
 - Bild auf display so richtig abgebildet wie in Aufgabe vorgesehen?
-- Bilder über Grenzen checken
+- Bilder über Grenzen checken --> ?
 
-- Teilaufgabe b!!
+- Teilaufgabe b!! funktioniert nicht ganz -> korrigieren
+
+
 
 
 Modul BMP_reader: 

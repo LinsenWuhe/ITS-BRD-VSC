@@ -52,7 +52,7 @@ int main(void) {
 	//bmp_reader aufrufen:
 			BMP_readHeaders(&fh, &ih);
 			BMP_readPalette(&ih, palette);
-			BMP_decodeAndDisplay(&fh, &ih, palette);
+			BMP_decodeAndDisplayWithWriteLine(&fh, &ih, palette);
 		}
 
 		lastState = gpiofPin6Pressed;

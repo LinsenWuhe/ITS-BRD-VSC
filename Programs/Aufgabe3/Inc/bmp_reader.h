@@ -27,4 +27,7 @@ int BMP_readPalette(BITMAPINFOHEADER *ih, RGBQUAD *palette);
 */
 int BMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette);
 
+
+int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette);
+
 #endif
