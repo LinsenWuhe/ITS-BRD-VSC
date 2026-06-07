@@ -269,7 +269,7 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                 // Fall 1 : Encoded Mode: b1 mal Farbe b2 zeichnen
                 for (int i = 0; i < b1; i++) 
                 {
-                    if ((x < LCD_WIDTH) && (y >= 0 )&& (y < LCD_HEIGHT)) 
+                    if (x < LCD_WIDTH && y >= 0 && y < LCD_HEIGHT)
                     {
                         RGBQUAD color = palette[b2];
                         COLOR c = ((color.rgbRed >> 3) << 11) |
