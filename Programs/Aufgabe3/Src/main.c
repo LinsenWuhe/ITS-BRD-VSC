@@ -52,7 +52,9 @@ int main(void) {
 	//bmp_reader aufrufen:
 			BMP_readHeaders(&fh, &ih);
 			BMP_readPalette(&ih, palette);
+			GPIOE->BSRR = (0x1U << 7); // D23 an
 			BMP_decodeAndDisplayWithWriteLine(&fh, &ih, palette);
+			GPIOE->BSRR = (0x1U << (7 + 16)); // D23 aus
 		}
 
 		lastState = gpiofPin6Pressed;

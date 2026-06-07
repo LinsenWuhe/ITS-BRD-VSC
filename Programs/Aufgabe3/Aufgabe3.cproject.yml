@@ -184,6 +184,7 @@ project:
         - file: Src/input.c
         - file: Src/perfTimer.c
         - file: Src/bmp_reader.c
+        - file: Src/bmp_dateiZumVergleichen.c
         
 
 

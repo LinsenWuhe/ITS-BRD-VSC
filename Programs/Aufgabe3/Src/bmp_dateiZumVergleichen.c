@@ -5,7 +5,7 @@
 #include "errors.h"
 #include "input.h"
 
-int BMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette)
+int vglBMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette)
 {
     //Breite und Höhe aus Info Header lesen
     int width   = ih->biWidth;

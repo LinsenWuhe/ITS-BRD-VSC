@@ -8,11 +8,11 @@ Für das nächste Bild muss der Taster losgelassen und erneut gedrückt werden -
 TODO's
 
 - Fehlermeldungen ausgeben
-- Besonderheiten beachten - 24 bit etc, oder 8bit?
+- Besonderheiten beachten - 24 bit etc, zwar implementiert, aber funktioniert nicht ganz
 - Bild auf display so richtig abgebildet wie in Aufgabe vorgesehen?
-- Bilder über Grenzen checken --> ?
+- Bilder über Grenzen checken --> ist jetzt glaub ich okay
 
-- Teilaufgabe b!! funktioniert nicht ganz -> korrigieren
+- Teilaufgabe b!! funktioniert nicht ganz -> korrigieren --> b ist an sich vollständig, bis auf allgemeine Probleme
 
 
 

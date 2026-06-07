@@ -30,4 +30,6 @@ int BMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *pa
 
 int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette);
 
+int BMP_decodeAndDisplay2(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *palette);
+
 #endif
