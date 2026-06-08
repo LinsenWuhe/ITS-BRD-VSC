@@ -2,6 +2,7 @@
 #include "BMP_types.h"
 #include "LCD_GUI.h"
 #include "LCD_general.h"
+#include "errorhandler.h"
 #include "errors.h"
 #include "input.h"
 #include "lcd.h"
@@ -17,7 +18,7 @@
 int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih)
 {
     //schreibt 14 Bytes in Struct - mit Umwandlung - fh ist Zeiger auf Bitmapfileheader-Struct, aber COM-Read erwaretet ein Char Zeiger
-    COMread((char *) fh, sizeof(BITMAPFILEHEADER), 1); //fh - speicherort von buffer, Elementgröße von BMP-FH, 1 Element der Größe lesen
+    ERR_HANDLER(1!= COMread((char *) fh, sizeof(BITMAPFILEHEADER), 1), "Fehler beim Lesen des File-Headers"); //fh - speicherort von buffer, Elementgröße von BMP-FH, 1 Element der Größe lesen
         // jetzt ist fh gefüllt:
         // fh->bfType    = 0x4D42  ("BM")
         // fh->bfSize    = Dateigröße
@@ -25,6 +26,7 @@ int BMP_readHeaders(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih)
 
     if (fh->bfType != 0x4D42) 
     {
+        ERR_HANDLER(true, "Keine BMP-Datei");
         return KEINE_BMP_DATEI;
     }
 
@@ -90,34 +92,70 @@ int BMP_decodeAndDisplay(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih, RGBQUAD *pa
     if (ih->biCompression == BI_RGB) 
     {
         //äußere schleife: höhe durchlaufen
-        for (int row = 0; row < height; row++) 
+        for (int row = 0; row < height; row++)
         {
-            //innere schleife: zeilen durchlaufen
-            for (int col = 0; col < width; col++) 
+            if (ih->biBitCount == 8)
             {
-                // nächsten Pixel lesen
-                int index = nextChar();
-                // Farbe aus Palette holen
-                RGBQUAD color = palette[index];
-                // y-Koordinate spiegeln - BMP speichert von unten nach oben -> row 0 ist unterste zeile im Bild - wird an y gespiegelt
-                int y = height - 1 - row;
-                int x = col;
-                // nur zeichnen wenn innerhalb Display
-                if (x < LCD_WIDTH && y < LCD_HEIGHT) 
+                //innere schleife: zeilen durchlaufen
+                for (int col = 0; col < width; col++) 
                 {
-                    //farbkonvertierung von rgb (3x8 Bit) auf 16 Bit LCD-Format
-                    COLOR c = ((color.rgbRed >> 3) << 11) | //Rot 8 Bit -> 5 bit >> 3, dann in Bits 15-11 (<<11)
-                              ((color.rgbGreen >> 2) << 5) | //Grün: 8-Bit → 6-Bit (>> 2), dann in Bits 10-5 (<< 5)
-                              (color.rgbBlue >> 3);         //Blau: 8-Bit → 5-Bit (>> 3), bleibt in Bits 4-0
-                    //Pixel zeichnen
-                    Coordinate crd = {x, y};
-                    GUI_drawPoint(crd, c, DOT_PIXEL_1X1, DOT_FILL_AROUND);
+                    // nächsten Pixel lesen
+                    int index = nextChar();
+                    // Farbe aus Palette holen
+                    RGBQUAD color = palette[index];
+                    // y-Koordinate spiegeln - BMP speichert von unten nach oben -> row 0 ist unterste zeile im Bild - wird an y gespiegelt
+                    int y = height - 1 - row;
+                    int x = col;
+                    // nur zeichnen wenn innerhalb Display
+                    if (x < LCD_WIDTH && y < LCD_HEIGHT) 
+                    {
+                        //farbkonvertierung von rgb (3x8 Bit) auf 16 Bit LCD-Format
+                        COLOR c = ((color.rgbRed >> 3) << 11) | //Rot 8 Bit -> 5 bit >> 3, dann in Bits 15-11 (<<11)
+                                ((color.rgbGreen >> 2) << 5) | //Grün: 8-Bit → 6-Bit (>> 2), dann in Bits 10-5 (<< 5)
+                                (color.rgbBlue >> 3);         //Blau: 8-Bit → 5-Bit (>> 3), bleibt in Bits 4-0
+                        //Pixel zeichnen
+                        Coordinate crd = {x, y};
+                        GUI_drawPoint(crd, c, DOT_PIXEL_1X1, DOT_FILL_AROUND);
+                    }
+                }
+                // Padding-Bytes überspringen
+                for (int p = 0; p < padding; p++) 
+                {
+                    nextChar();
                 }
             }
-            // Padding-Bytes überspringen
-            for (int p = 0; p < padding; p++) 
+            else if (ih->biBitCount == 24)
             {
-                nextChar();
+                //innere schleife: zeilen durchlaufen
+                for (int col = 0; col < width; col++) 
+                {
+                    RGBTRIPLE color;
+                    int nextByte = nextChar();
+                    color.rgbtBlue = nextByte;
+                    nextByte = nextChar();
+                    color.rgbtGreen = nextByte;
+                    nextByte = nextChar();
+                    color.rgbtRed = nextByte;
+                    // y-Koordinate spiegeln - BMP speichert von unten nach oben -> row 0 ist unterste zeile im Bild - wird an y gespiegelt
+                    int y = height - 1 - row;
+                    int x = col;
+                    // nur zeichnen wenn innerhalb Display
+                    if (x < LCD_WIDTH && y < LCD_HEIGHT) 
+                    {
+                        //farbkonvertierung von rgb (3x8 Bit) auf 16 Bit LCD-Format
+                        COLOR c = ((color.rgbtRed >> 3) << 11) | //Rot 8 Bit -> 5 bit >> 3, dann in Bits 15-11 (<<11)
+                                ((color.rgbtGreen >> 2) << 5) | //Grün: 8-Bit → 6-Bit (>> 2), dann in Bits 10-5 (<< 5)
+                                (color.rgbtBlue >> 3);         //Blau: 8-Bit → 5-Bit (>> 3), bleibt in Bits 4-0
+                        //Pixel zeichnen
+                        Coordinate crd = {x, y};
+                        GUI_drawPoint(crd, c, DOT_PIXEL_1X1, DOT_FILL_AROUND);
+                    }
+                }
+                // Padding-Bytes überspringen
+                for (int p = 0; p < padding; p++) 
+                {
+                    nextChar();
+                }
             }
         }
     } 
@@ -244,6 +282,11 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                     // nur zeichnen wenn innerhalb Display
                     if (x < LCD_WIDTH && y < LCD_HEIGHT) 
                     {
+                        // 1111100000000000
+                        //      11111100000
+                        //            11111
+                        //weiß
+
                         //farbkonvertierung von rgb (3x8 Bit) auf 16 Bit LCD-Format
                         COLOR c = ((color.rgbRed >> 3) << 11) | //Rot 8 Bit -> 5 bit >> 3, dann in Bits 15-11 (<<11)
                                 ((color.rgbGreen >> 2) << 5) | //Grün: 8-Bit → 6-Bit (>> 2), dann in Bits 10-5 (<< 5)
@@ -283,11 +326,11 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                 {
                     RGBTRIPLE color;
                     int nextByte = nextChar();
-                    color.rgbtRed = nextByte;
+                    color.rgbtBlue = nextByte;
                     nextByte = nextChar();
                     color.rgbtGreen = nextByte;
                     nextByte = nextChar();
-                    color.rgbtBlue = nextByte;
+                    color.rgbtRed = nextByte;
                     // y-Koordinate spiegeln - BMP speichert von unten nach oben -> row 0 ist unterste zeile im Bild - wird an y gespiegelt
                     int y = height - 1 - row;
                     int x = col;
@@ -304,9 +347,9 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                         colors[x] = c;
                         else if (x==printWidth/2)
                         {
-                            colors[x-printWidth/2] = c;
                             Coordinate crd = {0, y};
                             GUI_WriteLine(crd, printWidth/2, colors);
+                            colors[x-printWidth/2] = c;
                         }
                         else if (x>printWidth/2)
                         colors[x-printWidth/2] = c;
@@ -316,8 +359,8 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                             Coordinate crd = {printWidth/2, y};
                             GUI_WriteLine(crd, printWidth/2, colors);
                         }
-
                     }
+                    x++;
                 }
                 // Padding-Bytes überspringen
                 for (int p = 0; p < padding; p++) 
@@ -366,9 +409,9 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                         colors[x] = c;
                         else if (x==printWidth/2)
                         {
-                            colors[x-printWidth/2] = c;
                             Coordinate crd = {0, y};
                             GUI_WriteLine(crd, printWidth/2, colors);
+                            colors[x-printWidth/2] = c;
                         }
                         else if (x>printWidth/2)
                         colors[x-printWidth/2] = c;
@@ -421,9 +464,9 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                             colors[x] = c;
                             else if (x==printWidth/2)
                             {
-                                colors[x-printWidth/2] = c;
                                 Coordinate crd = {0, y};
                                 GUI_WriteLine(crd, printWidth/2, colors);
+                                colors[x-printWidth/2] = c;
                             }
                             else if (x>printWidth/2)
                             colors[x-printWidth/2] = c;

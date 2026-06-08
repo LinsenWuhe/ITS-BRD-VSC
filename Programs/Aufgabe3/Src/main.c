@@ -14,6 +14,7 @@
 #include "LCD_GUI.h"
 #include "LCD_Touch.h"
 #include "BMP_types.h"
+#include "errorhandler.h"
 #include "lcd.h"
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
@@ -42,6 +43,8 @@ int main(void) {
 	static BITMAPINFOHEADER ih; //enthält alle Infos über das Bild, Breite, Höhe, Bits pro Pixel, Komprimierung und Anzahl der Palettenfarben
 	static RGBQUAD palette[MAX_COLOR_TABLE_SIZE]; //Array mit bis zu 256 Einträgen. Jeder Eintrag ist ein RGBQUAD mit Felder Rot, Grün, Blau
 
+	int status = 0;
+
 	while(1) {
 		gpiofPin6Pressed = (IDR_MASK_PIN_6 != (GPIOF->IDR & IDR_MASK_PIN_6));
 		
@@ -50,11 +53,15 @@ int main(void) {
 			GUI_clear(BLACK);
 			openNextFile();
 	//bmp_reader aufrufen:
-			BMP_readHeaders(&fh, &ih);
-			BMP_readPalette(&ih, palette);
-			GPIOE->BSRR = (0x1U << 7); // D23 an
-			BMP_decodeAndDisplayWithWriteLine(&fh, &ih, palette);
-			GPIOE->BSRR = (0x1U << (7 + 16)); // D23 aus
+
+			status = BMP_readHeaders(&fh, &ih);
+			if (status == 0)
+			{
+				BMP_readPalette(&ih, palette);
+				GPIOE->BSRR = (0x1U << 7); // D23 an
+				BMP_decodeAndDisplayWithWriteLine(&fh, &ih, palette);
+				GPIOE->BSRR = (0x1U << (7 + 16)); // D23 aus
+			}
 		}
 
 		lastState = gpiofPin6Pressed;
