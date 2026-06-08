@@ -354,13 +354,12 @@ int BMP_decodeAndDisplayWithWriteLine(BITMAPFILEHEADER *fh, BITMAPINFOHEADER *ih
                         else if (x>printWidth/2)
                         colors[x-printWidth/2] = c;
                         
-                        if (x==printWidth)
+                        if (x==printWidth-1)
                         {
                             Coordinate crd = {printWidth/2, y};
                             GUI_WriteLine(crd, printWidth/2, colors);
                         }
                     }
-                    x++;
                 }
                 // Padding-Bytes überspringen
                 for (int p = 0; p < padding; p++) 
