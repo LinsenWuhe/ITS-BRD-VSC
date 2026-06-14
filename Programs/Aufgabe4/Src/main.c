@@ -15,6 +15,7 @@
 #include "fontsFLASH.h"
 #include "additionalFonts.h"
 #include "error.h"
+#include "timer.h"
 
 
 int main(void) {
@@ -23,11 +24,17 @@ int main(void) {
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
-  // Begruessungstext	
-	lcdPrintlnS("Hallo liebes TI-Labor (c-project)");
+	//1x Sensoren einlesen Einlesen und speichern
+
+
 	
-	// Test in Endlosschleife
 	while(1) {
+
+		//Temperaturwerte lesen
+
+		//temperaturwerte ausgeben
+		
+
 		HAL_Delay(10000);
 	}
 }

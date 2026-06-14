@@ -174,12 +174,19 @@ project:
     - group: Program/User/Inc
       files:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
+        - file: Inc/errors.h
+        - file: Inc/master.h
+        - file: Inc/tempSens.h
+        - file: Inc/displayOutput.h
 
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/master.c
+        - file: Src/tempSens.c
+        - file: Src/displayOutput.c
 
 
   components:
