@@ -1,0 +1,5 @@
+
+
+
+
+- timer nutzen oder HAL_delay bei sende 0 und 1 - funktioniert es mit HAL_delay?

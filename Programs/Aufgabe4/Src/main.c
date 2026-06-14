@@ -16,6 +16,7 @@
 #include "additionalFonts.h"
 #include "error.h"
 #include "timer.h"
+#include "../Inc/switchMode.h"
 
 
 int main(void) {
@@ -26,9 +27,9 @@ int main(void) {
 
 	initTimer(); //für timer-modul
 
-	//1x Sensoren einlesen Einlesen und speichern
+	GPIOG->OTYPER |= (1<<PD1); //1x am Anfang, um PD1 auf 3,3V zu setzen
 
-
+	//1x Sensoren einlesen Einlesen und speichern - hier und nicht in der while oder?
 	
 	while(1) {
 

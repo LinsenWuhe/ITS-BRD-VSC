@@ -179,6 +179,7 @@ project:
         - file: Inc/tempSens.h
         - file: Inc/displayOutput.h
         - file: Inc/switchMode.h
+        - file: Inc/warten.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -189,6 +190,7 @@ project:
         - file: Src/tempSens.c
         - file: Src/displayOutput.c
         - file: Src/switchMode.c
+        - file: Src/warten.c
 
 
   components:
