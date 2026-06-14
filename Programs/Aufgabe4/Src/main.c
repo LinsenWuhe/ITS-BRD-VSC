@@ -24,6 +24,8 @@ int main(void) {
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
+	initTimer(); //für timer-modul
+
 	//1x Sensoren einlesen Einlesen und speichern
 
 
