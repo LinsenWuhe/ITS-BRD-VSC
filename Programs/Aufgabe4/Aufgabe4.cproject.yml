@@ -178,6 +178,7 @@ project:
         - file: Inc/master.h
         - file: Inc/tempSens.h
         - file: Inc/displayOutput.h
+        - file: Inc/switchMode.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -187,6 +188,7 @@ project:
         - file: Src/master.c
         - file: Src/tempSens.c
         - file: Src/displayOutput.c
+        - file: Src/switchMode.c
 
 
   components:
