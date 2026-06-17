@@ -14,8 +14,8 @@ void sende0()
     GPIOD->BSRR = (1 << 16);        //Bus auf low
     warten(60);
 
-    GPIOD->BSRR = 1;                //Bus freigeben
-    warten(60);
+    GPIOD->BSRR =  (1 << 0);                //Bus freigeben
+    warten(10);
 }
 
 /**
@@ -23,10 +23,10 @@ Um eine 1 zu senden wird der Bus erst 6 mikrosekunden auf low gesetz und dann fr
 */
 void sende1()
 {
-    GPIOD->BSRR = (1 << (PIN + 16));    //bus auf LOW
+    GPIOD->BSRR = (1 << 16);    //bus auf LOW
     warten(6);
 
-    GPIOD->BSRR = 1;           //bus freigeben
+    GPIOD->BSRR = (1 << 0);           //bus freigeben
     warten(64);     
 }
 
@@ -38,7 +38,7 @@ int liesBit()
 
     GPIOD->BSRR = (1 << 16);        //bus auf Low
     warten(6);         //
-    GPIOD->BSRR = 1;                   //bus freigeben
+    GPIOD->BSRR = (1 << 0);                   //bus freigeben
     warten(9);
 
     /**
@@ -51,7 +51,7 @@ int liesBit()
 
        -> wenn 1: wird true und wenn 0 wird false (übersprungen)
      */
-    if(GPIOG->IDR & 1)
+    if(GPIOD->IDR &  (1 << 0))
     {
         bit = 1;
     }
@@ -68,10 +68,10 @@ int reset()
 
     GPIOD->BSRR = (1 <<16);
     warten(480);
-    GPIOG->BSRR = 1;
+    GPIOD->BSRR =  (1 << 0);
     warten(70);
 
-    if(liesBit() == 0)
+    if((GPIOD->IDR &1) == 0)
     {
         status = OK;
     }

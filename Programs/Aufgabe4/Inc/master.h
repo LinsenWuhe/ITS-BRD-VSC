@@ -17,6 +17,8 @@ int reset();
 
 void sendeByte(uint8_t byte);
 
+uint8_t liesByte();
+
 
 
 #endif

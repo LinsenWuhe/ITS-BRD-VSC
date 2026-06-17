@@ -3,4 +3,6 @@
 
 void statusAusgeben();
 
+void temperaturAusgeben(float* temperatur);
+
 #endif
