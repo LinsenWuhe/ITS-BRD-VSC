@@ -3,6 +3,7 @@
 #include "../Inc/master.h"
 #include "../Inc/errors.h"
 #include "../Inc/warten.h"
+#include <stdint.h>
 
 
 /**
@@ -10,11 +11,11 @@ Um eine 0 zu senden wird er Bus 60 mikrosekunden auf low gezogen und dann wieder
 */
 void sende0()
 {
-    GPIOG->BSRR = (1 << 16);
-    warten(0.060);
+    GPIOD->BSRR = (1 << 16);        //Bus auf low
+    warten(60);
 
-    GPIOG->BSRR = 1;
-    warten(0.010);
+    GPIOD->BSRR = 1;                //Bus freigeben
+    warten(60);
 }
 
 /**
@@ -22,23 +23,24 @@ Um eine 1 zu senden wird der Bus erst 6 mikrosekunden auf low gesetz und dann fr
 */
 void sende1()
 {
-    GPIOG->BSRR = (1 << (PIN + 16));
-    warten(0.006);
+    GPIOD->BSRR = (1 << (PIN + 16));    //bus auf LOW
+    warten(6);
 
-    GPIOG->BSRR = (1 << PIN);
-    warten(0.064);
+    GPIOD->BSRR = 1;           //bus freigeben
+    warten(64);     
 }
 
 
 //bus auf low setzen, 6 ms warten, wieder freigeben 9 ms warten und bit vom bus lesen und 55 ms warten
 int liesBit()
 {
-    GPIOG->BSRR = (1 << (PIN + 16));
-    warten(0.006);
-    GPIOG->BSRR = (1 << PIN);
-    warten(0.009);
+    int bit = 0;
 
-    int bit;
+    GPIOD->BSRR = (1 << 16);        //bus auf Low
+    warten(6);         //
+    GPIOD->BSRR = 1;                   //bus freigeben
+    warten(9);
+
     /**
     bitweiser vergleich (nicht &&) -> wir vergleichen mit 00000001
 
@@ -49,16 +51,12 @@ int liesBit()
 
        -> wenn 1: wird true und wenn 0 wird false (übersprungen)
      */
-    if(GPIOG->IDR & (1 <<PIN))
+    if(GPIOG->IDR & 1)
     {
         bit = 1;
     }
-    else
-    {
-        bit = 0;
-    }
 
-    warten(0.055);
+    warten(55);
 
     return bit;
 }
@@ -66,12 +64,12 @@ int liesBit()
 //bus auf low setzen, 480 ms warten, freigeben und 70 ms warten, buszustand abfragen, 410 ms warten
 int reset()
 {
-    GPIOG->BSRR = (1 << (16+ PIN));
-    warten(0.480);
-    GPIOG->BSRR = (1 << PIN);
-    warten(0.07);
+    int status; 
 
-    int status;
+    GPIOD->BSRR = (1 <<16);
+    warten(480);
+    GPIOG->BSRR = 1;
+    warten(70);
 
     if(liesBit() == 0)
     {
@@ -82,8 +80,45 @@ int reset()
         status = KEIN_TEILNEHMER;
     }
 
-    warten(0.410);
+    warten(410);
 
     return status;
 }
 
+//bit für bit prüfen, um ganzes byte zu senden
+void sendeByte(uint8_t byte)
+{
+    for (int i = 0; i < 8; i++)
+    {
+        //wir prüfen nur das unterste Bit
+        if(byte & 0x01)
+        {
+            sende1();
+        }
+        else 
+        {
+            sende0();
+        }
+
+        //byte um eine stelle nach rechts schieben, damit im nächsten durchlauf das nächste Bit im Lsb steht
+        byte >>= 1;
+    }
+}
+
+uint8_t liesByte()
+{
+    uint8_t byte = 0; //anfangen mit 00000000
+
+    for(int i = 0; i< 8; i++)
+    {
+        if(liesBit() == 1)
+        {
+            //wenn das gelesene Bit eine 1 ist, schieben wir eine 1 an die i-te stelle und setzen sie in unsere byte variable
+            byte |= (1<<i);
+        }
+
+        //wenn es eine ß ist, müssen wir nichts tun, da byte dort eh 0 ist
+    }
+
+    return byte;
+}

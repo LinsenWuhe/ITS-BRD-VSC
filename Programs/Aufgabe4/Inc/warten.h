@@ -1,6 +1,6 @@
 #ifndef WARTEN_H
 #define WARTEN_H
 
-void warten(int millisekunden);
+void warten(int mikrosekunden);
 
 #endif

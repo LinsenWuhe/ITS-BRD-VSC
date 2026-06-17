@@ -2,6 +2,7 @@
 #define MASTER_H
 
 //ist jetzt 0 - eigentlich unnötig, aber wenn pin mal geändert wird, muss es nur hier geändert werden
+#include <stdint.h>
 #define PIN 0
 
 //zum lesen und schreiben von master
@@ -13,4 +14,9 @@ void sende0();
 int liesBit();
 
 int reset();
+
+void sendeByte(uint8_t byte);
+
+
+
 #endif
