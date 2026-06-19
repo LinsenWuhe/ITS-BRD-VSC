@@ -49,97 +49,100 @@ int main(void) {
 	uint8_t rom_id[8];
 	char textausgabe[60];
 
+	uint8_t gefundene_id[8];
+	char text[60];
 
-	//1x Sensoren einlesen Einlesen und speichern - hier und nicht in der while oder?
-	
 	while(1)
 	{
 		//================================
-		//1. Ist ein Sensor angeschlossen??
+		//1. messung für alle sensoren gleichzeitig starten
 		//================================
-		if(reset() != OK)
+		if(reset() == OK)
+		{
+			sendeByte(0xCC); //skip Rom
+			sendeByte(0x44); //convert t
+
+			//push pull an
+			GPIOG->OTYPER &= ~(1 << 0);
+			GPIOG->BSRR = (1<<0);
+			HAL_Delay(750);
+			GPIOG->OTYPER |= (1<<0); //push pull aus
+		}
+		else
 		{
 			//wenn Reset fehlschlägt, bricht Master ab, und sagt dass kein sensor angeschlossen ist
 			lcdGotoXY(1,2);
 			lcdPrintS("Fehler: Kein Sensor angeschlossen!");
-			
 			HAL_Delay(1000);
 			continue; //springt an Anfang der Schleife zurück
 		}
 
 		//===============================
-		//2. Schritt - 64 Bit Rom auslesen und CRC prüfen
+		//2. Schritt - Suchen
 		//==============================
 
-		//befehl read ROM (0x33) laut Datenblatt
-		sendeByte(0x33);
+		starteSucheNeu();
+		int sensor_index = 0;
 
-		for(int i = 0; i< 8; i++)
+		//===============================
+		//3. Schritt - Bus absuchen
+		//==============================
+
+		while (sucheNaechstenSensor(gefundene_id)) 
 		{
-			rom_id[i] = liesByte(); //alle 8 byte lesen
+			sensor_index++; //zähler für displayzeile
+
+			//1.CRC prüfen
+			if(berechneCRC(gefundene_id, 8) != 0)
+			{
+				sprintf(text, "Sensor %d,: CRC Fehler!", sensor_index);
+				lcdGotoXY(1, 1+ sensor_index);
+				lcdPrintS(text);
+				continue;
+			}
+
+			//2. Familiy Code prüfen
+			if(gefundene_id[0] != 0x28)
+			{
+				sprintf(text, "Sensor %d: Falscher Typ!", sensor_index);
+				lcdGotoXY(1, 1+sensor_index);
+				lcdPrintS(text);
+				continue;
+			}
+
+			//wenn ids valide sind -> daten von genau diesem sensor holen
+			reset();
+			sendeByte(0x55); //match Rom
+			for (int i = 0; i < 8; i++)
+			{
+				sendeByte(gefundene_id[i]);
+			}
+			sendeByte(0xBE); //read scratchpad
+	
+			byte_LSB = liesByte();
+			byte_MSB = liesByte();
+	
+			//beide 8-bit werte zu einem 16 bit wert vereinen
+			//msb verschieben und mit oder verknüpfen
+			int16_t temperatur_roh = (byte_MSB << 8) | byte_LSB;
+	
+			//rohwert durch 16 teilen laut datenblatt, um °C zu erhalten
+			float temperatur_celsius = temperatur_roh / 16.0f;
+
+			// Ausgabe auf dem LCD (Zeile 2, 3, 4, 5...)
+            // Wir geben alle 8 Bytes (rom_id[0] bis [7]) als Hexadezimalwerte aus.
+            // "%.1f" zeigt die Temperatur mit einer Nachkommastelle an.
+            sprintf(text, "Sensor %d ID:%02X%02X%02X%02X%02X%02X%02X%02X - %.1f Grad", 
+                    sensor_index, 
+                    gefundene_id[0], gefundene_id[1], gefundene_id[2], gefundene_id[3],
+                    gefundene_id[4], gefundene_id[5], gefundene_id[6], gefundene_id[7], 
+                    temperatur_celsius);
+                    
+            // Jedes Mal, wenn ein neuer Sensor gefunden wird, springen wir eine Zeile tiefer
+            lcdGotoXY(1, 1 + sensor_index);
+            lcdPrintS(text);
+
 		}
-
-		//Schlägt CRC prüfung fehl?
-		if(berechneCRC(rom_id, 8) != 0)
-		{
-			lcdGotoXY(1, 2);
-			lcdPrintS("Fehler: CRC ungueltig!");
-			HAL_Delay(1000);
-			continue; //durchlauf abbrechen - crc simmmt nicht
-		}
-
-		//stimmt familiy code?? (muss 0x28 sein bei dem sensor laut datenblatt)
-		if (rom_id[0] != 0x28) 
-		{
-			lcdGotoXY(1, 2);
-			lcdPrintS("Fehler: Ungueltiger Typ (familiy code)!");
-			HAL_Delay(1000);
-			continue; //durchlauf abbrechen - familiy code stimmt nicht
-		}
-
-		//wenn kein abbrauch (continue) kam, ist id geprüft
-		//64-Bit ID formatiert ausgeben
-		sprintf(textausgabe, "ID: %02X%02X%02X%02X%02X%02X%02X%02X",
-			rom_id[0], rom_id[1], rom_id[2], rom_id[3], rom_id[4],
-			rom_id[5], rom_id[6], rom_id[7]);
-		lcdGotoXY(1, 2);
-		lcdPrintS(textausgabe);
-
-		//===========================================
-		//3. Normale Temperaturmessung
-		//==========================================
-		reset();
-		sendeByte(0xCC); //skip rom
-		sendeByte(0x44); //convert t
-		
-        //PG0 kurz auf Push-Pull umschalten, damit aktiv 3,3V geliefert werden
-        GPIOG->OTYPER &= ~(1 << 0); 
-        GPIOG->BSRR = (1 << 0);     // Datenleitung aktiv auf HIGH
-
-        HAL_Delay(750); // Der Sensor misst 
-
-        // Nach den 750ms schalten wir PG0 sofort wieder auf Open-Drain zurück!
-        GPIOG->OTYPER |= (1 << 0); 
-
-		reset();
-		sendeByte(0xCC); //Skip Rom
-		sendeByte(0xBE); //Read Scratchpad
-
-
-		byte_LSB = liesByte();
-		byte_MSB = liesByte();
-
-		//beide 8-bit werte zu einem 16 bit wert vereinen
-		//msb verschieben und mit oder verknüpfen
-		int16_t temperatur_roh = (byte_MSB << 8) | byte_LSB;
-
-		//rohwert durch 16 teilen laut datenblatt, um °C zu erhalten
-		float temperatur_celsius = temperatur_roh / 16.0f;
-
-		//temperatur anzeigen
-		sprintf(textausgabe, "Temperatur: %.1f C", temperatur_celsius);
-		lcdGotoXY(1,3);
-		lcdPrintS(textausgabe);
 
 		HAL_Delay(1000);
 	}

@@ -156,3 +156,107 @@ uint8_t berechneCRC(uint8_t *daten, int laenge)
 
     return crc;
 }
+
+static uint8_t ROM_NO[8];
+static int letzter_konflikt = 0;
+static int suche_beendet = 0;
+
+void starteSucheNeu() 
+{
+    letzter_konflikt = 0;
+    suche_beendet = 0;
+    for(int i = 0; i < 8; i++) ROM_NO[i] = 0;
+}
+
+// Sucht den nächsten Sensor auf dem Bus. Schreibt die ID in 'id_buffer'.
+// Gibt 1 zurück, wenn einer gefunden wurde, 0 wenn die Suche vorbei ist.
+int sucheNaechstenSensor(uint8_t *id_buffer) 
+{
+    int bit_index = 1;
+    int aktueller_konflikt = 0;
+    int byte_index = 0;
+    uint8_t bit_maske = 1;
+    int search_richtung = 0;
+    
+    if (suche_beendet) 
+    {
+        return 0;
+    }
+    if (reset() != OK)
+    {
+         starteSucheNeu(); return 0;
+    }
+    
+    sendeByte(0xF0); // 0xF0 ist der offizielle "Search ROM" Befehl
+    
+    while (bit_index <= 64) 
+    {
+        int bit = liesBit();
+        int bit_invertiert = liesBit();
+        
+        if (bit == 1 && bit_invertiert == 1)
+        {
+             break; //Fehler
+        }               
+        else if (bit != bit_invertiert) 
+        {
+            search_richtung = bit;
+        }
+        else { // Konflikt (Kreuzung im Binärbaum)
+            if (bit_index < letzter_konflikt) 
+            {
+                search_richtung = ((ROM_NO[byte_index] & bit_maske) > 0) ? 1 : 0;
+            } 
+            else if (bit_index == letzter_konflikt)
+            {
+                search_richtung = 1;
+            } 
+            else 
+            {
+                search_richtung = 0;
+            }
+            if (search_richtung == 0) 
+            {
+                aktueller_konflikt = bit_index;
+            }
+        }
+        
+        if (search_richtung == 1) 
+        {
+            ROM_NO[byte_index] |= bit_maske;
+        }
+        else
+        {
+            ROM_NO[byte_index] &= ~bit_maske;
+        }
+        
+        if (search_richtung == 1) 
+        {
+            sende1();
+        }
+        else 
+        {
+            sende0();
+        }
+        
+        bit_index++;
+        bit_maske <<= 1;
+
+        if (bit_maske == 0) 
+        { 
+            byte_index++; bit_maske = 1; 
+        }
+    }
+    
+    letzter_konflikt = aktueller_konflikt;
+    if (letzter_konflikt == 0) 
+    {
+        suche_beendet = 1;
+    }
+    
+    for (int i = 0; i < 8; i++) 
+    {
+        id_buffer[i] = ROM_NO[i];
+    }
+    return 1;
+}

@@ -1,0 +1,2 @@
+- befehle mit konstanten ersetzen
+- kommentare zur erläuterung schreiben

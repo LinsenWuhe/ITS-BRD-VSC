@@ -21,6 +21,10 @@ uint8_t liesByte();
 
 uint8_t berechneCRC(uint8_t *daten, int laenge);
 
+void starteSucheNeu();
+
+int sucheNaechstenSensor(uint8_t *id_buffer);
+
 
 
 #endif
