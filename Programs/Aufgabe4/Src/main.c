@@ -109,10 +109,17 @@ int main(void) {
 		//3. Normale Temperaturmessung
 		//==========================================
 		reset();
-		sendeByte(0x33); //skip rom
+		sendeByte(0xCC); //skip rom
 		sendeByte(0x44); //convert t
 		
-		HAL_Delay(750); //Zeit für messung
+        //PG0 kurz auf Push-Pull umschalten, damit aktiv 3,3V geliefert werden
+        GPIOG->OTYPER &= ~(1 << 0); 
+        GPIOG->BSRR = (1 << 0);     // Datenleitung aktiv auf HIGH
+
+        HAL_Delay(750); // Der Sensor misst 
+
+        // Nach den 750ms schalten wir PG0 sofort wieder auf Open-Drain zurück!
+        GPIOG->OTYPER |= (1 << 0); 
 
 		reset();
 		sendeByte(0xCC); //Skip Rom
@@ -120,9 +127,7 @@ int main(void) {
 
 
 		byte_LSB = liesByte();
-
 		byte_MSB = liesByte();
-
 
 		//beide 8-bit werte zu einem 16 bit wert vereinen
 		//msb verschieben und mit oder verknüpfen
@@ -133,7 +138,7 @@ int main(void) {
 
 		//temperatur anzeigen
 		sprintf(textausgabe, "Temperatur: %.1f C", temperatur_celsius);
-		lcdGotoXY(1,2);
+		lcdGotoXY(1,3);
 		lcdPrintS(textausgabe);
 
 		HAL_Delay(1000);

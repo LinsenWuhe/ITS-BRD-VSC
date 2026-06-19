@@ -122,3 +122,37 @@ uint8_t liesByte()
 
     return byte;
 }
+
+
+
+uint8_t berechneCRC(uint8_t *daten, int laenge)
+{
+    uint8_t crc = 0;
+
+    //schleife über alle bytes im Array
+    for (int i = 0; i < laenge; i++) 
+    {
+        uint8_t inbyte = daten[i];
+
+        //Schleife über alle 8 Bits des aktuelle Bytes (von lsb nach msb)
+        for (int b = 0; b<8; b++) 
+        {
+            //Prüfen, ob das untersete Bit des aktuelle CRC-Werts sich vom aktuellen Datenbit unterscheidet
+            uint8_t mix = (crc ^inbyte) & 0x01;
+
+            //CRC um eine Stelle nach rechts schieben
+            crc >>= 1;
+
+            //wernn der mix 1 war, wir das polynom (0x8C) per XOR verknüpft
+            if (mix)
+            {
+                crc ^= 0x8C; //blatt an27 -> reflektiertes Polynom für X^8 + X^5 + X^4 + 1
+            }
+
+            //daten-byte weiterschieben für nächstes Bit
+            inbyte >>= 1;
+        }
+    }
+
+    return crc;
+}

@@ -19,6 +19,8 @@ void sendeByte(uint8_t byte);
 
 uint8_t liesByte();
 
+uint8_t berechneCRC(uint8_t *daten, int laenge);
+
 
 
 #endif
