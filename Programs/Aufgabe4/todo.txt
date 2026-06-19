@@ -1,2 +1,4 @@
 - befehle mit konstanten ersetzen
 - kommentare zur erläuterung schreiben
+- methoden für push pull nutzen und struct begriffe ersetzen
+- gedanken machen über auslagerung, damit code übersichtlicher wird 
