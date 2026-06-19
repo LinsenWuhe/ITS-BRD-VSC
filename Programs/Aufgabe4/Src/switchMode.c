@@ -7,12 +7,12 @@
 //nicht geshiftet mit << PIN, weil es pin 0 ist - passt das?
 void aufPushPullStellen()
 {
-    GPIOG->OTYPER &= ~(1 << PIN);
+    GPIOG->OTYPER &= ~(1 << 0);
 }
 
 
 //stellt beide Pins auf OpenDrain - ist es richtiger Port????
 void aufOpenDrainStellen()
 {
-    GPIOG->OTYPER |= (1 << PIN);
+    GPIOG->OTYPER |= (1 << 0);
 }
