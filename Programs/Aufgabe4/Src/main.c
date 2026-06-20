@@ -81,6 +81,8 @@ int main(void) {
 		//2. Schritt - Suchen
 		//==============================
 
+		//um id von sensoren zu lesen und rauszufinden, ob wir in while nochmal lesen müssen, weil wir eine andere Abwzweigung im Baum nehmen müssen
+		//falls im Betrieb Sensoren dazukommen / entfernt werden, wird die die Suche trotzdem vor jedem Durchlauf mit starteSucheNeu auf 0 gesetzt, um Bus abzusuchen
 		starteSucheNeu();
 		int sensor_index = 0;
 

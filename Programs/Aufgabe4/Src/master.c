@@ -161,75 +161,95 @@ static uint8_t ROM_NO[8];
 static int letzter_konflikt = 0;
 static int suche_beendet = 0;
 
+//reset für suchalgorithmus -> 1 wire bus wird beim nächsten mal wieder von vorne - also beim ersten sensor abgesucht
 void starteSucheNeu() 
 {
+    //wenn mehrere Sensoren am Bus hängen, kommt es zu Konflikten beim suchen -> letzterKonflikt merkt sich die letzte Abzweigung im Baum, um anderen Weg zu gehen
     letzter_konflikt = 0;
+    //wenn alle Sensoren auf dem Bus erfolgreich durchgelaufen wurden, setzt er suche_beendet = 1
     suche_beendet = 0;
-    for(int i = 0; i < 8; i++) ROM_NO[i] = 0;
+    //in array wird Bit für bit die ID des aktuellen Sensors zusammengesetzt
+    for(int i = 0; i < 8; i++) 
+    { 
+        ROM_NO[i] = 0;
+    }
 }
 
 // Sucht den nächsten Sensor auf dem Bus. Schreibt die ID in 'id_buffer'.
 // Gibt 1 zurück, wenn einer gefunden wurde, 0 wenn die Suche vorbei ist.
+//master geht alle 64 bits der id durch und löst konflikte schritt für schritt auf
 int sucheNaechstenSensor(uint8_t *id_buffer) 
 {
-    int bit_index = 1;
-    int aktueller_konflikt = 0;
-    int byte_index = 0;
-    uint8_t bit_maske = 1;
-    int search_richtung = 0;
+    //Vorbereitungen und Prüfungen
+    
+    int bit_index = 1;          //zähler für die 64 bits (von 1-64)
+    int aktueller_konflikt = 0; //merkt sich den letzten Konflut in DIESEM durchlauf
+    int byte_index = 0;         //welches der 8 bytes bearbeiten wir gerade?
+    uint8_t bit_maske = 1;      //bitmaske, um das aktuelle Bit im byte zu setzen
+    int search_richtung = 0;    //gehen wir in Richtung 0 oder 1 im Baum?
     
     if (suche_beendet) 
     {
-        return 0;
+        return 0; //wenn im letzten Durchlauf alle Sensoren gefunden wurden, wird abgebrochen
     }
     if (reset() != OK)
     {
-         starteSucheNeu(); return 0;
+         starteSucheNeu(); 
+         return 0; //wenn Bus leer ist, wird suche zurückgesetzt
     }
     
-    sendeByte(0xF0); // 0xF0 ist der offizielle "Search ROM" Befehl
+    sendeByte(search_ROM); //alle Sensoren lauschen nun
     
-    while (bit_index <= 64) 
+    while (bit_index <= 64) //durchlaufen für jedes Bit der ID
     {
-        int bit = liesBit();
-        int bit_invertiert = liesBit();
+        int bit = liesBit();                //alle Sensoren senden ihr bit 
+        int bit_invertiert = liesBit();     //und ihr Komplement
         
         if (bit == 1 && bit_invertiert == 1)
         {
-             break; //Fehler
+             break; //Fehler, weil kein Sensor antwortet
         }               
         else if (bit != bit_invertiert) 
         {
-            search_richtung = bit;
+            search_richtung = bit; //wenn zb bit=0 und bit_invertiert = 1 ist, dann haben ALLE angeschlossenen Sensoren an dieser Stelle eine 0 -> Richtung steht fest
         }
-        else { // Konflikt (Kreuzung im Binärbaum)
+        else { // Konflikt (Kreuzung im Binärbaum), weil bit=0 und komplement = 0 - ein Sensor hat hier eine 0 und einer eine 1
             if (bit_index < letzter_konflikt) 
             {
+                //wenn wir noch weiter oben im Baum sind als beim letzten Durchlauf, nehmen wir die Richtung, die wir in der Vergangenheit schon gewählt haben
                 search_richtung = ((ROM_NO[byte_index] & bit_maske) > 0) ? 1 : 0;
             } 
             else if (bit_index == letzter_konflikt)
             {
+                //wir sind exakt an der Kreuzung angekommen, die wir beim lezten Mal.
+                //letztes Mal 0 -> jetzt 1
                 search_richtung = 1;
             } 
             else 
             {
+                //neuer Konflikt, den wir noch nicht gesehen haben
                 search_richtung = 0;
             }
             if (search_richtung == 0) 
             {
+                //wenn wir 0 Pfad genommen haben, merken wir uns die Position, damit beim nächsten Aufuruf der Funktion klar ist, wo man lang geht
                 aktueller_konflikt = bit_index;
             }
         }
         
+        //ermittelte Bit in zwischenspeicher ROM-NO speichern
         if (search_richtung == 1) 
         {
+            //bit auf 1 setzen
             ROM_NO[byte_index] |= bit_maske;
         }
         else
         {
+            //bit auf 0 setzen
             ROM_NO[byte_index] &= ~bit_maske;
         }
         
+        //bit zurück an den Bus senden - alle sensoren, die NICHT diese RIchtung haben, schalten sich ab
         if (search_richtung == 1) 
         {
             sende1();
@@ -239,24 +259,31 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
             sende0();
         }
         
+        //zähler und masken für das nächste Bit vorbereiten
         bit_index++;
+        // Maske um eins nach links schieben (z.B. von 00000001 zu 00000010)
         bit_maske <<= 1;
 
+        //wenn Maske überläuft, ist Byte voll - wechlse zu nächsten byte
         if (bit_maske == 0) 
         { 
             byte_index++; bit_maske = 1; 
         }
     }
-    
+    //wir merken uns den letzten unaufgelösten Konflikt für den nächsten funktionsaufruf
     letzter_konflikt = aktueller_konflikt;
+
+    //wenn es in diesem ganzen durchlauf überhaupt keienn konflikt mehr gibt: wir haben den letzten Sensor auf dem Bus gelesen, suche ist vorbei 
     if (letzter_konflikt == 0) 
     {
         suche_beendet = 1;
     }
     
+    //die gefundene 64-bit-id in den id buffer des Aufrufers kopieren
     for (int i = 0; i < 8; i++) 
     {
         id_buffer[i] = ROM_NO[i];
     }
+    //erfolg - 1 sensor wurde gelensen
     return 1;
 }

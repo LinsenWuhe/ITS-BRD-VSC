@@ -9,6 +9,7 @@
 #define match_ROM           0x55
 #define skip_ROM            0xCC
 #define convert_t           0x44
+#define search_ROM          0xF0
 
 //zum lesen und schreiben von master
 
