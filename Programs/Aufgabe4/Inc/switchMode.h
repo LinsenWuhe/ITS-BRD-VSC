@@ -5,8 +5,8 @@
 #define PD0     0
 #define PD1     1
 
-void aufPushPullStellen();
+void PushPullAn();
 
-void aufOpenDrainStellen();
+void OpenDrainAn();
 
 #endif

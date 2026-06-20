@@ -5,6 +5,11 @@
 #include <stdint.h>
 #define PIN 0
 
+#define read_Scratchpad     0xBE
+#define match_ROM           0x55
+#define skip_ROM            0xCC
+#define convert_t           0x44
+
 //zum lesen und schreiben von master
 
 void sende1();

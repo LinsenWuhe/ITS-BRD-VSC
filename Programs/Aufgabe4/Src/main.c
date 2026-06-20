@@ -59,14 +59,14 @@ int main(void) {
 		//================================
 		if(reset() == OK)
 		{
-			sendeByte(0xCC); //skip Rom
-			sendeByte(0x44); //convert t
+			sendeByte(skip_ROM); //alle adressen ignorieren - ab jetzt gleichzeitig auf master hören
+			sendeByte(convert_t); //befehl für Messung, schickt aber keine Daten zurück - später mit read scratchpad
 
-			//push pull an
-			GPIOG->OTYPER &= ~(1 << 0);
-			GPIOG->BSRR = (1<<0);
-			HAL_Delay(750);
-			GPIOG->OTYPER |= (1<<0); //push pull aus
+			
+			PushPullAn(); //Pin kann nun aktiv Strom ausgeben
+			GPIOG->BSRR = (1<<0); //PG0 auf HIGH setzen -> strom über datenleitung
+			HAL_Delay(750); //Messung durchführen und auladen - braucht Sensor nach Datenblatt, um messung durchzuführen (12 bit)
+			OpenDrainAn(); //nach Messung Leitung wieder auf low ziehen
 		}
 		else
 		{
@@ -112,12 +112,12 @@ int main(void) {
 
 			//wenn ids valide sind -> daten von genau diesem sensor holen
 			reset();
-			sendeByte(0x55); //match Rom
+			sendeByte(match_ROM); 
 			for (int i = 0; i < 8; i++)
 			{
 				sendeByte(gefundene_id[i]);
 			}
-			sendeByte(0xBE); //read scratchpad
+			sendeByte(read_Scratchpad);
 	
 			byte_LSB = liesByte();
 			byte_MSB = liesByte();

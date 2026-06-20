@@ -5,14 +5,14 @@
 
 //stellt beide Pins auf PushPull - richtiger Port??
 //nicht geshiftet mit << PIN, weil es pin 0 ist - passt das?
-void aufPushPullStellen()
+void PushPullAn()
 {
     GPIOG->OTYPER &= ~(1 << 0);
 }
 
 
 //stellt beide Pins auf OpenDrain - ist es richtiger Port????
-void aufOpenDrainStellen()
+void OpenDrainAn()
 {
     GPIOG->OTYPER |= (1 << 0);
 }
