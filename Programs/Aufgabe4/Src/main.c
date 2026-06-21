@@ -24,48 +24,51 @@
 
 
 int main(void) {
-	initITSboard();    //ggf nochmal MODER prüfen
+	initITSboard();    //Initialisiert zwar board, aber nicht für uns passend den output der gpio ports
 	
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
 	initTimer(); //für timer-modul
 
-	// Zuerst Bits für Pin 0 und 1 im GPIOG-MODER löschen
+	// Zuerst Bits für Pin 0 und 1 im GPIOG-MODER löschen, um in einen neuen Zustand zu bringen gleich - jeder pin belegt 2 Bits
     GPIOG->MODER &= ~((3 << 0) | (3 << 2));
 
     // Beide Pins auf 01 (Output) setzen
     GPIOG->MODER |= ((1 << 0) | (1 << 2));
 
     // pg0 - opendrain
-    GPIOG->OTYPER |= (1 << 0);
+    OpenDrainAn(); //damit leitung nur aktiv auf 0 gezogen wird, keine kurzschlussgefahr wie bei pushpull
     
-    // pg1 aktiv auf 3,3 v setzen, um den Sensor parasitär zu versorgen
+    // pg1 aktiv auf 3,3 v setzen, um den Sensor parasitär zu versorgen - bleibt die ganze Ziet als Push-pull geschaltet
     GPIOG->BSRR = (1 << 1);
 
 	uint8_t byte_LSB;	//zum lesen später
-	uint8_t byte_MSB;
+	uint8_t byte_MSB;	
 
-	uint8_t rom_id[8];
-	char textausgabe[60];
+	uint8_t rom_id[8];		//platz für 64 bit hardwareadresse des sensors später
+	char textausgabe[60];	//zum ausgeben
 
-	uint8_t gefundene_id[8];
-	char text[60];
+	uint8_t gefundene_id[8]; //auch zum speichern der hardwareadresse
+	char text[60]; //zum ausgeben
 
 	while(1)
 	{
 		//================================
 		//1. messung für alle sensoren gleichzeitig starten
 		//================================
-		if(reset() == OK)
+		if(reset() == OK) //es ist mind. ein sensor da
 		{
-			sendeByte(skip_ROM); //alle adressen ignorieren - ab jetzt gleichzeitig auf master hören
-			sendeByte(convert_t); //befehl für Messung, schickt aber keine Daten zurück - später mit read scratchpad
+			//nach reset wird erwaretet read Rom oder match rom oder skip rom
+			sendeByte(skip_ROM); //alle adressen ignorieren - ab jetzt gleichzeitig auf master hören - nach Reset warten Sensoren auf Adresse
+			sendeByte(convert_t); //startbefehl für Temperaturmessung, schickt aber keine Daten zurück - später mit read scratchpad
 
+			//Strom liefern für Messung
+			PushPullAn(); //Pin kann nun aktiv Strom ausgeben - auf pushpull modus setzen
+			GPIOG->BSRR = (1<<0); //PG0 auf HIGH setzen -> strom über datenleitung - erst jetzt wird strom ausgegeben
+
+			HAL_Delay(750); //Messung durchführen und aufladen - braucht Sensor nach Datenblatt, um messung durchzuführen (12 bit)
 			
-			PushPullAn(); //Pin kann nun aktiv Strom ausgeben
-			GPIOG->BSRR = (1<<0); //PG0 auf HIGH setzen -> strom über datenleitung
-			HAL_Delay(750); //Messung durchführen und auladen - braucht Sensor nach Datenblatt, um messung durchzuführen (12 bit)
 			OpenDrainAn(); //nach Messung Leitung wieder auf low ziehen
 		}
 		else

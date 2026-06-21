@@ -158,17 +158,17 @@ uint8_t berechneCRC(uint8_t *daten, int laenge)
 }
 
 static uint8_t ROM_NO[8];
-static int letzter_konflikt = 0;
-static int suche_beendet = 0;
 
-//reset für suchalgorithmus -> 1 wire bus wird beim nächsten mal wieder von vorne - also beim ersten sensor abgesucht
+//behalten ihren Wert bei, auch wenn die FUnktion sucheNaechstenSensor verlassen wird -> gedächtnis der Suche
+static int letzter_konflikt = 0; //position 1-64 merkt er sich - 0 hier: (noch) kein konflikt
+static int suche_beendet = 0; //wenn alle Sensoren gefunden wurden wird hier 1 hingeschrieben
+
+//reset für suchalgorithmus -> fängt beim nächsten mal wieder von vorne an
 void starteSucheNeu() 
 {
-    //wenn mehrere Sensoren am Bus hängen, kommt es zu Konflikten beim suchen -> letzterKonflikt merkt sich die letzte Abzweigung im Baum, um anderen Weg zu gehen
     letzter_konflikt = 0;
-    //wenn alle Sensoren auf dem Bus erfolgreich durchgelaufen wurden, setzt er suche_beendet = 1
     suche_beendet = 0;
-    //in array wird Bit für bit die ID des aktuellen Sensors zusammengesetzt
+    //array was zusammengesetzt wurde hier löschen
     for(int i = 0; i < 8; i++) 
     { 
         ROM_NO[i] = 0;

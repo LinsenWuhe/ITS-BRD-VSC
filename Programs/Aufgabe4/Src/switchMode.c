@@ -11,7 +11,7 @@ void PushPullAn()
 }
 
 
-//stellt beide Pins auf OpenDrain - ist es richtiger Port????
+//stellt pg0 auf OpenDrain - ist es richtiger Port????
 void OpenDrainAn()
 {
     GPIOG->OTYPER |= (1 << 0);

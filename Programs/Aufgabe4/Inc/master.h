@@ -5,11 +5,12 @@
 #include <stdint.h>
 #define PIN 0
 
-#define read_Scratchpad     0xBE
-#define match_ROM           0x55
-#define skip_ROM            0xCC
-#define convert_t           0x44
-#define search_ROM          0xF0
+#define read_Scratchpad     0xBE //daten auslesen vom Sensor
+#define match_ROM           0x55 //mit dem Sensor sprechen, der die ID ...... hat
+#define skip_ROM            0xCC // es ist egal, wer welche ID hat, lässt alle Sensoren zuhören
+#define convert_t           0x44 //startbefehl für temperaturmessung
+#define search_ROM          0xF0 
+#define read_ROM            0x33 //ID lesen von EINEM angeschlossenen Sensor
 
 //zum lesen und schreiben von master
 
