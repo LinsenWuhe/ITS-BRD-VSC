@@ -176,7 +176,6 @@ project:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
         - file: Inc/errors.h
         - file: Inc/master.h
-        - file: Inc/tempSens.h
         - file: Inc/displayOutput.h
         - file: Inc/switchMode.h
         - file: Inc/warten.h
@@ -187,7 +186,6 @@ project:
       files:
         - file: Src/main.c
         - file: Src/master.c
-        - file: Src/tempSens.c
         - file: Src/displayOutput.c
         - file: Src/switchMode.c
         - file: Src/warten.c
