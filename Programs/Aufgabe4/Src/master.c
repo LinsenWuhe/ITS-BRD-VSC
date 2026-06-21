@@ -198,7 +198,14 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
          return 0; //wenn Bus leer ist, wird suche zurückgesetzt
     }
     
-    sendeByte(search_ROM); //alle Sensoren lauschen nun
+    sendeByte(search_ROM); //start für id-suche
+
+    /**
+    Ablauf: 
+    - sensoren senden bit
+    - sensoren senden invertiertes bit
+    - master entscheidet sich für weg
+    */
     
     while (bit_index <= 64) //durchlaufen für jedes Bit der ID
     {
@@ -213,10 +220,14 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
         {
             search_richtung = bit; //wenn zb bit=0 und bit_invertiert = 1 ist, dann haben ALLE angeschlossenen Sensoren an dieser Stelle eine 0 -> Richtung steht fest
         }
-        else { // Konflikt (Kreuzung im Binärbaum), weil bit=0 und komplement = 0 - ein Sensor hat hier eine 0 und einer eine 1
+        // bit = 0 und bit invertiert = 0 
+        else // Konflikt - ein Sensor hat hier eine 0 und einer eine 1 
+        { 
             if (bit_index < letzter_konflikt) 
             {
                 //wenn wir noch weiter oben im Baum sind als beim letzten Durchlauf, nehmen wir die Richtung, die wir in der Vergangenheit schon gewählt haben
+                //master hat in einem vorherigen durchlauf schon weiter hinten gearbeiet und im neuen Durchlauf fängt er wieder vorne an und stößt auf eine Kreuzung
+                //Da er Weg bis krezung schon kennt, schaut master auf ROM_NO und prüft mit der bitmaske, ob an dieser stellt beim letzten eine 1 oder 0 stand und wählt DIESELBE Richtung
                 search_richtung = ((ROM_NO[byte_index] & bit_maske) > 0) ? 1 : 0;
             } 
             else if (bit_index == letzter_konflikt)
@@ -240,12 +251,12 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
         //ermittelte Bit in zwischenspeicher ROM-NO speichern
         if (search_richtung == 1) 
         {
-            //bit auf 1 setzen
+            //1 an aktuelle stelle setzen
             ROM_NO[byte_index] |= bit_maske;
         }
         else
         {
-            //bit auf 0 setzen
+            //0 an aktuelle stelle setzen
             ROM_NO[byte_index] &= ~bit_maske;
         }
         

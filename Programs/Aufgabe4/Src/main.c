@@ -93,6 +93,8 @@ int main(void) {
 		//3. Schritt - Bus absuchen
 		//==============================
 
+		//es wird so lange nach dem nächsten Sensor gesucht und dieser verarbeitet, bis die Funktion sagt, dass der Bus komplett leer ist
+		//sucheNaechstenSensor gibt eine 0 zurück bei Fertig/Fehler und eine 1 bei Erfolg
 		while (sucheNaechstenSensor(gefundene_id)) 
 		{
 			sensor_index++; //zähler für displayzeile
@@ -100,6 +102,7 @@ int main(void) {
 			//1.CRC prüfen
 			if(berechneCRC(gefundene_id, 8) != 0)
 			{
+				//sprintf schickt Text nicht an Anzeige, sondern schreibt  ihn in ein Array aus zeichen, hier damit wir String zusammenbauen können, geht in lcdPrintS nicht
 				sprintf(text, "Sensor %d,: CRC Fehler!", sensor_index);
 				lcdGotoXY(1, 1+ sensor_index);
 				lcdPrintS(text);
@@ -118,12 +121,14 @@ int main(void) {
 			//wenn ids valide sind -> daten von genau diesem sensor holen
 			reset();
 			sendeByte(match_ROM); 
+			//zwischengespeicherte id wird geschickt
 			for (int i = 0; i < 8; i++)
 			{
 				sendeByte(gefundene_id[i]);
 			}
 			sendeByte(read_Scratchpad);
 	
+			//gibt 2 8bit Werte aus
 			byte_LSB = liesByte();
 			byte_MSB = liesByte();
 	
@@ -132,11 +137,11 @@ int main(void) {
 			int16_t temperatur_roh = (byte_MSB << 8) | byte_LSB;
 	
 			//rohwert durch 16 teilen laut datenblatt, um °C zu erhalten
-			float temperatur_celsius = temperatur_roh / 16.0f;
+			float temperatur_celsius = temperatur_roh / 16.0f; //als float, um nachkommazahlen nicht abzuschneiden
 
 			// Ausgabe auf dem LCD (Zeile 2, 3, 4, 5...)
             // Wir geben alle 8 Bytes (rom_id[0] bis [7]) als Hexadezimalwerte aus.
-            // "%.1f" zeigt die Temperatur mit einer Nachkommastelle an.
+            // "%.1f" zeigt die Temperatur mit einer Nachkommastelle an und %02X -> Zahl als Hexadeziamlzahl formatiert mit 2 Stellen darstellen
             sprintf(text, "Sensor %d ID:%02X%02X%02X%02X%02X%02X%02X%02X - %.1f Grad", 
                     sensor_index, 
                     gefundene_id[0], gefundene_id[1], gefundene_id[2], gefundene_id[3],
@@ -149,6 +154,7 @@ int main(void) {
 
 		}
 
+		//wenn mit while schleife durch, gehen wir in übergeordnete und fangen wider von vorne an -> wieder zu starteSucheNEu
 		HAL_Delay(1000);
 	}
 }
