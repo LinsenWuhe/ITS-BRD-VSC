@@ -151,8 +151,10 @@ int main(void) {
             // Jedes Mal, wenn ein neuer Sensor gefunden wird, springen wir eine Zeile tiefer
             lcdGotoXY(1, 1 + sensor_index);
             lcdPrintS(text);
-
 		}
+		// Löscht eine unverwendete Zeile
+		lcdGotoXY(1, 1 + sensor_index + 1);
+        lcdPrintS(" ");
 
 		//wenn mit while schleife durch, gehen wir in übergeordnete und fangen wider von vorne an -> wieder zu starteSucheNEu
 		HAL_Delay(1000);
