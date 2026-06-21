@@ -124,28 +124,33 @@ uint8_t liesByte()
 }
 
 
-
+/**
 uint8_t berechneCRC(uint8_t *daten, int laenge)
 {
+    //schieberegister für Berechnung mit 0 initialisiert 
     uint8_t crc = 0;
 
-    //schleife über alle bytes im Array
+    //schleife über alle bytes im Array - 8 Bytes der ROM-ID
     for (int i = 0; i < laenge; i++) 
     {
+        //lädt das aktuelle Byte
         uint8_t inbyte = daten[i];
 
         //Schleife über alle 8 Bits des aktuelle Bytes (von lsb nach msb)
         for (int b = 0; b<8; b++) 
         {
             //Prüfen, ob das untersete Bit des aktuelle CRC-Werts sich vom aktuellen Datenbit unterscheidet
+            //crc ^inbyte -> per XOR wird geprüft, ob das unterste Bit des bisherigen CRC Ergebnisses und das aktuelle Bit aus dem Datenbyte unterschiedlich sind
+            // & 0x01 -> uns interessiert nur das allerunterste Bit -> mix wird 1 (wenn sie unterschiedlich sind) und 0 (wenn sie gleich sind)
             uint8_t mix = (crc ^inbyte) & 0x01;
 
-            //CRC um eine Stelle nach rechts schieben
+            //CRC um eine Stelle nach rechts schieben unabhängig vom Ergebnis
             crc >>= 1;
 
-            //wernn der mix 1 war, wir das polynom (0x8C) per XOR verknüpft
+            //wernn der mix 1 war, wird das polynom (0x8C) per XOR verknüpft
             if (mix)
             {
+                //wenn mix 1 war, wird das polynom 0x8C auf das CRC Register angewaendet -> simuliert mathematisches Teilen
                 crc ^= 0x8C; //blatt an27 -> reflektiertes Polynom für X^8 + X^5 + X^4 + 1
             }
 
@@ -156,6 +161,7 @@ uint8_t berechneCRC(uint8_t *daten, int laenge)
 
     return crc;
 }
+*/
 
 static uint8_t ROM_NO[8];
 
@@ -223,6 +229,7 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
         // bit = 0 und bit invertiert = 0 
         else // Konflikt - ein Sensor hat hier eine 0 und einer eine 1 
         { 
+            //wenn zb bit 45 gesucht wird und wir bspw bei bit 12 wieder vorbeikommen, können wir schauen und ROM_No als "wegweiser" nehmen
             if (bit_index < letzter_konflikt) 
             {
                 //wenn wir noch weiter oben im Baum sind als beim letzten Durchlauf, nehmen wir die Richtung, die wir in der Vergangenheit schon gewählt haben
@@ -232,13 +239,16 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
             } 
             else if (bit_index == letzter_konflikt)
             {
-                //wir sind exakt an der Kreuzung angekommen, die wir beim lezten Mal.
+                //wir sind exakt an der Kreuzung angekommen, vom lezten Mal - es wird erst 0 genommen
                 //letztes Mal 0 -> jetzt 1
+
+                //hier wird beim nächsten Sensor weitergemacht
                 search_richtung = 1;
             } 
             else 
             {
-                //neuer Konflikt, den wir noch nicht gesehen haben
+                //beim ersten Fehler  garantiert größer als letzter Konflikt
+                //neuer Konflikt, den wir noch nicht gesehen haben -> wir "biegen ab zur 0"
                 search_richtung = 0;
             }
             if (search_richtung == 0) 
@@ -282,6 +292,7 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
         }
     }
     //wir merken uns den letzten unaufgelösten Konflikt für den nächsten funktionsaufruf
+    //wenn ein sensor komplett gelesen wurde, wird letzter konflikt zurückgesetzt.
     letzter_konflikt = aktueller_konflikt;
 
     //wenn es in diesem ganzen durchlauf überhaupt keienn konflikt mehr gibt: wir haben den letzten Sensor auf dem Bus gelesen, suche ist vorbei 
@@ -295,6 +306,58 @@ int sucheNaechstenSensor(uint8_t *id_buffer)
     {
         id_buffer[i] = ROM_NO[i];
     }
-    //erfolg - 1 sensor wurde gelensen
+    //erfolg - 1 sensor wurde gelesen
     return 1;
+}
+
+//===============aus Datenblatt kopiert======================== 1 wire bus Seite 17
+
+unsigned char crc8;   // globale Variable, muss vor jedem neuen ROM-Read auf 0 gesetzt werden
+
+static unsigned char dscrc_table[] = {
+   0, 94,188,226, 97, 63,221,131,194,156,126, 32,163,253, 31, 65,
+   157,195, 33,127,252,162, 64, 30, 95, 1,227,189, 62, 96,130,220,
+   35,125,159,193, 66, 28,254,160,225,191, 93, 3,128,222, 60, 98,
+   190,224, 2, 92,223,129, 99, 61,124, 34,192,158, 29, 67,161,255,
+   70, 24,250,164, 39,121,155,197,132,218, 56,102,229,187, 89, 7,
+   219,133,103, 57,186,228, 6, 88, 25, 71,165,251,120, 38,196,154,
+   101, 59,217,135, 4, 90,184,230,167,249, 27, 69,198,152,122, 36,
+   248,166, 68, 26,153,199, 37,123, 58,100,134,216, 91, 5,231,185,
+   140,210, 48,110,237,179, 81, 15, 78, 16,242,172, 47,113,147,205,
+   17, 79,173,243,112, 46,204,146,211,141,111, 49,178,236, 14, 80,
+   175,241, 19, 77,206,144,114, 44,109, 51,209,143, 12, 82,176,238,
+   50,108,142,208, 83, 13,239,177,240,174, 76, 18,145,207, 45,115,
+   202,148,118, 40,171,245, 23, 73, 8, 86,180,234,105, 55,213,139,
+   87, 9,235,181, 54,104,138,212,149,203, 41,119,244,170, 72, 22,
+   233,183, 85, 11,136,214, 52,106, 43,117,151,201, 74, 20,246,168,
+   116, 42,200,150, 21, 75,169,247,182,232, 10, 84,215,137,107, 53};
+
+unsigned char docrc8(unsigned char value)
+{
+
+   crc8 = dscrc_table[crc8 ^ value];
+   return crc8;
+}
+
+//-----------------------------------
+
+
+//eigene
+uint8_t berechneCRC(uint8_t *daten, int laenge)
+{
+
+    crc8 = 0; //Setzt die Berechnung vor jedem neuen ROM/Scratchpad-Lauf auf 0 zurück!, sonst erhalten wir wert aus letzter Prüfung
+    
+    //funktion bekommt zeiger auf gefundene ID und weiß durch laenge 8, dass sie 8 runden laufen muss -> in jeder das nächste Byte
+    for (int i = 0; i < laenge; i++)
+    {
+        docrc8(daten[i]); //Jedes Byte wird an docrc8 übergeben
+        //dort gibt es eine XOR verknüpfung, das neue Byte value wird über XOR mit dem aktuellen Zustand von crc8 verknüpft. 
+        //in tabelle steht fertiger Wert für unser Byte
+        //ergebnis ist index für tabelle -> dann schaut itsboard am index nach und schreibt den Wert in crc8
+        //Ablauf: crc8 = Tabelle[0 ^ daten[0]] danach crc8 = Tabelle[crc8 ^ daten[1]] usw bis zum crc byte selbst -> crc8 = Tabelle[crc8 ^ daten[7]]
+        //wenn am ende das CRC Byte mit dazu kommt UND Daten korrekt übertragen wurden, löscht sich ergebnis am Ende selbst crc8 wird 0
+    }
+    
+    return crc8; // Gibt das Endergebnis der Tabellenprüfung zurück
 }
