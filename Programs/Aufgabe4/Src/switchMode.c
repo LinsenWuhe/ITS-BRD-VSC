@@ -7,12 +7,12 @@
 //nicht geshiftet mit << PIN, weil es pin 0 ist - passt das?
 void PushPullAn()
 {
-    GPIOG->OTYPER &= ~(1 << 0);
+   // GPIOG->OTYPER &= ~(1 << 0);
 }
 
 
 //stellt pg0 auf OpenDrain - ist es richtiger Port????
 void OpenDrainAn()
 {
-    GPIOG->OTYPER |= (1 << 0);
+   // GPIOG->OTYPER |= (1 << 0);
 }

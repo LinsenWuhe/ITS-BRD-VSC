@@ -31,17 +31,17 @@ int main(void) {
 
 	initTimer(); //für timer-modul
 
-	// Zuerst Bits für Pin 0 und 1 im GPIOG-MODER löschen, um in einen neuen Zustand zu bringen gleich - jeder pin belegt 2 Bits
+/* 	// Zuerst Bits für Pin 0 und 1 im GPIOG-MODER löschen, um in einen neuen Zustand zu bringen gleich - jeder pin belegt 2 Bits
     GPIOG->MODER &= ~((3 << 0) | (3 << 2));
 
     // Beide Pins auf 01 (Output) setzen
-    GPIOG->MODER |= ((1 << 0) | (1 << 2));
+    GPIOG->MODER |= ((1 << 0) | (1 << 2)); */
 
     // pg0 - opendrain
-    OpenDrainAn(); //damit leitung nur aktiv auf 0 gezogen wird, keine kurzschlussgefahr wie bei pushpull
+    //OpenDrainAn(); //damit leitung nur aktiv auf 0 gezogen wird, keine kurzschlussgefahr wie bei pushpull
     
     // pg1 aktiv auf 3,3 v setzen, um den Sensor parasitär zu versorgen - bleibt die ganze Ziet als Push-pull geschaltet
-    GPIOG->BSRR = (1 << 1);
+  /*   GPIOG->BSRR = (1 << 1); */
 
 	uint8_t byte_LSB;	//zum lesen später
 	uint8_t byte_MSB;	
@@ -64,12 +64,12 @@ int main(void) {
 			sendeByte(convert_t); //startbefehl für Temperaturmessung, schickt aber keine Daten zurück - später mit read scratchpad
 
 			//Strom liefern für Messung
-			PushPullAn(); //Pin kann nun aktiv Strom ausgeben - auf pushpull modus setzen
-			GPIOG->BSRR = (1<<0); //PG0 auf HIGH setzen -> strom über datenleitung - erst jetzt wird strom ausgegeben
+			//PushPullAn(); //Pin kann nun aktiv Strom ausgeben - auf pushpull modus setzen
+			//GPIOG->BSRR = (1<<0); //PG0 auf HIGH setzen -> strom über datenleitung - erst jetzt wird strom ausgegeben
 
 			HAL_Delay(750); //Messung durchführen und aufladen - braucht Sensor nach Datenblatt, um messung durchzuführen (12 bit)
 			
-			OpenDrainAn(); //nach Messung Leitung wieder auf low ziehen
+			//OpenDrainAn(); //nach Messung Leitung wieder auf low ziehen
 		}
 		else
 		{
