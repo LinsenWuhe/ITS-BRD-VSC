@@ -1,13 +1,21 @@
+#include "lcd.h"
+#include "stm32f429xx.h"
+#include <stdbool.h>
 
+extern volatile bool s6;
+extern volatile int counter;
 
-
-
-int status_drehscheibe_ISR()
+//muss man so nennen, damit CPU interruptfunktion findet
+void EXTI9_5_IRQHandler(void)
 {
-    return 0;
+    EXTI->PR = (1<<6);
+    s6 = true;
+    counter++;
 }
 
-
+void status_drehscheibe_ISR()
+{
+}
 
 
 

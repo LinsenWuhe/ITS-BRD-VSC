@@ -169,7 +169,7 @@ project:
         - file: ../../ITS_BRD_LIB/Src/timer.c
         - file: ../../ITS_BRD_LIB/Src/USART_STM32F4xx.c
         - file: ../../ITS_BRD_LIB/Src/stdinout_USART.c
-        
+
     # Header-Dateien für das Programm
     - group: Program/User/Inc
       files:
@@ -180,6 +180,7 @@ project:
         - file: Inc/LED_output.h
         - file: Inc/text_output.h
         - file: Inc/zeitmessung.h
+        - file: Inc/ISR_init.h
 
 
     # Benutzerdefinierte Programmdateien
@@ -192,6 +193,8 @@ project:
         - file: Src/LED_output.c
         - file: Src/text_output.c
         - file: Src/zeitmessung.c
+        - file: Src/ISRs.c
+        - file: Src/ISR_init.c
 
 
   components:

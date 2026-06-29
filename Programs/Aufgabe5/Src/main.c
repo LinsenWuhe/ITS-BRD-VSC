@@ -7,6 +7,7 @@
   */
 /* Includes ------------------------------------------------------------------*/
 
+#include "ISR_init.h"
 #include "LED_output.h"
 #include "calc.h"
 #include "stm32f4xx_hal.h"
@@ -23,6 +24,10 @@
 #include <stdint.h>
 #include <stdio.h>
 
+	//sollte überall sichtbar sein und wird immer aus ram geladen - innerhalb von main nur lokale Variablen
+	volatile bool s6 = false;
+	volatile int counter = 0;   //für Test vom Interrupt
+
 
 int main(void) {
 	initITSboard();  					  							 // Initialisierung des ITS Boards
@@ -33,6 +38,7 @@ int main(void) {
 	textInit();
 	status_drehscheibe(); // nötig vor calc init für letztePhase
 	calcInit();
+	s6_isr_init(); //interrupt initialisieren
 	
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	// int letztePhasenzahl = 0;
@@ -55,27 +61,30 @@ int main(void) {
 	//PG3 als Output für mainloop-Messung
 	GPIOG->MODER |= (1 << 6);
 	GPIOG->MODER &= ~(1 << 7);
+
+
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
 	{
 		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
-		//kanal1 = GPIO...
-		//kanal2 =
-		//button_s6
 
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
 		status_drehscheibe(); 
-		// 	
-											//kanal1 & kanal2 auslesen und speichern -> Zugriff mit "extern int kanal1"
-		if(s6_lesen() == LOW) 
+		
+		/**
+		Hier nur die Infos aus ISR holen, bzw. Flag lesen - damit ISR schlank gehalten wird
+		*/
+		if(s6) 
 		{
-			fehlerLoeschen();
-			statusDrucken();
+			//fehlerLoeschen();
+			//statusDrucken();
+			s6 = false;
+			lcdPrintInt(counter);
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
-		
+	
 		
 		/*-----2. Verarbeiten--------*/
 		
@@ -133,7 +142,7 @@ int main(void) {
 
 		//printf("%f\n", t_differenz);
 
-	}
+	 }
 }
 
 // EOF

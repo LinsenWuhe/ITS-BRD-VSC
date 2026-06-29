@@ -4,6 +4,7 @@
 #include "calc.h"
 #include <stdio.h>
 
+extern volatile int counter;
  //statusDrucken-  Gibt Winkel, Geschwindigkeit und Status auf LCD aus - Wird nur alle 250ms-500ms aufgerufen
 void statusDrucken(void)
 {
@@ -61,6 +62,9 @@ void statusDrucken(void)
 
     //Pin LOW - Messung endet
     GPIOG -> ODR &= ~(1<<2);
+
+    lcdGotoXY(1, 1);
+    lcdPrintInt(counter);
 }
 
 void textInit(void)
