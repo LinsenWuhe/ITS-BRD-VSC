@@ -6,7 +6,15 @@
 int kanal1;
 int kanal2;
 
-int status_drehscheibe()
+
+
+//überlegung, ob man kanal einfach mit isr einliest - wenn es nicht klappt, in main wieder zu status_drehscheibe_aufgabe2() wechseln, dort 2x geändert
+void status_drehscheibe_isr()
+{
+    
+}
+
+int status_drehscheibe_aufgabe2()
 {
 
     kanal1 = GPIOF->IDR & (1 << 0);

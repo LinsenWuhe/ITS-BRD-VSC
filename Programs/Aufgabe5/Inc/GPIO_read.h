@@ -16,7 +16,8 @@
 extern int kanal1;
 extern int kanal2;
 
-int status_drehscheibe(void); //liest den aktuellen Status der Drehscheibe ein -> wird in kanal1 & kanal2 gespeichert
+void status_drehscheibe_isr();
+int status_drehscheibe_aufgabe2(void); //liest den aktuellen Status der Drehscheibe ein -> wird in kanal1 & kanal2 gespeichert
 int s6_lesen(void);           //liest den aktuellen Status von S6 ein
 
 #endif

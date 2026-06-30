@@ -39,7 +39,7 @@ int main(void) {
 	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
 	
 	textInit();
-	status_drehscheibe(); // nötig vor calc init für letztePhase
+	status_drehscheibe_isr(); // nötig vor calc init für letztePhase
 	calcInit();
 	s6_isr_init(); //interrupt initialisieren
 	kanaele_isr_init();
@@ -78,7 +78,7 @@ int main(void) {
 
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
-		status_drehscheibe(); 
+		status_drehscheibe_isr(); 
 		
 		/**
 		Hier nur die Infos aus ISR holen, bzw. Flag lesen - damit ISR schlank gehalten wird
