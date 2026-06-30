@@ -35,5 +35,34 @@ void s6_isr_init()
     //interrupt kommt bei NVIC (nested vectored interrupt controller) an - NVIC muss interrupt zur CPU durchlassen -> schalter für interrupt kanal muss freigeschaltet werden -> hier nummer 23 nach der Maske
     //cpu weiß nun: "wenn auf leitung 23 ein signal kommt, springe zu der funktion exti9_5_IRQHandler"
     NVIC_EnableIRQ(EXTI9_5_IRQn);
+}
+
+
+void kanaele_isr_init()
+{
+    //RCC befehle sind schon in der init oben -> müsste eigentlich reichen, weil es strom und clock für ganzen port aktiviert und schalter gleich liegen
+
+    //Wieder input (00) auf pins
+    GPIOF->MODER &= ~(3 << (2*0));
+    GPIOF->MODER &= ~(3 << (2*1));
+
+    SYSCFG->EXTICR[0] &= ~(0xf << (4*0)); //1111 invertieren und verunden -> überall eine 0, um alten Wert zu löschen - für pin 0
+    SYSCFG->EXTICR[0] &= ~(0xf << (4*1)); //für Pin 1 
+
+    //port f auf exti0 und 1 leiten
+    SYSCFG->EXTICR[0] |= (0x5 << (4*0));
+    SYSCFG->EXTICR[0] |= (0x5 << (4*1)); 
+
+    //fallende (?) flanke als trigger
+    EXTI->FTSR |= (1<<0);
+    EXTI->FTSR |= (1<<1);
+
+    //interrupt "schleuse" öffnen
+    EXTI->IMR |= (1<<0);
+    EXTI->IMR |= (1<<1);
+
+    //interrupts im controller freischalten
+    NVIC_EnableIRQ(EXTI0_IRQn);
+    NVIC_EnableIRQ(EXTI1_IRQn);
 
 }

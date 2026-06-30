@@ -39,6 +39,7 @@ int main(void) {
 	status_drehscheibe(); // nötig vor calc init für letztePhase
 	calcInit();
 	s6_isr_init(); //interrupt initialisieren
+	kanaele_isr_init();
 	
 	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	// int letztePhasenzahl = 0;

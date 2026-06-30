@@ -13,8 +13,14 @@ void EXTI9_5_IRQHandler(void)
     counter++;
 }
 
-void status_drehscheibe_ISR()
+void EXTI0_IRQHandler(void)
 {
+    EXTI->PR = (1<<0);
+}
+
+void EXTI1_IRQHandler(void)
+{
+    EXTI->PR = (1<<1);
 }
 
 
