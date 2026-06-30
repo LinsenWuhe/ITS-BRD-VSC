@@ -27,6 +27,9 @@
 	//sollte überall sichtbar sein und wird immer aus ram geladen - innerhalb von main nur lokale Variablen
 	volatile bool s6 = false;
 	volatile int counter = 0;   //für Test vom Interrupt
+	volatile int counter1 = 0; //tests für kanal interrupts
+	volatile int counter0 = 0; 
+	//man kann den pico anschließen und signale geben -> wird oben im display angezeigt wie viele - erste 0 die s6 klicks, zweite 0 die impulse von kanal 1 oder 0 und dritte 0 der andere kanal
 
 
 int main(void) {
