@@ -56,22 +56,25 @@ int main(void) {
 	int32_t pulse_start = 0; //wie viele phasenwechsel passieren im zeitfenster
 	bool berechnet = false;
 
-	//PG2 für Textmessung
-	__HAL_RCC_GPIOG_CLK_ENABLE(); //Clock aktivieren auf Port
-	GPIOG->MODER |= (1 << 4); 	//Bit 4+5 auf Output setzen -> 01
-	GPIOG->MODER &= ~(1 << 5);
 
 
-	//PG3 als Output für mainloop-Messung
-	GPIOG->MODER |= (1 << 6);
-	GPIOG->MODER &= ~(1 << 7);
+//Messung für Textausgabe Aufgabe 2
+	// //PG2 für Textmessung
+	// __HAL_RCC_GPIOG_CLK_ENABLE(); //Clock aktivieren auf Port
+	// GPIOG->MODER |= (1 << 4); 	//Bit 4+5 auf Output setzen -> 01
+	// GPIOG->MODER &= ~(1 << 5);
+
+	// //PG3 als Output für mainloop-Messung
+	// GPIOG->MODER |= (1 << 6);
+	// GPIOG->MODER &= ~(1 << 7);
 
 
 	
 	//Superloop mit Direct Digital Control (einlesen, verarbeiten, ausgeben - DDC)
 	while(1) 
-	{
-		GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
+	{	
+		//Aufgabe 2 messung
+		//GPIOG->ODR |= (1 << 3); //Pin PG3 auf High
 
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
@@ -93,7 +96,6 @@ int main(void) {
 		/*-----2. Verarbeiten--------*/
 		
 		berechneAktuellePhase();
-		//berechnePhasenwechsel(int aktuellePhase, int letztePhase, int *ergebnis);     Welche Parameter hier rein?? Lieber direkt alles in calc speichern?
 		berechnePhasenwechsel2();
 		
 		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status

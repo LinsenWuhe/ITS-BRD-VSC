@@ -12,7 +12,7 @@ void EXTI9_5_IRQHandler(void)
 {
     EXTI->PR = (1<<6);
     s6 = true;
-    counter++;
+    counter++; //alle drei counter zum testen mit displayausgabe
 }
 
 void EXTI0_IRQHandler(void)
