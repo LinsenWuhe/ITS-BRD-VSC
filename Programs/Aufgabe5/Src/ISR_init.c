@@ -32,6 +32,8 @@ void s6_isr_init()
     // Interrupt und Flag aktivieren -> Interrupt-Maske im EXTI öffnen (Kanal unmaskieren)
     EXTI->IMR |= (1 << 6);   // Interrupt Mask Register: Bit 6 erlauben
 
+    // muss noch eine Priorität festgelegt werden?
+
     //interrupt kommt bei NVIC (nested vectored interrupt controller) an - NVIC muss interrupt zur CPU durchlassen -> schalter für interrupt kanal muss freigeschaltet werden -> hier nummer 23 nach der Maske
     //cpu weiß nun: "wenn auf leitung 23 ein signal kommt, springe zu der funktion exti9_5_IRQHandler"
     NVIC_EnableIRQ(EXTI9_5_IRQn);
@@ -61,6 +63,8 @@ void kanaele_isr_init()
     //interrupt "schleuse" öffnen
     EXTI->IMR |= (1<<0);
     EXTI->IMR |= (1<<1);
+
+    // Eventuell noch Prioritäten festlegen, (mit t.B. NVIC_SetPriority(EXTI0_IRQn, 0);), wobei 0 höchste und 15 niedrigste Priorität ist
 
     //interrupts im controller freischalten
     NVIC_EnableIRQ(EXTI0_IRQn);
