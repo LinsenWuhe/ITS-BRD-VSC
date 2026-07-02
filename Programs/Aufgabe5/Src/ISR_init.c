@@ -25,7 +25,7 @@ void s6_isr_init()
     SYSCFG->EXTICR[1] |=  (0x05 << (4 * 2)); // 0x05 steht beim STM32 für Port F nach Folien - Nimmt 5 und schiebt sie um 8 stellen nach links für kanal 6
 
     // Nach meinem Verständnis sollen wir AUX0 und AUX1 also PG0 und PG1 für die Signalleitungen nutzen
-    // Ich würde also statt den oberen zwei Zeilen Folgendes versuchen (mit 0 und 1 bin ich mir unsicher):
+    // Ich würde also statt den oberen zwei Zeilen Folgendes versuchen (mit 0 und 1 bin ich mir unsicher, sollte aber richtig sein):
     /*
     SYSCFG->EXTICR[0] &= ~(0x0f << (4*0));
     SYSCFG->EXTICR[0] |= 0x06 << (4*0);
