@@ -1,3 +1,9 @@
 - gesamte Aufgabe 2 hierher bringen, ok
 
 - Prioritäten für ISR festlegen
+
+- berechneGeschwindigkeit Aufruf in main korrigieren, ok
+
+- aktuelle Phasen und Phasenwechseln in den ISRs bestimmen
+
+- prüfen, ob die superloop nur atomare Befehle enthält, bz. Synchronisation

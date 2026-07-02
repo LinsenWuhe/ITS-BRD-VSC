@@ -18,8 +18,8 @@ void status_drehscheibe_isr()
 int status_drehscheibe_aufgabe2()
 {
 
-    kanal1 = GPIOF->IDR & (1 << 0);
-	kanal2 = GPIOF->IDR & (1 << 1);
+    kanal1 = GPIOG->IDR & (1 << 0); //GPIOF zu GPIOG geändert
+	kanal2 = GPIOG->IDR & (1 << 1); //GPIOF zu GPIOG geändert
 
     return OK;
 }

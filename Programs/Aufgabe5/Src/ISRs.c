@@ -5,6 +5,8 @@
 #include <stdint.h>
 
 extern volatile bool s6;
+extern volatile bool phase_aux0;
+extern volatile bool phase_aus1;
 
 
 //muss man so nennen, damit CPU interruptfunktion findet
@@ -17,15 +19,16 @@ void EXTI9_5_IRQHandler(void)
 
 //nach aufgabe verläuft in den beiden isrs die verwaltung der phasenwechsel des drehgebers und das erfassen des zeitstempels des auftretens eines phasenwechsels
 
+// wird ausgeführt bei Flanke, also wenn kein Strom kommt (unsicher)
 //für kanal 0
 void EXTI0_IRQHandler(void)
 {
     //zeitstempel holen
     uint32_t zeitstempel = getTimeStamp();
 
-    EXTI->PR = (1<<0);
+    EXTI->PR = (1<<0); // was genau macht das? Das einzige Peripheriegerät ist doch der pi pico, ist dies also hier notwendig?
 
-
+    phase_aux0 = false;
  
 }
 
@@ -34,6 +37,8 @@ void EXTI0_IRQHandler(void)
 void EXTI1_IRQHandler(void)
 {
     EXTI->PR = (1<<1);
+
+    phase_aus1 = false;
   
 }
 

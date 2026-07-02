@@ -34,7 +34,7 @@
 	volatile uint32_t letzter_zeitstempel = 0;
 
 	volatile bool phase_aux0 = false;
-	volatile bool phase_aus1 = false;
+	volatile bool phase_aus1 = false; // phase1 aus? gemeint ist aux oder?
 
 
 
@@ -55,7 +55,8 @@ int main(void) {
 	TP_Init(false);                  	  							// Initialisierung des LCD Boards mit Touch
 	
 	textInit();
-	status_drehscheibe_isr(); // nötig vor calc init für letztePhase
+	//status_drehscheibe_isr(); // nötig vor calc init für letztePhase
+	status_drehscheibe_aufgabe2(); //sollte hier richtig sein, sollte aber glaub ich angepasst werden. wie haben kanal1 und kanal2 und phase_aux...., das ist doch das gleiche?
 	calcInit();
 	s6_isr_init(); //interrupt initialisieren
 	kanaele_isr_init();
@@ -94,7 +95,7 @@ int main(void) {
 
 		/*-----1. Einlesen--------*/
 		uint32_t t_jetzt = getTimeStamp();
-		status_drehscheibe_isr(); 
+		//status_drehscheibe_isr();  // ist das überflüssig? wir lesen ja nichts mehr aktiv, sondern bekommen durch die Interrupts die Infos
 		
 		/**
 		Hier nur die Infos aus ISR holen, bzw. Flag lesen - damit ISR schlank gehalten wird
@@ -110,8 +111,20 @@ int main(void) {
 		
 		/*-----2. Verarbeiten--------*/
 		
-		berechneAktuellePhase();
-		berechnePhasenwechsel2();
+		// Diese Funktionalität der zwei Befehle müssen doch in den ISRs ausgeführt werden, oder?
+		//berechneAktuellePhase(); //auszukommentieren
+		berechnePhasenwechsel2(); //auszukommentieren
+
+		//Folgendes ist quasi berechneAktuellePhase(), aber ist das hier an dieser Stelle okay?:
+		{
+			if      (!phase_aux0 && !phase_aus1)    aktuellePhase = PHASE_A;
+
+	        else if (phase_aux0 && !phase_aus1)     aktuellePhase = PHASE_B;
+
+            else if (phase_aux0 && phase_aus1)      aktuellePhase = PHASE_C;
+
+            else                            aktuellePhase = PHASE_D;
+		}
 		
 		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
 		
@@ -126,7 +139,8 @@ int main(void) {
 			{
 				//zeitfenster schließen und berechnen
 				berechneWinkel();
-				berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
+				//berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start); // was ist das Problem hier?
+				berechneGeschwindigkeit(); //bekommt die Daten selbst durch get_drehgeberdaten
 				
 				//neues Zeitfenster starten
 				t_fenster_start = t_jetzt;
@@ -147,7 +161,8 @@ int main(void) {
 			{
 			    // Noch nicht berechnet - jetzt auf jeden Fall 
             	berechneWinkel();
-           		berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start);
+           		//berechneGeschwindigkeit(t_fenster_start, t_jetzt, pulse_start); // was ist das Problem hier?
+				berechneGeschwindigkeit(); //bekommt die Daten selbst durch get_drehgeberdaten
 				
 				//Ausgeben II
             	statusDrucken();
