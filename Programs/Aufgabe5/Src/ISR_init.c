@@ -65,6 +65,7 @@ void kanaele_isr_init()
     EXTI->IMR |= (1<<1);
 
     // Eventuell noch Prioritäten festlegen, (mit t.B. NVIC_SetPriority(EXTI0_IRQn, 0);), wobei 0 höchste und 15 niedrigste Priorität ist
+    //siehe eventuell folie 19
 
     //interrupts im controller freischalten
     NVIC_EnableIRQ(EXTI0_IRQn);
