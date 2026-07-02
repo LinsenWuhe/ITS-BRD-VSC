@@ -26,10 +26,26 @@
 
 	//sollte überall sichtbar sein und wird immer aus ram geladen - innerhalb von main nur lokale Variablen
 	volatile bool s6 = false;
-	volatile int counter = 0;   //für Test vom Interrupt
-	volatile int counter1 = 0; //tests für kanal interrupts
-	volatile int counter0 = 0; 
 	//man kann den pico anschließen und signale geben -> wird oben im display angezeigt wie viele - erste 0 die s6 klicks, zweite 0 die impulse von kanal 1 oder 0 und dritte 0 der andere kanal
+
+
+	//variablen für isrs
+	volatile uint32_t phasenzaehler_isr = 0;
+	volatile uint32_t letzter_zeitstempel = 0;
+
+	volatile bool phase_aux0 = false;
+	volatile bool phase_aus1 = false;
+
+
+
+
+	//globale volatile Variablen für isrs
+	volatile Phase_t aktuellePhase;
+	volatile Phase_t letztePhase;
+	volatile int32_t phasenzahl = 0;
+	volatile Richtung_t richtung = GLEICH;
+	volatile bool fehlerBeiPhasenwechsel = false;
+	volatile uint32_t letzterZeitstempel = 0;
 
 
 int main(void) {
@@ -43,8 +59,8 @@ int main(void) {
 	calcInit();
 	s6_isr_init(); //interrupt initialisieren
 	kanaele_isr_init();
+
 	
-	extern int phasenzahl;											// Anzahl der Phasenwechsel
 	// int letztePhasenzahl = 0;
 	// int s6;
 
@@ -88,7 +104,6 @@ int main(void) {
 			//fehlerLoeschen();
 			//statusDrucken();
 			s6 = false;
-			lcdPrintInt(counter);
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
 	

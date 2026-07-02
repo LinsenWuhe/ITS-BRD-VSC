@@ -9,6 +9,7 @@ int kanal2;
 
 
 //überlegung, ob man kanal einfach mit isr einliest - wenn es nicht klappt, in main wieder zu status_drehscheibe_aufgabe2() wechseln, dort 2x geändert
+//oder liest man ein, indem interrupt selbst bei anderem kanal schaut?
 void status_drehscheibe_isr()
 {
     
