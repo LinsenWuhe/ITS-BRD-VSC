@@ -28,7 +28,8 @@ void EXTI0_IRQHandler(void)
 
     EXTI->PR = (1<<0); // was genau macht das? Das einzige Peripheriegerät ist doch der pi pico, ist dies also hier notwendig?
 
-    phase_aux0 = false;
+    if (GPIOG->IDR & (1 << 0)) phase_aux0 = true;
+    else phase_aux0 = false;
  
 }
 
@@ -38,7 +39,8 @@ void EXTI1_IRQHandler(void)
 {
     EXTI->PR = (1<<1);
 
-    phase_aus1 = false;
+    if (GPIOG->IDR & (1 << 1)) phase_aus1 = true;
+    else phase_aus1 = false;
   
 }
 

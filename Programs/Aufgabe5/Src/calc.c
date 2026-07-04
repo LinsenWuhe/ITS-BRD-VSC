@@ -172,8 +172,8 @@ Phase_t get_aktuelle_phase(void)
 {
     // Knöpfe/Signale einlesen
     // Wenn Signal da (0V) -> bool ist false. Wenn Signal weg (3.3V) -> bool ist true.
-    bool kanal1 = (GPIOF->IDR & (1 << 0)) ? true : false; // AUX0
-    bool kanal2 = (GPIOF->IDR & (1 << 1)) ? true : false; // AUX1
+    bool kanal1 = (GPIOG->IDR & (1 << 0)) ? true : false; // AUX0
+    bool kanal2 = (GPIOG->IDR & (1 << 1)) ? true : false; // AUX1
 
     if      (!kanal1 && !kanal2)    return PHASE_A;
     else if (kanal1 && !kanal2)     return PHASE_B;
@@ -183,7 +183,7 @@ Phase_t get_aktuelle_phase(void)
 
 void verarbeite_phasenwechsel(uint32_t zeitstempel)
 {
-    aktuellePhase = get_aktuelle_phase();
+    //aktuellePhase = get_aktuelle_phase();
 
     if (aktuellePhase != letztePhase)
     {

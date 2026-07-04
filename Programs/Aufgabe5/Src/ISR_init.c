@@ -9,7 +9,10 @@ void s6_isr_init()
     //RCC (Reset and Clock Control) - einschalten der takte
     //AHB1ENR (Advanced high-performance bus 1 enable register) -> In dem Register hat jeder GPIO-Port sein eigenes Bit
     //verodern (nur 1 bit auf 1 setzen) mit vorgegeber RCC_maske für GPIOF Port
-    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;    
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;
+
+    //eigentlich für Kanäle, nicht s6
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOFEN;
 
     //Advances Perpheral Bus 2 Enable Register, wo Syscfg liegt
     //schaltet multiplexer an, da er entscheidet, welcher pin auf welchen exti kanal geleitet wird (sitzt in syscfg) -> takt für mux anschalten
@@ -42,22 +45,28 @@ void s6_isr_init()
 
 void kanaele_isr_init()
 {
-    //RCC befehle sind schon in der init oben -> müsste eigentlich reichen, weil es strom und clock für ganzen port aktiviert und schalter gleich liegen
+    //gesamte Funktion muss auf Port G überarbeitet werden, AUX liegt bei Port G, nicht F
+    //RCC für Port G in Methode für S6 --//RCC befehle sind schon in der init oben -> müsste eigentlich reichen, weil es strom und clock für ganzen port aktiviert und schalter gleich liegen
 
     //Wieder input (00) auf pins
-    GPIOF->MODER &= ~(3 << (2*0));
-    GPIOF->MODER &= ~(3 << (2*1));
+    GPIOG->MODER &= ~(3 << (2*0));
+    GPIOG->MODER &= ~(3 << (2*1));
 
     SYSCFG->EXTICR[0] &= ~(0xf << (4*0)); //1111 invertieren und verunden -> überall eine 0, um alten Wert zu löschen - für pin 0
     SYSCFG->EXTICR[0] &= ~(0xf << (4*1)); //für Pin 1 
 
-    //port f auf exti0 und 1 leiten
-    SYSCFG->EXTICR[0] |= (0x5 << (4*0));
-    SYSCFG->EXTICR[0] |= (0x5 << (4*1)); 
+    // Was ist das?:
+    //port f auf exti0 und 1 leiten, Korrektur: Port G, deshalb auch 0x06 und nicht 0x05
+    SYSCFG->EXTICR[0] |= (0x6 << (4*0)); 
+    SYSCFG->EXTICR[0] |= (0x6 << (4*1)); 
 
     //fallende (?) flanke als trigger
     EXTI->FTSR |= (1<<0);
     EXTI->FTSR |= (1<<1);
+
+    //auch rising 
+    EXTI->RTSR |= (1<<0);
+    EXTI->RTSR |= (1<<1);
 
     //unmask
     //interrupt "schleuse" öffnen

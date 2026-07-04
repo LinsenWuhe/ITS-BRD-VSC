@@ -96,8 +96,8 @@ int main(void) {
 		*/
 		if(s6) 
 		{
-			//fehlerLoeschen();
-			//statusDrucken();
+			fehlerLoeschen();
+			statusDrucken();
 			s6 = false;
 			continue;												 //nächsten Loop starten und nicht mehr
 		}
