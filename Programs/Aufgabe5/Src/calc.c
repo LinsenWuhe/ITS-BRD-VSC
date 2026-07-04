@@ -3,7 +3,7 @@
 #include "error.h"
 #include "zeitmessung.h"
 #include <stdint.h>
-#include "ISRs.c"
+#include "ISRs.h"
 
 //lokale variablen
 double winkel               = 0.0;

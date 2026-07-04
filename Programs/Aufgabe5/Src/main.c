@@ -40,8 +40,8 @@
 	volatile Phase_t aktuellePhase;
 	volatile Phase_t letztePhase;
 	volatile int32_t phasenzahl = 0;
-	volatile Richtung_t richtung = GLEICH;
-	volatile bool fehlerBeiPhasenwechsel = false;
+	//volatile Richtung_t richtung = GLEICH; // Richtung ist hier nicht nötig, es ist ja in calc, muss auch nicht volatile sein, oder?
+	//volatile bool fehlerBeiPhasenwechsel = false; // gleiches wie bei richtung
 	volatile uint32_t letzterZeitstempel = 0;
 
 
@@ -107,7 +107,7 @@ int main(void) {
 		
 		// Diese Funktionalität der zwei Befehle müssen doch in den ISRs ausgeführt werden, oder?
 		//berechneAktuellePhase(); //auszukommentieren
-		berechnePhasenwechsel2(); //auszukommentieren
+		//berechnePhasenwechsel2(); //auszukommentieren
 
 		//Folgendes ist quasi berechneAktuellePhase(), aber ist das hier an dieser Stelle okay?:
 		{
@@ -119,6 +119,8 @@ int main(void) {
 
             else                            aktuellePhase = PHASE_D;
 		}
+
+		verarbeite_phasenwechsel(letzter_zeitstempel); // richtiges Argument?
 		
 		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
 		

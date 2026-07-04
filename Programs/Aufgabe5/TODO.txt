@@ -7,3 +7,9 @@
 - aktuelle Phasen und Phasenwechseln in den ISRs bestimmen
 
 - prüfen, ob die superloop nur atomare Befehle enthält, bz. Synchronisation
+
+- kompilierbar machen, multiple Definitionen beheben, ok
+
+- get_drehgeberdaten2 oder get_drehgeberdaten implementieren
+
+- Zwisschentest (get_drehgeberdaten-2), 

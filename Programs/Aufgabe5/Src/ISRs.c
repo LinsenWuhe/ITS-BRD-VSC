@@ -43,7 +43,12 @@ void EXTI1_IRQHandler(void)
 }
 
 //vervollständigen
-void get_drehgeberdaten(uint32_t *zeitstempel_out, uint32_t *zaehler_out)
+void get_drehgeberdaten(uint32_t *zeitstempel_out, uint32_t *zaehler_out) // wofür weden die Parameter gebraucht?
+{
+
+}
+
+void get_drehgeberdaten2()
 {
 
 }
