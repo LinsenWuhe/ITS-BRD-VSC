@@ -3,10 +3,13 @@
 #include "timer.h"
 #include <stdbool.h>
 #include <stdint.h>
+#include "calc.h"
 
 extern volatile bool s6;
 extern volatile bool phase_aux0;
 extern volatile bool phase_aus1;
+
+extern volatile Phase_t aktuellePhase;
 
 
 //muss man so nennen, damit CPU interruptfunktion findet
@@ -30,7 +33,18 @@ void EXTI0_IRQHandler(void)
 
     if (GPIOG->IDR & (1 << 0)) phase_aux0 = true;
     else phase_aux0 = false;
- 
+    
+    {
+			if      (!phase_aux0 && !phase_aus1)    aktuellePhase = PHASE_A;
+
+	        else if (phase_aux0 && !phase_aus1)     aktuellePhase = PHASE_B;
+
+            else if (phase_aux0 && phase_aus1)      aktuellePhase = PHASE_C;
+
+            else                            aktuellePhase = PHASE_D;
+	}
+
+    verarbeite_phasenwechsel2();
 }
 
 
@@ -41,7 +55,18 @@ void EXTI1_IRQHandler(void)
 
     if (GPIOG->IDR & (1 << 1)) phase_aus1 = true;
     else phase_aus1 = false;
-  
+
+    {
+			if      (!phase_aux0 && !phase_aus1)    aktuellePhase = PHASE_A;
+
+	        else if (phase_aux0 && !phase_aus1)     aktuellePhase = PHASE_B;
+
+            else if (phase_aux0 && phase_aus1)      aktuellePhase = PHASE_C;
+
+            else                            aktuellePhase = PHASE_D;
+	}
+    
+    verarbeite_phasenwechsel2();
 }
 
 //vervollständigen

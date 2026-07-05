@@ -50,6 +50,7 @@ int gibRichtung(void);
 
 //neu für isr
 void verarbeite_phasenwechsel(uint32_t zeitstempel);
+void verarbeite_phasenwechsel2();
 Phase_t get_aktuelle_phase(void) ;
 
 #endif

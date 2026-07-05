@@ -228,3 +228,50 @@ void verarbeite_phasenwechsel(uint32_t zeitstempel)
     letzter_zeitstempel = zeitstempel;
     letztePhase = aktuellePhase;
 }
+
+void verarbeite_phasenwechsel2()
+{
+    //aktuellePhase = get_aktuelle_phase();
+
+    if (aktuellePhase != letztePhase)
+    {
+        switch (letztePhase) 
+        {
+            case PHASE_B:
+                if      (aktuellePhase == PHASE_A) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_C) {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;} // Phase B auf D
+                letztePhase = aktuellePhase;
+                break;
+
+            case PHASE_A:
+                if      (aktuellePhase == PHASE_D) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_B)  {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
+                break;
+            
+            case PHASE_C:
+                if      (aktuellePhase == PHASE_B) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_D) {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
+                break;
+            
+            case PHASE_D:
+                if      (aktuellePhase == PHASE_C) {phasenzahl--; richtung = RUECKWAERTS;}
+                else if (aktuellePhase == PHASE_A) {phasenzahl++; richtung = VORWAERTS;}
+                else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
+                letztePhase = aktuellePhase;
+                break;
+
+            default:
+                letztePhase = aktuellePhase;
+                break;
+        }
+    }
+    else richtung = GLEICH;
+
+
+    letztePhase = aktuellePhase;
+}

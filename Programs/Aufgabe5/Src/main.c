@@ -109,6 +109,7 @@ int main(void) {
 		//berechneAktuellePhase(); //auszukommentieren
 		//berechnePhasenwechsel2(); //auszukommentieren
 
+		/*
 		//Folgendes ist quasi berechneAktuellePhase(), aber ist das hier an dieser Stelle okay?:
 		{
 			if      (!phase_aux0 && !phase_aus1)    aktuellePhase = PHASE_A;
@@ -121,6 +122,7 @@ int main(void) {
 		}
 
 		verarbeite_phasenwechsel(letzter_zeitstempel); // richtiges Argument?
+		*/
 		
 		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
 		
