@@ -74,12 +74,12 @@ lcdPrintS("--------------------");
 lcdGotoXY(6, 7);
 lcdPrintS("Winkel:  ");
 
-lcdGotoXY(19, 7);
+lcdGotoXY(30, 7);
 lcdPrintS("Grad");
 
 lcdGotoXY(6, 8);
 lcdPrintS("Tempo:   ");
-lcdGotoXY(19, 8);
+lcdGotoXY(30, 8);
 lcdPrintS("Grad/s");
 
 /*
@@ -96,7 +96,7 @@ int doubleDrucken(double zahl)
 {
     char str[20];
 
-    sprintf(str, "%5.1lf", zahl);
+    sprintf(str, "%10.1lf", zahl);
 
     int i = 0;
     while (str[i] != 0)

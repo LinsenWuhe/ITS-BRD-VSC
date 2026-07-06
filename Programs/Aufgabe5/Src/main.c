@@ -33,9 +33,6 @@
 	volatile uint32_t phasenzaehler_isr = 0;
 	volatile uint32_t letzter_zeitstempel = 0;
 
-	volatile bool phase_aux0 = false;
-	volatile bool phase_aus1 = false; // phase1 aus? gemeint ist aux oder?
-
 	//globale volatile Variablen für isrs
 	volatile Phase_t aktuellePhase;
 	volatile Phase_t letztePhase;
@@ -103,30 +100,7 @@ int main(void) {
 		}
 	
 		
-		/*-----2. Verarbeiten--------*/
-		
-		// Diese Funktionalität der zwei Befehle müssen doch in den ISRs ausgeführt werden, oder?
-		//berechneAktuellePhase(); //auszukommentieren
-		//berechnePhasenwechsel2(); //auszukommentieren
-
-		/*
-		//Folgendes ist quasi berechneAktuellePhase(), aber ist das hier an dieser Stelle okay?:
-		{
-			if      (!phase_aux0 && !phase_aus1)    aktuellePhase = PHASE_A;
-
-	        else if (phase_aux0 && !phase_aus1)     aktuellePhase = PHASE_B;
-
-            else if (phase_aux0 && phase_aus1)      aktuellePhase = PHASE_C;
-
-            else                            aktuellePhase = PHASE_D;
-		}
-
-		verarbeite_phasenwechsel(letzter_zeitstempel); // richtiges Argument?
-		*/
-		
-		//Bevor status gedruckt wurd -> kann hängen, so zeigen LEDs immer aktuellen status
-		
-		
+		/*-----2. Verarbeiten--------*/		
 		double t_differenz = timer_get_duration(t_fenster_start, t_jetzt);
 		
 		

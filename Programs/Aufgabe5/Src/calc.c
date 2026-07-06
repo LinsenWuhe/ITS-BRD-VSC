@@ -33,7 +33,7 @@ void calcInit()
 {
     // Startphase einlesen 
     //letztePhase                  = berechneAktuellePhase(); Das geht nicht, denn berechneAktuellePhase() gibt 0, also einen Statuscode, statt dessen:
-    get_aktuelle_phase();
+    aktuellePhase= get_aktuelle_phase();
     letztePhase = aktuellePhase;
 
     richtung                     = UNBEKANNT;
