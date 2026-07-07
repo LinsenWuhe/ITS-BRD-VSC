@@ -184,7 +184,6 @@ project:
         - file: ../../ITS_BRD_LIB/Inc/lcd.h
         - file: Inc/calc.h
         - file: Inc/error.h
-        - file: Inc/GPIO_read.h
         - file: Inc/LED_output.h
         - file: Inc/text_output.h
         - file: Inc/zeitmessung.h

@@ -1,5 +1,4 @@
 #include "calc.h"
-#include "GPIO_read.h"
 #include "error.h"
 #include "zeitmessung.h"
 #include <stdint.h>
@@ -21,19 +20,11 @@ extern volatile Phase_t aktuellePhase;
 extern volatile int32_t phasenzahl;
 extern volatile uint32_t letzter_zeitstempel;
 
-//Für Zählen der Phasenwechsel
-// alt: int phasenzahl;
-
-//ALT:  //Zahlen aus GPIO_read -> statusDrehscheibe
-// extern int kanal1;
-// extern int kanal2;
-
 //Initialisierung für Rechner -> zu beginn oder nach fehler löschen
 void calcInit()
 {
     // Startphase einlesen 
-    //letztePhase                  = berechneAktuellePhase(); Das geht nicht, denn berechneAktuellePhase() gibt 0, also einen Statuscode, statt dessen:
-    aktuellePhase= get_aktuelle_phase();
+    aktuellePhase = get_aktuelle_phase();
     letztePhase = aktuellePhase;
 
     richtung                     = UNBEKANNT;
@@ -42,59 +33,6 @@ void calcInit()
     t_start = 0;
     pulse_start = 0;
 }
-
-// int berechnePhasenwechsel2(void) // Ansatz, dass allles in calc ist
-// {
-//     if (aktuellePhase != letztePhase)
-//     {
-//         switch (letztePhase) 
-//         {
-//             case PHASE_B:
-//                 if      (aktuellePhase == PHASE_A) {phasenzahl--; richtung = RUECKWAERTS;}
-//                 else if (aktuellePhase == PHASE_C) {phasenzahl++; richtung = VORWAERTS;}
-//                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;} // Phase B auf D
-//                 letztePhase = aktuellePhase;
-//                 break;
-
-//             case PHASE_A:
-//                 if      (aktuellePhase == PHASE_D) {phasenzahl--; richtung = RUECKWAERTS;}
-//                 else if (aktuellePhase == PHASE_B)  {phasenzahl++; richtung = VORWAERTS;}
-//                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
-//                 letztePhase = aktuellePhase;
-//                 break;
-            
-//             case PHASE_C:
-//                 if      (aktuellePhase == PHASE_B) {phasenzahl--; richtung = RUECKWAERTS;}
-//                 else if (aktuellePhase == PHASE_D) {phasenzahl++; richtung = VORWAERTS;}
-//                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
-//                 letztePhase = aktuellePhase;
-//                 break;
-            
-//             case PHASE_D:
-//                 if      (aktuellePhase == PHASE_C) {phasenzahl--; richtung = RUECKWAERTS;}
-//                 else if (aktuellePhase == PHASE_A) {phasenzahl++; richtung = VORWAERTS;}
-//                 else    {richtung = phasenwechsel_fehler; fehlerBeiPhasenwechsel = true;}
-//                 letztePhase = aktuellePhase;
-//                 break;
-
-//             default:
-//                 letztePhase = aktuellePhase;
-//                 return -1; // Passt das? // lieber UNBEKANNTER_phasenwechsel_fehler
-//                 break;
-//         }
-//     }
-//     else richtung = GLEICH;
-
-//     return 0;
-// }
-
-/*
-int berechneWinkel(int phasenzahl, double* winkel)
-{
-    if (phasenzahl == 0) *winkel = 0;
-    else *winkel = (1200.0 / 360.0) * *winkel; 
-}
-*/
 
 void berechneGeschwindigkeit() 
 {
@@ -172,19 +110,19 @@ Phase_t get_aktuelle_phase(void)
 {
     // Knöpfe/Signale einlesen
     // Wenn Signal da (0V) -> bool ist false. Wenn Signal weg (3.3V) -> bool ist true.
-    bool kanal1 = (GPIOG->IDR & (1 << 0)) ? true : false; // AUX0
+    /*bool kanal1 = (GPIOG->IDR & (1 << 0)) ? true : false; // AUX0
     bool kanal2 = (GPIOG->IDR & (1 << 1)) ? true : false; // AUX1
 
     if      (!kanal1 && !kanal2)    return PHASE_A;
     else if (kanal1 && !kanal2)     return PHASE_B;
     else if (kanal1 && kanal2)      return PHASE_C;
-    else                            return PHASE_D;
+    else                            return PHASE_D;*/
+
+    return GPIOG->IDR & 3;
 }
 
 void verarbeite_phasenwechsel(uint32_t zeitstempel)
 {
-    //aktuellePhase = get_aktuelle_phase();
-
     if (aktuellePhase != letztePhase)
     {
         switch (letztePhase) 

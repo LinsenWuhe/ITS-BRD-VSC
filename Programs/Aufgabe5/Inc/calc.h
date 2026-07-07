@@ -16,7 +16,7 @@
 // #define UNBEKANNT   80
 
 //Phasendefinitionen
-typedef enum { PHASE_A, PHASE_B, PHASE_C, PHASE_D } Phase_t;
+typedef enum { PHASE_A, PHASE_B, PHASE_D, PHASE_C } Phase_t;
 typedef enum { UNBEKANNT, VORWAERTS, RUECKWAERTS, GLEICH, PHASENWECHSEL_FEHLER } Richtung_t;
 
 #define PHASEN_PRO_UMDREHUNG 1200
