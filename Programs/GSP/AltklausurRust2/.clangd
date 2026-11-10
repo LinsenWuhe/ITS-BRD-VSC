@@ -1,0 +1,7 @@
+CompileFlags:
+  CompilationDatabase: /Users/jannik/Studium
+    lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug
+  Add:
+    - -include
+    - /Users/jannik/Studium
+      lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/compile_macros.h

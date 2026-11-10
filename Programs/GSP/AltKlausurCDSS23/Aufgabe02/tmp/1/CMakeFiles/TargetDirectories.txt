@@ -1,0 +1,11 @@
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Aufgabe02.Debug+ITSboard.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_Drivers_Board.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_Utils.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_LCD.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_ITS_BRD_LIB.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/Group_Program_User_Src.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/edit_cache.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/rebuild_cache.dir

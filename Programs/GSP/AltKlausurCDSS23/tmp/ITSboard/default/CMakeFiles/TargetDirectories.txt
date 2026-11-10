@@ -1,0 +1,8 @@
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-build.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-configure.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-executes.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/edit_cache.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/rebuild_cache.dir

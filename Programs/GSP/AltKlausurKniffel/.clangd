@@ -1,0 +1,7 @@
+CompileFlags:
+  CompilationDatabase: /Users/jannik/Studium
+    lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/out/AltKlausurKniffel/ITSboard/Debug
+  Add:
+    - -include
+    - /Users/jannik/Studium
+      lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/out/AltKlausurKniffel/ITSboard/Debug/compile_macros.h

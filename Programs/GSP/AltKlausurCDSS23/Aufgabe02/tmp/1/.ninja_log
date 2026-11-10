@@ -1,0 +1,91 @@
+# ninja log v7
+1	32	1779091435152553232	CMakeFiles/database	595f306e040cece
+1	32	1779091435152553232	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece
+7	684	1778430398080346884	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	2ca5471621645ee1
+8	684	1778430398080527635	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	6b71c81b34094c
+8	691	1778430398080713094	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	58c9a13dbee7f931
+8	685	1778430398080896303	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	d85f072669a2179b
+9	681	1778430398081595808	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	36fe1395fbaf2a2d
+9	686	1778430398081884518	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	104d6856215901c9
+7	689	1778430398079755838	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	ddc89fcca67944a0
+8	692	1778430398081256347	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	418996c6e0a0823d
+9	690	1778430398082349104	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	765aa64caa66a5e1
+11	791	1778430398083407318	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	91a45b56be849317
+685	806	1778430398758291379	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	db8b4f8c6471f3bc
+686	767	1778430398758991674	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	d888147e9c08a0f5
+690	789	1778430398763180741	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	65ae4bf234599e3d
+691	799	1778430398764275080	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	5d49f1a080505fd5
+689	772	1778430398761989400	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	78668ce4abfd1486
+692	845	1778430398764686083	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	fe4a85ef6641e79f
+7	820	1778430398080147758	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	f89e91dd85cfd221
+10	800	1778430398082828315	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	b0de94289c087c33
+683	960	1778430398756066157	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	140b045cf7e76c45
+791	883	1778430398864124913	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	765e3ea936c83411
+767	895	1778430398839437810	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	6288ef94d8a1593
+684	1076	1778430398757342248	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	fed66e0eecbd59ab
+684	997	1778430398756691828	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	8aef8eda601d3d1a
+772	955	1778430398844574423	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	657e8c32590176b1
+820	910	1778430398893364791	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	67077e2ef22d4a12
+799	925	1778430398871653832	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	d9b446b7be570027
+845	932	1778430398917633808	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	601424b35e8e1f26
+800	960	1778430398873322841	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	e68b9a3a77c25ba9
+789	997	1778430398862107401	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	4db817b821f44425
+895	979	1778430398967804517	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	82eb268ac8e6ccbc
+955	1042	1778430399027982285	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	3b27210232128dc4
+910	1024	1778430398982933939	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	8694603d96fc8caf
+806	1049	1778430398878684247	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	331efb9fba2d7a36
+960	1078	1778430399032554020	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	69f6f381563da0ef
+883	1003	1778430398955572446	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	dc8cb12dc3f03372
+997	1064	1778430399069516735	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	43037a5d77668628
+1003	1109	1778430399076025357	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	e8d421f949b64874
+960	1167	1778430399033223815	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	db91a88ea045bc4b
+925	1144	1778430398998043652	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	7f5e5158a005e6a
+979	1245	1778430399052018467	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	18f6d00a02263dbb
+932	1156	1778430399005222402	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	671ddd819e1a77a0
+1049	1183	1778430399122232418	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	d1359a42f43a6e21
+997	1154	1778430399070134531	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	2b01c3185c7e4545
+1042	1216	1778430399114796666	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	2ef415bc76478d24
+1076	1238	1778430399148922157	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	d112b8f2e102987d
+1109	1185	1778430399181869640	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	70e811440fe409e5
+1024	1195	1778430399096730102	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	fcc20d5fcb79236a
+1144	1240	1778430399216977304	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	d819c231ea0a2ece
+1078	1255	1778430399150513499	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	a8961139bdb50132
+1156	1267	1778430399229243417	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	17fe732001a31ef1
+1183	1279	1778430399255999989	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	8e0c51359dbbc6ee
+1154	1306	1778430399226540984	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	4e2ca549b65a4602
+1185	1310	1778430399257902250	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	64523457cab728ae
+1064	1229	1778430399136632585	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	8ccb5f4aa9f3c923
+1238	1346	1778430399310892601	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	ddd94f11f3f37fbb
+1167	1331	1778430399239637519	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	95ac972710e61b15
+1196	1347	1778430399268721814	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	187a30e1b9272953
+1216	1374	1778430399289087016	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	eb23a9695e3b77d2
+5	563	1779091324453050332	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/main.o	b7e6b406d43de55
+1229	1443	1778430399301710589	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	fb04aa3d8eaf443c
+104	230	1779091649381465377	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	a1b3fb6eb0e96b74
+2	516	1778948902672576437	build.ninja	531b3383daf4ce95
+5	358	1778950440087579438	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/calc.o	4b916c3f9e3e53d6
+4	291	1777885762824871388	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/util.o	3909643e5f9f1514
+3	285	1779091434657836684	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/LED_output.o	fcdd999ebad2c558
+5	497	1779087103312247570	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/GPIO_read.o	d1b754eae4db6a4a
+1310	1423	1778430399382825187	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/timer.o	ac7c1c15d8059f1
+6	597	1778949533814286933	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/error.o	2eb504938e151fec
+2	104	1779091649279593487	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/text_output.o	14fc4c4c16493458
+8	271	1778948906843047374	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/zeitmessung.o	15e91e37a2a0794a
+2	32	1779091649547046449	CMakeFiles/database	595f306e040cece
+2	32	1779091649547046449	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece
+5	531	1779091800357793350	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/text_output.o	14fc4c4c16493458
+532	700	1779091800884031157	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	a1b3fb6eb0e96b74
+2	31	1779091801091123100	CMakeFiles/database	595f306e040cece
+2	31	1779091801091123100	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece
+5	587	1779092518844641610	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/main.o	b7e6b406d43de55
+587	749	1779092519426691897	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	a1b3fb6eb0e96b74
+2	30	1779092519624075560	CMakeFiles/database	595f306e040cece
+2	30	1779092519624075560	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece
+3	121	1779092641563064709	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/main.o	b7e6b406d43de55
+122	244	1779092641682035872	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	a1b3fb6eb0e96b74
+1	37	1779092641842628574	CMakeFiles/database	595f306e040cece
+1	37	1779092641842628574	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece
+5	529	1779093380335758263	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/Src/text_output.o	14fc4c4c16493458
+529	696	1779093380860342445	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	a1b3fb6eb0e96b74
+1	30	1779093381062123086	CMakeFiles/database	595f306e040cece
+1	30	1779093381062123086	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/1/CMakeFiles/database	595f306e040cece

@@ -1,0 +1,37 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-database"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-database.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-database.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"AltKlausurCDSS23.Debug+ITSboard"
+		],
+		"name" : "AltKlausurCDSS23.Debug+ITSboard-database"
+	}
+}

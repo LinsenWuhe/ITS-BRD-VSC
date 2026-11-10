@@ -1,0 +1,21 @@
+build-idx:
+  generated-by: csolution version 2.15.1+p3-gf46d68bf
+  target: ITSboard
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: AltKlausurCDSS23.csolution.yml
+  cbuild-run: out/AltKlausurCDSS23+ITSboard.cbuild-run.yml
+  tmpdir: tmp/ITSboard/default
+  cprojects:
+    - cproject: AltKlausurCDSS23.cproject.yml
+  cbuilds:
+    - cbuild: out/AltKlausurCDSS23/ITSboard/Debug/AltKlausurCDSS23.Debug+ITSboard.cbuild.yml
+      project: AltKlausurCDSS23
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - AltKlausurCDSS23.cbuild-pack.yml - file is already up-to-date
+          - AltKlausurCDSS23+ITSboard.cbuild-run.yml - file generated successfully
+          - AltKlausurCDSS23.Debug+ITSboard.cbuild.yml - file generated successfully
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.17.0
+        - pack: ARM::CMSIS-NN@7.0.0

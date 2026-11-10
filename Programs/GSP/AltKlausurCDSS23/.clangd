@@ -1,0 +1,12 @@
+CompileFlags:
+  CompilationDatabase: /Users/jannik/Studium
+    lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/out/AltKlausurCDSS23/ITSboard/Debug
+
+---
+If:
+  PathMatch: .*\.(c|C|h)$
+CompileFlags:
+  Add:
+    - -include
+    - /Users/jannik/Studium
+      lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/out/AltKlausurCDSS23/ITSboard/Debug/compile_macros_c.h

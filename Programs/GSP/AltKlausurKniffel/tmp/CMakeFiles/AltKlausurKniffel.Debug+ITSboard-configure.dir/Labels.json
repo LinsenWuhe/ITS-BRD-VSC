@@ -1,0 +1,34 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-configure"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"AltKlausurKniffel.Debug+ITSboard"
+		],
+		"name" : "AltKlausurKniffel.Debug+ITSboard-configure"
+	}
+}

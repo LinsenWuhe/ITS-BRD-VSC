@@ -1,0 +1,3 @@
+void testButtonsAndLEDs();
+
+void testTouch();

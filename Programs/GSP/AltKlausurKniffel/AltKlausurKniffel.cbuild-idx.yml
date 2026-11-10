@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.14.1+p9-g859cb6c9
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: AltKlausurKniffel.csolution.yml
+  cbuild-run: out/AltKlausurKniffel+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: AltKlausurKniffel.cproject.yml
+  cbuilds:
+    - cbuild: out/AltKlausurKniffel/ITSboard/Debug/AltKlausurKniffel.Debug+ITSboard.cbuild.yml
+      project: AltKlausurKniffel
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - AltKlausurKniffel.cbuild-pack.yml - file is already up-to-date
+          - AltKlausurKniffel+ITSboard.cbuild-run.yml - file is already up-to-date
+          - AltKlausurKniffel.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.17.0
+        - pack: ARM::CMSIS-NN@7.0.0

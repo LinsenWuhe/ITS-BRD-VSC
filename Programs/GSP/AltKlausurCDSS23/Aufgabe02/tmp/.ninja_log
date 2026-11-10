@@ -1,0 +1,41 @@
+# ninja log v7
+1	30	1777288311586199287	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-mkdir	d2f8f25c357c1d56
+1	30	1777288311586199287	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-mkdir	d2f8f25c357c1d56
+30	57	1777288311612976967	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-download	ba0ca306f6febee5
+30	57	1777288311612976967	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-download	ba0ca306f6febee5
+57	85	1777288311641334374	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-update	cddd70c35569fd32
+57	85	1777288311641334374	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-update	cddd70c35569fd32
+85	112	1777288311667846135	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-patch	956a3b5384efc5d0
+85	112	1777288311667846135	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-patch	956a3b5384efc5d0
+112	2069	1777288313624583910	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-configure	12f106bdd4c492bc
+112	2069	1777288313624583910	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-configure	12f106bdd4c492bc
+289	364	1779092641806825196	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-database	90f3b90e2f680d30
+289	364	1779092641806825196	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-database	90f3b90e2f680d30
+0	289	1779092641517595883	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-build	e2ac5fb687c7830f
+0	289	1779092641517595883	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	e2ac5fb687c7830f
+0	289	1779092641517595883	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/compile_commands.json	e2ac5fb687c7830f
+0	289	1779092641517595883	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-build	e2ac5fb687c7830f
+1427	1467	1777288388112124000	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-executes	5ad9eedffdd3d25e
+1427	1467	1777288388112124000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-executes	5ad9eedffdd3d25e
+364	381	1779092641880984324	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-install	37c14dea15fcd44d
+364	381	1779092641880984324	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-install	37c14dea15fcd44d
+381	410	1779092641925923000	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-test	a03fcbf720e5970e
+381	410	1779092641925923000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-test	a03fcbf720e5970e
+410	448	1779092641964442000	CMakeFiles/Aufgabe02.Debug+ITSboard-complete	c5a4b6095724c140
+410	448	1779092641964442000	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-done	c5a4b6095724c140
+410	448	1779092641964442000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-complete	c5a4b6095724c140
+410	448	1779092641964442000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-done	c5a4b6095724c140
+1	744	1779093380286040230	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-build	e2ac5fb687c7830f
+1	744	1779093380286040230	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/Aufgabe02.axf	e2ac5fb687c7830f
+1	744	1779093380286040230	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/out/Aufgabe02/ITSboard/Debug/compile_commands.json	e2ac5fb687c7830f
+1	744	1779093380286040230	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-build	e2ac5fb687c7830f
+744	808	1779093381029283996	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-database	90f3b90e2f680d30
+744	808	1779093381029283996	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-database	90f3b90e2f680d30
+808	823	1779093381092972709	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-install	37c14dea15fcd44d
+808	823	1779093381092972709	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-install	37c14dea15fcd44d
+823	849	1779093381133230000	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-test	a03fcbf720e5970e
+823	849	1779093381133230000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-test	a03fcbf720e5970e
+849	887	1779093381171296000	CMakeFiles/Aufgabe02.Debug+ITSboard-complete	c5a4b6095724c140
+849	887	1779093381171296000	Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-done	c5a4b6095724c140
+849	887	1779093381171296000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-complete	c5a4b6095724c140
+849	887	1779093381171296000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-done	c5a4b6095724c140

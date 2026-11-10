@@ -1,0 +1,12 @@
+# Target labels
+ AltklausurRust.Debug+ITSboard
+# Source files and their labels
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/CMakeFiles/AltklausurRust.Debug+ITSboard-executes
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/CMakeFiles/AltklausurRust.Debug+ITSboard-executes.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-executes.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-build.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-configure.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-patch.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-update.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-download.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-mkdir.rule

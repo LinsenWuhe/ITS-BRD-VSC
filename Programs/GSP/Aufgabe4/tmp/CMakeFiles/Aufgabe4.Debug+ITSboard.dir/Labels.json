@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/CMakeFiles/Aufgabe4.Debug+ITSboard"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/CMakeFiles/Aufgabe4.Debug+ITSboard.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/CMakeFiles/Aufgabe4.Debug+ITSboard-complete.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-database.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-install.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-mkdir.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-test.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe4/tmp/Aufgabe4.Debug+ITSboard/src/Aufgabe4.Debug+ITSboard-stamp/Aufgabe4.Debug+ITSboard-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Aufgabe4.Debug+ITSboard"
+		],
+		"name" : "Aufgabe4.Debug+ITSboard"
+	}
+}

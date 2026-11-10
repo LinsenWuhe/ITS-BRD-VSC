@@ -1,0 +1,30 @@
+# ninja log v7
+3	84	1784014390378380864	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-mkdir	b2f114cf611d2b50
+3	84	1784014390378380864	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-mkdir	b2f114cf611d2b50
+84	118	1784014390411927213	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-download	9fccb92dbb5ac4b5
+84	118	1784014390411927213	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-download	9fccb92dbb5ac4b5
+118	147	1784014390441362087	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-update	320323c69305f0f4
+118	147	1784014390441362087	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-update	320323c69305f0f4
+147	173	1784014390467916782	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-patch	8c239891f1dfab0d
+147	173	1784014390467916782	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-patch	8c239891f1dfab0d
+173	4069	1784014394363774169	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-configure	4b3ca3a439aedf0
+173	4069	1784014394363774169	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-configure	4b3ca3a439aedf0
+623	659	1784138174553998574	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-database	a76509b5712b81dd
+623	659	1784138174553998574	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-database	a76509b5712b81dd
+1	623	1784138173931905915	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-build	8cc34f982496463a
+1	623	1784138173931905915	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/out/AltklausurRust/ITSboard/Debug/AltklausurRust.axf	8cc34f982496463a
+1	623	1784138173931905915	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/out/AltklausurRust/ITSboard/Debug/compile_commands.json	8cc34f982496463a
+1	623	1784138173931905915	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/out/AltklausurRust/ITSboard/Debug/compile_macros.h	8cc34f982496463a
+1	623	1784138173931905915	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-build	8cc34f982496463a
+431	468	1784015670121220567	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-executes	b7e0f0bede0d79c8
+431	468	1784015670121220567	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-executes	b7e0f0bede0d79c8
+659	675	1784138174590383843	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-install	94cbd7a6366134f9
+659	675	1784138174590383843	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-install	94cbd7a6366134f9
+676	701	1784138174631254000	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-test	ebc6da1b2c3ed698
+676	701	1784138174631254000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-test	ebc6da1b2c3ed698
+701	737	1784138174666627000	CMakeFiles/AltklausurRust.Debug+ITSboard-complete	b704e36e7525f8a7
+701	737	1784138174666627000	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-done	b704e36e7525f8a7
+701	737	1784138174666627000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/CMakeFiles/AltklausurRust.Debug+ITSboard-complete	b704e36e7525f8a7
+701	737	1784138174666627000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-done	b704e36e7525f8a7
+1	45	1784282180555899380	AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-database	a76509b5712b81dd
+1	45	1784282180555899380	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust/tmp/AltklausurRust.Debug+ITSboard/src/AltklausurRust.Debug+ITSboard-stamp/AltklausurRust.Debug+ITSboard-database	a76509b5712b81dd

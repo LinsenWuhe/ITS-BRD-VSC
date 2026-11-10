@@ -1,0 +1,7 @@
+CompileFlags:
+  CompilationDatabase: /Users/jannik/Studium
+    lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/out/Aufgabe5/ITSboard/Debug
+  Add:
+    - -include
+    - /Users/jannik/Studium
+      lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/out/Aufgabe5/ITSboard/Debug/compile_macros.h

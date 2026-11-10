@@ -1,0 +1,11 @@
+# Target labels
+ Aufgabe02.Debug+ITSboard
+# Source files and their labels
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-build
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-build.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-build.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-configure.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-patch.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-update.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-download.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-mkdir.rule

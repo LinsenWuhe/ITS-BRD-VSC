@@ -1,0 +1,34 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-configure"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/CMakeFiles/Aufgabe02.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe02/tmp/Aufgabe02.Debug+ITSboard/src/Aufgabe02.Debug+ITSboard-stamp/Aufgabe02.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Aufgabe02.Debug+ITSboard"
+		],
+		"name" : "Aufgabe02.Debug+ITSboard-configure"
+	}
+}

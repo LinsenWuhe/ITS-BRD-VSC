@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.14.1+p9-g859cb6c9
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: AltklausurRust.csolution.yml
+  cbuild-run: out/AltklausurRust+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: AltklausurRust.cproject.yml
+  cbuilds:
+    - cbuild: out/AltklausurRust/ITSboard/Debug/AltklausurRust.Debug+ITSboard.cbuild.yml
+      project: AltklausurRust
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - AltklausurRust.cbuild-pack.yml - file is already up-to-date
+          - AltklausurRust+ITSboard.cbuild-run.yml - file is already up-to-date
+          - AltklausurRust.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.17.0
+        - pack: ARM::CMSIS-NN@7.0.0

@@ -1,0 +1,8 @@
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-build.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-configure.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-executes.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/edit_cache.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/rebuild_cache.dir

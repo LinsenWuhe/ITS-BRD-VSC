@@ -1,0 +1,8 @@
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard-build.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard-configure.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard-executes.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard-database.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/edit_cache.dir
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/rebuild_cache.dir

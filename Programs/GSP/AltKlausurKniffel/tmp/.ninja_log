@@ -1,0 +1,30 @@
+# ninja log v7
+1	29	1783670212289479990	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-mkdir	71a43084f0841a7
+1	29	1783670212289479990	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-mkdir	71a43084f0841a7
+29	57	1783670212317841257	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-download	8780792d9b100267
+29	57	1783670212317841257	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-download	8780792d9b100267
+57	84	1783670212344295223	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-update	80816e9adb8f19d1
+57	84	1783670212344295223	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-update	80816e9adb8f19d1
+84	109	1783670212369927310	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-patch	88c04703d6f0f7ed
+84	109	1783670212369927310	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-patch	88c04703d6f0f7ed
+109	1077	1783670213337597110	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-configure	2aadf8aaf7fb9d19
+109	1077	1783670213337597110	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-configure	2aadf8aaf7fb9d19
+282	319	1783763381149704075	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-database	7df11b94ed91e451
+282	319	1783763381149704075	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-database	7df11b94ed91e451
+1	282	1783763380868260340	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-build	af4a0c04bf42f29d
+1	282	1783763380868260340	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/out/AltKlausurKniffel/ITSboard/Debug/AltKlausurKniffel.axf	af4a0c04bf42f29d
+1	282	1783763380868260340	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/out/AltKlausurKniffel/ITSboard/Debug/compile_commands.json	af4a0c04bf42f29d
+1	282	1783763380868260340	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/out/AltKlausurKniffel/ITSboard/Debug/compile_macros.h	af4a0c04bf42f29d
+1	282	1783763380868260340	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-build	af4a0c04bf42f29d
+1097	1146	1783670215740113798	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-executes	59ea9860fb07c479
+1097	1146	1783670215740113798	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-executes	59ea9860fb07c479
+319	335	1783763381186704468	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-install	a5ef5ae68d8c4ab7
+319	335	1783763381186704468	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-install	a5ef5ae68d8c4ab7
+336	362	1783763381228979000	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-test	23b5aa7956f4a1f4
+336	362	1783763381228979000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-test	23b5aa7956f4a1f4
+362	401	1783763381267240000	CMakeFiles/AltKlausurKniffel.Debug+ITSboard-complete	d7ec0081e7a4a9b7
+362	401	1783763381267240000	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-done	d7ec0081e7a4a9b7
+362	401	1783763381267240000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/CMakeFiles/AltKlausurKniffel.Debug+ITSboard-complete	d7ec0081e7a4a9b7
+362	401	1783763381267240000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-done	d7ec0081e7a4a9b7
+1	40	1784014120299091542	AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-database	7df11b94ed91e451
+1	40	1784014120299091542	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurKniffel/tmp/AltKlausurKniffel.Debug+ITSboard/src/AltKlausurKniffel.Debug+ITSboard-stamp/AltKlausurKniffel.Debug+ITSboard-database	7df11b94ed91e451

@@ -1,0 +1,12 @@
+# Target labels
+ AltKlausurCDSS23.Debug+ITSboard
+# Source files and their labels
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-executes
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/CMakeFiles/AltKlausurCDSS23.Debug+ITSboard-executes.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-executes.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-build.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-configure.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-patch.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-update.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-download.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-mkdir.rule

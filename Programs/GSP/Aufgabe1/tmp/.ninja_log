@@ -1,0 +1,41 @@
+# ninja log v7
+5	82	1777875761187705053	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-mkdir	f6efb01ad3e17f6a
+5	82	1777875761187705053	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-mkdir	f6efb01ad3e17f6a
+82	120	1777875761226339928	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-download	befcf69c8734ac13
+82	120	1777875761226339928	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-download	befcf69c8734ac13
+120	170	1777875761274578376	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-update	28e69945278ec17e
+120	170	1777875761274578376	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-update	28e69945278ec17e
+170	227	1777875761330580757	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-patch	5f3745c57cbf87ec
+170	227	1777875761330580757	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-patch	5f3745c57cbf87ec
+227	1068	1777875762173588977	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-configure	56f1215a4a5c844a
+227	1068	1777875762173588977	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-configure	56f1215a4a5c844a
+0	290	1777879034767191322	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-build	f980531f5db4aa6c
+0	290	1777879034767191322	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/out/Aufgabe1/ITSboard/Debug/Aufgabe1.axf	f980531f5db4aa6c
+0	290	1777879034767191322	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/out/Aufgabe1/ITSboard/Debug/compile_commands.json	f980531f5db4aa6c
+0	290	1777879034767191322	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-build	f980531f5db4aa6c
+2252	2290	1777875763396414494	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-executes	c29bfb2ffea43937
+2252	2290	1777875763396414494	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-executes	c29bfb2ffea43937
+1	67	1777879058332854894	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-database	45c082f75133ada1
+1	67	1777879058332854894	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-database	45c082f75133ada1
+363	381	1777879035130424287	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-install	b52c1039a061482d
+363	381	1777879035130424287	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-install	b52c1039a061482d
+381	409	1777879035175297000	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-test	7b5cdd314f9b5763
+381	409	1777879035175297000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-test	7b5cdd314f9b5763
+409	450	1777879035216417000	CMakeFiles/Aufgabe1.Debug+ITSboard-complete	b4878067a68d8850
+409	450	1777879035216417000	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-done	b4878067a68d8850
+409	450	1777879035216417000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/CMakeFiles/Aufgabe1.Debug+ITSboard-complete	b4878067a68d8850
+409	450	1777879035216417000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-done	b4878067a68d8850
+1	48	1777879062595509401	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-build	f980531f5db4aa6c
+1	48	1777879062595509401	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/out/Aufgabe1/ITSboard/Debug/Aufgabe1.axf	f980531f5db4aa6c
+1	48	1777879062595509401	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/out/Aufgabe1/ITSboard/Debug/compile_commands.json	f980531f5db4aa6c
+1	48	1777879062595509401	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-build	f980531f5db4aa6c
+48	116	1777879062642954865	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-database	45c082f75133ada1
+48	116	1777879062642954865	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-database	45c082f75133ada1
+116	132	1777879062710086260	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-install	b52c1039a061482d
+116	132	1777879062710086260	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-install	b52c1039a061482d
+132	160	1777879062753652000	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-test	7b5cdd314f9b5763
+132	160	1777879062753652000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-test	7b5cdd314f9b5763
+160	198	1777879062791347000	CMakeFiles/Aufgabe1.Debug+ITSboard-complete	b4878067a68d8850
+160	198	1777879062791347000	Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-done	b4878067a68d8850
+160	198	1777879062791347000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/CMakeFiles/Aufgabe1.Debug+ITSboard-complete	b4878067a68d8850
+160	198	1777879062791347000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe1/tmp/Aufgabe1.Debug+ITSboard/src/Aufgabe1.Debug+ITSboard-stamp/Aufgabe1.Debug+ITSboard-done	b4878067a68d8850

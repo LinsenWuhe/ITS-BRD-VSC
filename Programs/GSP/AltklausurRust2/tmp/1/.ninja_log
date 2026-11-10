@@ -1,0 +1,146 @@
+# ninja log v7
+1	21	1784974821098146000	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/compile_commands.json	a8806db65ce04bbd
+2	49	1784974821123296657	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/compile_macros.h	f3f94b5c7ef6f337
+2	214	1784974824551488612	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/stm32f4xx_it.o	e944f36a3df31951
+2	220	1784974824551302485	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/system_stm32f4xx.o	e1ea4ce47c20abf3
+4	222	1784974824553174915	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o	f80993adc17a646c
+4	228	1784974824552825996	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o	8397ea3a2ad74dce
+3	229	1784974824552188033	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o	c1fa0659661df476
+2	231	1784974824550799357	CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/BSP/STM32F4xx_Nucleo_144/stm32f4xx_nucleo_144.o	6410e6cd83c10dd6
+3	232	1784974824552504869	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o	da2bffc83b8179b5
+3	239	1784974824551801614	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o	eb2c0ab35f1f2b58
+5	251	1784974824553631377	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o	af2cc05e40de5ad6
+231	308	1784974824779784510	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font16.o	e763ea4e0e3da747
+233	310	1784974824782409529	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font20.o	75ef954a6e056d16
+228	311	1784974824777284408	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font8.o	1e0eaba34652aef8
+230	312	1784974824778587585	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font12.o	d9da9942759de802
+239	333	1784974824788313863	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Utilities/Fonts/font24.o	48727ae6cb78aa1b
+6	342	1784974824554911678	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o	230aebc02394e327
+251	368	1784974824799765862	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas40.o	874c084db86ecaf8
+5	378	1784974824553910296	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o	1cca64842d07410f
+215	415	1784974824764505983	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o	c62be49069f1d564
+313	425	1784974824861558850	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold40.o	eaf14772ad21eb8b
+221	442	1784974824769516186	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o	223dcdb011571862
+222	449	1784974824770904196	CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/stm32cubef4/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o	ab66d61a6cfc188f
+308	455	1784974824857313486	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas60.o	ab82635756e9c5b7
+310	477	1784974824858976665	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas80.o	5cf619dbfaa470dc
+2	499	1784974824551114234	CMakeFiles/Group_Drivers_Board.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/startup/startup_stm32f429xx.o	8f1a176efad30c40
+336	509	1784974824884848518	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold60.o	a1989be39809688e
+379	524	1784974824927540743	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNew48.o	d834144f5422832f
+342	538	1784974824890584018	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold80.o	f655dcb453f3e79d
+442	574	1784974824991057994	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono40.o	b4ee03bf6093883c
+311	578	1784974824859999922	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/Consolas90.o	bbb4aaf0bf110e36
+415	590	1784974824964389051	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold40.o	ddc075852d98812d
+499	597	1784974825048171573	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium40.o	4629b59ef2a6abab
+449	623	1784974824997626166	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono60.o	d220de599d2c11ef
+426	624	1784974824974599041	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/CourierNewBold60.o	feeaff2234841df6
+509	642	1784974825058184895	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium60.o	8d9f1d6e2049f856
+574	643	1784974825123287365	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/fontsFLASH.o	2316ffc1e3a5c4fa
+368	652	1784974824917400378	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/ConsolasBold90.o	ea78e5469c8fb2dd
+455	661	1784974825003970295	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono80.o	8270266c9dd5ebd5
+590	701	1784974825138890102	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GUI.o	9d6f33a27f593df6
+477	728	1784974825025641201	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMono90.o	1345243d1445d2d6
+661	731	1784974825210039116	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Debug.o	1b23e9b942d0855c
+578	732	1784974825127171434	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Driver.o	2406efe2f83c6513
+525	758	1784974825073569047	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium80.o	1931ade423b64b8f
+538	759	1784974825086626809	CMakeFiles/Group_Utils.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Utilities/AddFonts/FiraMonoMedium90.o	a926de62377f935b
+624	764	1784974825173329268	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_GPIO.o	daddc7a9039b3deb
+623	770	1784974825172046092	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_SPI.o	f0eb78b135eb12fd
+642	775	1784974825191203480	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_TIM.o	78032515a323ed0e
+643	783	1784974825191702025	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Tools.o	fafb88b4036c3c38
+597	785	1784974825145833194	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Touch.o	9bec9e3a90a2a3c7
+701	792	1784974825250040238	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/LCD_Demos.o	e8f096f218d400a4
+652	801	1784974825200924925	CMakeFiles/Group_LCD.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/DisplayWaveshare/Src/testsoftware.o	732123a6af6d6739
+758	848	1784974825307361943	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/terminal.o	ca119b40c3db1050
+731	848	1784974825280544249	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/lcd.o	58b34151d7a9e5c2
+783	858	1784974825331739952	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/stdinout_USART.o	a181c06ab8d6acc0
+759	861	1784974825307832155	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/keypad.o	4ad835f419312456
+764	900	1784974825313286569	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/delay.o	c52ae75a1c182d8a
+732	907	1784974825281382297	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/init.o	8576f14208ad74c1
+728	915	1784974825277104974	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/error.o	78f3986e304a409f
+770	918	1784974825319175903	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/timer.o	d6697318e50e2664
+792	920	1784974825340744851	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+5	445	1784975856150784362	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/io.o	c561e2a38e589750
+848	963	1784974825397447968	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/touch.o	5143ad083439a11c
+5	398	1784975506696623882	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/test.o	69b4ff31b363a581
+775	974	1784974825324470733	CMakeFiles/Group_ITS_BRD_LIB.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/ITS_BRD_LIB/Src/USART_STM32F4xx.o	39e94243ebfec2dd
+3	392	1784975872024574352	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+85	215	1784975557197631865	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	b196c2e086d745b4
+3	284	1784975920096478712	build.ninja	5ea6757c9b7915b9
+1	19	1784975920122229516	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/compile_commands.json	a8806db65ce04bbd
+4	294	1784975921479183009	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+294	465	1784975921769381174	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+5	328	1784975937395200431	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+328	487	1784975937718782773	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	610	1784976964179499803	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+4	611	1784976964179136424	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+611	767	1784976964786256896	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	433	1784977063761541147	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+433	583	1784977064190469457	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	112	1784977086080654321	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+112	224	1784977086190516236	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	428	1784977115543550445	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+428	585	1784977115967758627	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	556	1784977687060173103	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+556	709	1784977687613074086	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	370	1784977726509669046	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+370	532	1784977726877064191	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+6	467	1784978366121734303	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+7	467	1784978366122380851	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+7	467	1784978366122646937	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/test.o	69b4ff31b363a581
+7	467	1784978366122853231	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/touch.o	5143ad083439a11c
+7	467	1784978366123073274	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/display.o	2c0c3c6202694b80
+467	618	1784978366582993128	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	293	1784978384158417151	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/touch.o	5143ad083439a11c
+294	456	1784978384449571282	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	201	1784978439914085230	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+201	313	1784978440112629109	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+5	526	1784979649429075787	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+4	526	1784979649428777077	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/main.o	ac0e52b9bb194e1e
+526	701	1784979649950796846	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	455	1784979763159855328	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+455	629	1784979763610849373	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	433	1784979900050567495	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+433	593	1784979900479276323	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	120	1784979919580258046	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+121	275	1784979919698131847	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	117	1784980038858701817	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+118	235	1784980038974188683	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+5	554	1784980272401298586	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+555	728	1784980272951177559	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	470	1784980657108934238	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+470	644	1784980657575567013	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	371	1784980693032949340	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+371	528	1784980693401591267	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	113	1784980758720730530	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+113	239	1784980758831644599	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	565	1784980986618922859	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+565	733	1784980987180074457	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	320	1784981046682861904	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+321	481	1784981047000030869	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	110	1784981059176922638	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+110	218	1784981059284381514	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	284	1784981124894637008	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+285	452	1784981125176598963	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	587	1784981481410656628	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+587	752	1784981481994974855	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	493	1784981781264443376	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+493	663	1784981781753630068	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	220	1784981845268484440	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+220	350	1784981845486480840	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	449	1784981947477688639	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+449	620	1784981947923300339	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	459	1784981989121907836	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+459	633	1784981989576654234	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	252	1784982052034380089	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+252	364	1784982052284152727	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+4	396	1784982077110816928	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+396	559	1784982077503202968	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	451	1784982115163810326	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+451	614	1784982115611934204	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	121	1784982141813792746	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+121	253	1784982141932569879	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+2	334	1784982190174249834	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+335	503	1784982190506888926	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784
+3	362	1784982212750005748	CMakeFiles/Group_Program_User_Src.dir/Users/jannik/Studium_lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/Src/game.o	8c062a955cb887a4
+362	531	1784982213109612744	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/out/AltklausurRust2/ITSboard/Debug/AltklausurRust2.axf	e8089bc9d39c9784

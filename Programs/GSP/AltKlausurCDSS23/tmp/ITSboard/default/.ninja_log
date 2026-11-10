@@ -1,0 +1,13 @@
+# ninja log v7
+2	50	1794321602450877133	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-mkdir	a5ab418258ab848a
+2	50	1794321602450877133	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-mkdir	a5ab418258ab848a
+51	110	1794321602510166851	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-download	2b2baa1bafa777a5
+51	110	1794321602510166851	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-download	2b2baa1bafa777a5
+110	154	1794321602551423331	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-update	ce9002e4932453ae
+110	154	1794321602551423331	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-update	ce9002e4932453ae
+154	199	1794321602598692654	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-patch	fe53b9fc82e3ae80
+154	199	1794321602598692654	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-patch	fe53b9fc82e3ae80
+199	15681	1794321618082490323	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-configure	7dd5f83b9aec4bbe
+199	15681	1794321618082490323	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-configure	7dd5f83b9aec4bbe
+15681	15762	1794321618084100879	AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-database	9107d8315c6bced1
+15681	15762	1794321618084100879	/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltKlausurCDSS23/tmp/ITSboard/default/AltKlausurCDSS23.Debug+ITSboard/src/AltKlausurCDSS23.Debug+ITSboard-stamp/AltKlausurCDSS23.Debug+ITSboard-database	9107d8315c6bced1

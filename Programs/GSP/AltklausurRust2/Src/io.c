@@ -1,0 +1,43 @@
+/**
+ ******************************************************************************
+ * @file    io.c
+ *
+ * @date    25. Juli 2024
+ * @brief   Template der io.c für die Laborklausur GS SoSe 2024
+ *
+ * @author  
+ *
+ ******************************************************************************
+ */
+
+
+
+#include "stm32f429xx.h"
+#include <stdbool.h>
+#include <stdint.h>
+
+//maske, um alle 8 Pins direkt anzusprechen
+uint32_t maske = 0b11111111;
+
+bool getButton(int n)
+{
+    return ((GPIOF->IDR & (1 << n)) == 0);
+}
+
+
+void setLEDs(bool* leds)
+{
+    //zuerst alle LEDs ausschalten
+    GPIOD->BSRR = (maske << 16);
+
+    //dann led für led durch das übergebene Array gehen und prüfen, ob taste gedrückt ist
+    for(int i = 0; i<9; i++)
+    {
+        if (leds[i] == true) 
+        {
+            GPIOD->BSRR |= (1<<i);
+        }
+    }
+}
+
+// EOF

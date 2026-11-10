@@ -1,0 +1,16 @@
+# Target labels
+ Aufgabe5.Debug+ITSboard
+# Source files and their labels
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/CMakeFiles/Aufgabe5.Debug+ITSboard
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/CMakeFiles/Aufgabe5.Debug+ITSboard.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/CMakeFiles/Aufgabe5.Debug+ITSboard-complete.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-build.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-configure.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-database.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-download.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-executes.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-install.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-mkdir.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-patch.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-test.rule
+/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe5/tmp/Aufgabe5.Debug+ITSboard/src/Aufgabe5.Debug+ITSboard-stamp/Aufgabe5.Debug+ITSboard-update.rule

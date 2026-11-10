@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/CMakeFiles/AltklausurRust2.Debug+ITSboard-complete.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-database.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-install.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-mkdir.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-test.rule"
+		},
+		{
+			"file" : "/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/AltklausurRust2/tmp/AltklausurRust2.Debug+ITSboard/src/AltklausurRust2.Debug+ITSboard-stamp/AltklausurRust2.Debug+ITSboard-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"AltklausurRust2.Debug+ITSboard"
+		],
+		"name" : "AltklausurRust2.Debug+ITSboard"
+	}
+}
