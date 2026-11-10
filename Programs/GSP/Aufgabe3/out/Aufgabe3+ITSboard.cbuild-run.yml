@@ -1,17 +1,20 @@
 cbuild-run:
-  generated-by: csolution version 2.13.0+p3-g40b6564e
+  generated-by: csolution version 2.15.1+p3-gf46d68bf
   solution: ../Aufgabe3.csolution.yml
   target-type: ITSboard
   target-set: <default>
   compiler: AC6
   board: STMicroelectronics::NUCLEO-F429ZI:Rev.B
   board-pack: Keil::STM32NUCLEO_BSP@1.8.1
+  board-pack-path: ${CMSIS_PACK_ROOT}/Keil/STM32NUCLEO_BSP/1.8.1
   device: STMicroelectronics::STM32F429ZITx
   device-pack: Keil::STM32F4xx_DFP@2.17.1
+  device-pack-path: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1
   output:
     - file: Aufgabe3/ITSboard/Debug/Aufgabe3.axf
       info: generate by Aufgabe3.Debug+ITSboard
       type: elf
+      project: Aufgabe3
       load: image+symbols
   system-resources:
     memory:
@@ -19,17 +22,27 @@ cbuild-run:
         access: rx
         start: 0x08000000
         size: 0x00200000
+        default: true
         from-pack: Keil::STM32F4xx_DFP@2.17.1
       - name: IRAM1
         access: rwx
         start: 0x20000000
         size: 0x00030000
+        default: true
         from-pack: Keil::STM32F4xx_DFP@2.17.1
       - name: IRAM2
         access: rwx
         start: 0x10000000
         size: 0x00010000
+        default: false
         from-pack: Keil::STM32F4xx_DFP@2.17.1
+    processors:
+      - core: Cortex-M4
+        revision: r0p1
+        endian: little
+        fpu: sp
+        mpu: present
+        max-clock: 180000000
   system-descriptions:
     - file: ${CMSIS_PACK_ROOT}/Keil/STM32F4xx_DFP/2.17.1/CMSIS/SVD/STM32F429.svd
       type: svd
@@ -37,9 +50,12 @@ cbuild-run:
     name: ST-Link@pyOCD
     protocol: swd
     clock: 10000000
-    dbgconf: ../.cmsis/Aufgabe3+ITSboard.dbgconf
     gdbserver:
       - port: 3333
+    device-settings:
+      DbgMCU_APB1_Fz: 0x00000000
+      DbgMCU_APB2_Fz: 0x00000000
+      DbgMCU_CR: 0x00000007
   debug-vars:
     vars: |
       __var DbgMCU_CR      = 0x00000007;   // DBGMCU_CR: DBG_SLEEP, DBG_STOP, DBG_STANDBY
@@ -308,3 +324,7 @@ cbuild-run:
       size: 0x00200000
       ram-start: 0x20000000
       ram-size: 0x00030000
+  debug-topology:
+    trace-sinks:
+      - serialwire: 
+      - tracebuffer: 

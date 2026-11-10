@@ -1,1 +1,0 @@
-cmd='/Users/jannik/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;-G;Ninja;-S;<SOURCE_DIR>;-B;<BINARY_DIR>;-DSOLUTION_ROOT=/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3;-DCMSIS_PACK_ROOT=/Users/jannik/.cache/arm/packs;-DCMSIS_COMPILER_ROOT=/Users/jannik/.vscode/extensions/arm.cmsis-csolution-1.66.0-darwin-arm64/tools/cmsis-toolbox/etc'

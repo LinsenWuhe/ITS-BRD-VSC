@@ -1,8 +1,0 @@
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/database.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/Aufgabe3.Debug+ITSboard.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/Aufgabe3.Debug+ITSboard-build.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/Aufgabe3.Debug+ITSboard-configure.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/Aufgabe3.Debug+ITSboard-executes.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/Aufgabe3.Debug+ITSboard-database.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/edit_cache.dir
-/Users/jannik/Studium lokal/GSP/ITS-BRD-VSC/Programs/Aufgabe3/tmp/CMakeFiles/rebuild_cache.dir
